@@ -7,8 +7,16 @@
 }
 
 .child1 {
+display: flex;
   width: 50%;
   text-align: right;
+  align-items: center;
+}
+
+.gundambg{
+    max-width: 500px;
+    max-height: 500px;
+    position: sticky;
 }
 
 .child2 {
@@ -62,6 +70,9 @@
 }
 
 @media (max-width: 768px) {
+    .main {
+        height: 100vh;
+      }
   .regis {
     padding: 20px;
   }

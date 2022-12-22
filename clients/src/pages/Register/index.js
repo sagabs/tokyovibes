@@ -4,19 +4,15 @@ import Logo from "../../assets/logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Styles from "./index.module.css";
 import Form from "react-bootstrap/Form";
+import Gundambg from "../../assets/gundambg.png";
 
-// const myStyle={
-//   backgroundImage:`url(${Bg})`,
-//   minHeight:'100vh',
-//   minWidth:'100vw',
-//   backgroundSize: 'cover',
-//   backgroundRepeat: 'no-repeat',
-// };
 
 const Register = () => {
   return (
     <div className={Styles.main}>
-      <div className={Styles.child1}></div>
+      <div className={Styles.child1}>
+        <img className={Styles.gundambg} src={Gundambg} alt="background gundam"></img>
+      </div>
       <div className={Styles.child2}>
         <div className={Styles.regis}>
           <div className={Styles.logoanddaftar}>
