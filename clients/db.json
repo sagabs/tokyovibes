@@ -32,5 +32,49 @@
       "email": "fikridev2@tokyovibes.com",
       "password": "fikridev2"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Action Figure Anime",
+      "price": 100000,
+      "stock": 1234,
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+    },
+    {
+      "id": 2,
+      "name": "Action Figure Anime 2",
+      "price": 200000,
+      "stock": 2234,
+      "spesification": {
+        "condition": "Baru",
+        "color": "Pink",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "amount": 1,
+      "totalPrice": 100000,
+      "product": {
+        "id": 1,
+        "name": "Action Figure Anime",
+        "price": 100000,
+        "stock": 1234,
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        }
+      }
+    }
   ]
 }
