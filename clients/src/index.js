@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-//import Register from './pages/Register/index';
+import App from './App';
+import Register from './pages/Register/index';
+import Keranjang from './pages/Keranjang/index';
+import Navbar from './components/navbar/navbar';
 import reportWebVitals from './reportWebVitals';
 // import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails'

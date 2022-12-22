@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Navbar from "../../components/navbar/navbar"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Styles from "./index.module.css";
 import Productex from "../../assets/productex.png";
@@ -27,6 +28,8 @@ const ProductDetails = () => {
     }, []);
 
     return (
+        <>
+        <Navbar />
         <div className={Styles.main}>
             <div className={Styles.col1}>
                 <img className={Styles.productex} src={Productex} alt="background gundam"></img>
@@ -75,6 +78,7 @@ const ProductDetails = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
