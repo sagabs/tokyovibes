@@ -46,11 +46,14 @@ export default class FormRegister extends Component {
         this.setState({ c_password: event.target.value });
     };
 
+    comparePassword = (password, c_password) => {
+        return password === c_password
+    }
+
     submitData(event) {
         event.preventDefault();
 
         const { password, c_password } = this.state;
-        const matches = password === c_password;
 
         const data = {
             id: uuidv4(),
@@ -58,10 +61,10 @@ export default class FormRegister extends Component {
             lastName: this.state.lastName,
             mobilePhone: this.state.mobilePhone,
             email: this.state.email,
-            password: this.state.passwordS
+            password: this.state.password
         }
 
-        if (!matches) {
+        if (!this.comparePassword(password, c_password)) {
             alert("Konfirmasi password belum benar")
         } else {
             axios

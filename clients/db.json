@@ -15,20 +15,6 @@
       "mobilePhone": "082134567890",
       "email": "userdev2@tokyovibes.com",
       "password": "userdev2"
-    },
-    {
-      "id": 3,
-      "firstName": "fikri",
-      "lastName": "lubis",
-      "mobilePhone": "082134567890",
-      "email": "fikri@tokyovibes.com"
-    },
-    {
-      "id": "7e65d8b3-865b-4b7d-a260-c489616554d4",
-      "firstName": "fikri",
-      "lastName": "lubis2",
-      "mobilePhone": "082134567890",
-      "email": "fikri2@tokyovibes.com"
     }
   ]
 }
