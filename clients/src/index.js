@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Register from './pages/Register/index';
+// import App from './App';
+//import Register from './pages/Register/index';
 import reportWebVitals from './reportWebVitals';
 import Register from './pages/Register';
 
