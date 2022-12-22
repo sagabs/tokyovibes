@@ -1,9 +1,9 @@
-.logo{
+.logo {
     height: 75px;
     width: 75px;
 }
 
-.navbar{
+.navbar {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -13,9 +13,10 @@
     background-size: 13%;
     background-repeat: no-repeat;
     background-position: top right;
+    background-color: white;
 }
 
-.search{
+.search {
     width: 800px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     margin-right: 20px;
