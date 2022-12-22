@@ -87,7 +87,7 @@ export default class FormRegister extends Component {
     render() {
         return (
             <Form onSubmit={this.submitData}>
-                <Form.Group className="mb-3" controlId="formBasicFirstName">
+                <Form.Group className="mb-3" controlId="firstName">
                     <Form.Label>Nama Depan</Form.Label>
                     <Form.Control 
                         required
@@ -96,7 +96,7 @@ export default class FormRegister extends Component {
                         onChange={this.inputFirstName}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicLastName">
+                <Form.Group className="mb-3" controlId="lastName">
                     <Form.Label>Nama Belakang</Form.Label>
                     <Form.Control 
                         type="text" 
@@ -104,7 +104,7 @@ export default class FormRegister extends Component {
                         onChange={this.inputLastName}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicMobilePhone">
+                <Form.Group className="mb-3" controlId="mobilePhone">
                     <Form.Label>Nomor Handphone</Form.Label>
                     <Form.Control 
                         required 
@@ -113,7 +113,7 @@ export default class FormRegister extends Component {
                         onChange={this.inputMobilePhone}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control 
                         required type="email" 
@@ -121,7 +121,7 @@ export default class FormRegister extends Component {
                         onChange={this.inputEmail}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
                     <Form.Control 
                         required 
@@ -130,7 +130,7 @@ export default class FormRegister extends Component {
                         onChange={this.inputPassword}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+                <Form.Group className="mb-3" controlId="confirmPassword">
                     <Form.Label>Konformasi Password</Form.Label>
                     <Form.Control 
                         required 
