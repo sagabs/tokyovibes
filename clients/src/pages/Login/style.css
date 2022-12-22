@@ -1,0 +1,80 @@
+:root {
+  --grey: #d9d9d9;
+  --red: #9b0e09;
+  --black: #000000;
+}
+.main {
+  display: flex;
+  width: 00%;
+  height: 100vh;
+  background-image: url("../../assets/img/bg.png");
+  background-size: 120%;
+}
+
+.Col1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DBallImg {
+  width: 325px;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+.tokyo-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.Col2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginform {
+  background-color: var(--grey);
+  width: 475px;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.TokyoLogo {
+  text-align: center;
+}
+
+.masuk {
+  color: var(--black);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+.formgroup {
+  margin-bottom: 1.15rem;
+  font-weight: 500;
+}
+
+.loginform .loginbutton {
+  background-color: var(--red);
+  font-weight: 500;
+  border: none;
+}
+
+.loginform .loginbutton:hover {
+  background-color: var(--red);
+  opacity: 5rem;
+}
+
+.daftar,
+.lupa-sandi {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.daftar {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
