@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import './style.css'
 
@@ -10,13 +10,26 @@ const Tracking = () => {
         { id: 3, nama: "HololiveEN Ollie", status: "diterima", total: 4100000 }
     ]
 
-    const [cards, setCards] = useState(allCards);
-    const [currentCard, setCurrentCard] = useState("All");
+    const [cards, setCards] = useState(dataDummy);
+    const [currentCard, setCurrentCard] = useState("all");
 
     const handleBtns = (e) => {
         let word = e.target.value;
         setCurrentCard(word);
     };
+
+    useEffect(() => {
+        if (currentCard === "all") {
+            setCards(dataDummy);
+        } else {
+            const filtered = dataDummy.filter((item) => {
+                return (
+                    item.status === currentCard || item.status.includes(currentCard)
+                );
+            });
+            setCards(filtered);
+        }
+    }, [currentCard]);
 
     const checkStatus = (e) => {
         if (e === "bayar") {
@@ -62,20 +75,20 @@ const Tracking = () => {
                         <Container >
                             <Row className='contentButton'>
                                 <div className='justify-content-between d-flex'>
-                                    <Button className='btnFilter' onClick={handleBtns}>Semua </Button>
-                                    <Button className='btnFilter' onClick={handleBtns}>Bayar </Button>
-                                    <Button className='btnFilter' onClick={handleBtns}>Dikirim </Button>
-                                    <Button className='btnFilter' onClick={handleBtns}>Diterima </Button>
-                                    <Button className='btnFilter' onClick={handleBtns}>Dinilai </Button>
+                                    <Button className='btnFilter' onClick={handleBtns} value="all">Semua </Button>
+                                    <Button className='btnFilter' onClick={handleBtns} value="bayar" >Bayar </Button>
+                                    <Button className='btnFilter' onClick={handleBtns} value="dikirim" >Dikirim </Button>
+                                    <Button className='btnFilter' onClick={handleBtns} value="diterima" >Diterima </Button>
+                                    <Button className='btnFilter' onClick={handleBtns} value="dinilai" >Dinilai </Button>
                                 </div>
                             </Row>
                             <Row>
                                 <div className='contentTransaksi mt-4'>
-                                    {dataDummy.map((item, index) =>
+                                    {cards.map((item, index) =>
                                     (<>
-                                        <Row>
+                                        <Row key={item.id}>
                                             <Col className='imgColTransaksi' xs={2} >
-                                                <img src={require("../../assets/img/gambar2.png")} className="imgTransaksi" width={160} height={160} />
+                                                <img src={require("../../assets/img/gambar2.png")} className="imgTransaksi" draggable={false} width={160} height={160} />
                                             </Col>
                                             <Col className='cardColTransaksi'>
                                                 <Row>
