@@ -13,8 +13,8 @@ export default class navbar extends Component {
   render() {
     return (
       <Navbar className={Styles.navbar} sticky="top">
-        <Container className="d-flex justify-content-start" style={{ position: "sticky" }}>
-          <Row xs="auto">
+        <Container className="d-flex justify-content-end" style={{ position: "fluid" }}>
+          <Row xs="auto" className='rowNav'>
             <Col>Tentang Kami</Col>
             <Col>Daftar</Col>
             <Col>Masuk</Col>
