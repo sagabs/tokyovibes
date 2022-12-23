@@ -42,7 +42,7 @@ function home() {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 3
         }
     };
 
@@ -262,80 +262,13 @@ function home() {
                     </div>
                 </Carousel>
 
-                <div style={{ margin: 20 }}>
+                <div style={{ margin: 20, verticalAlign: "middle" }}>
                     <h2 className="mb-5 mt-2" >Special Hololive Sell</h2>
                     <div >
                         <Carousel responsive={responsive2} >
                             <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                <Card className="cardItem2" >
+                                    <Card.Img variant="top" height={"260"} className="imgCard" src={require("../../assets/img/gambar1.jpg")} style={{ paddingRight: 0, paddingLeft: 0 }} />
                                     <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                         <div>Gawr Gura</div>
                                         <div className="mt-1">Hololive</div>

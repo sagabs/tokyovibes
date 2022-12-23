@@ -8,14 +8,24 @@ p:empty {
     object-fit: cover;
 }
 
-.item1 {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
 .viewProdukList {
     height: 100%;
     width: 100%;
     object-fit: contain
+}
+
+.cardItem2 {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 85%;
+    min-height: auto;
+    max-height: auto;
+    border: none;
+    border-radius: 20;
+    background: #3E3E3E;
+}
+
+.imgCard {
+    height: 260px;
 }
 
 img {
@@ -33,4 +43,14 @@ body {
 
 h2 {
     margin-left: 20px;
+}
+
+@media (max-width:1368px) {
+    .cardItem2 {
+        width: 85%;
+    }
+
+    .imgCard {
+        height: 200px;
+    }
 }
