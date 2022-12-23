@@ -1,7 +1,6 @@
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import React from "react";
 import "./style.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Login = () => {
@@ -9,14 +8,14 @@ export const Login = () => {
     <Container fluid className="main">
       <Row className="Login">
         <Col className="Col1">
-          <div className=" text-center mb-2">
+          <div className=" mb-2 section-one">
             <img src={require("../../assets/img/LoginImage.png")} alt={"Dragon Ball Logo"} className="DBallImg"></img>
-            <p className="text-center tokyo-text">
+            <p className="tokyo-text">
               Tokyo Vibes TV adalah toko penjualan action figure anime Jepang dan platform konten media yang menyajikan informasi.
               <br />
               Di sini Anda dapat menjadi reseller action figure dengan harga yang menarik, so menunggu apalagi segera daftarkan dirimu dan jadilah pebisnis untuk menaikkan pendapatan kamu!
             </p>
-            <p className="text-center tokyo-text mt-2">ありがとうございました</p>
+            <p className=" tokyo-text mt-2">ありがとうございました</p>
           </div>
         </Col>
         <Col className="Col2">
