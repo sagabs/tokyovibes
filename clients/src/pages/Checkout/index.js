@@ -1,10 +1,12 @@
 import React from 'react'
 import { Col, Container, Row, Card, Button } from 'react-bootstrap'
 import "./style.css"
+import Header from '../../components/navbar/navbar'
 
 const checkout = () => {
     return (
         <div>
+            <Header />
             <Container>
                 <Row className='mt-5 mb-5'>
                     <Col xs={8}>
@@ -40,11 +42,11 @@ const checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pembayaran</Card.Title>
-                                        <input type={"radio"} name="checkPembayaran" />
+                                        <input type={"radio"} name="checkPembayaran" value={"BankSinarmas"} />
                                         <label>Bank Sinarmas</label><br />
-                                        <input type={"radio"} name="checkPembayaran" />
+                                        <input type={"radio"} name="checkPembayaran" value={"Mandiri"} />
                                         <label>Mandiri</label><br />
-                                        <input type={"radio"} name="checkPembayaran" />
+                                        <input type={"radio"} name="checkPembayaran" value={"BCA"} />
                                         <label>BCA</label>
                                     </Card.Body>
                                 </Card>
@@ -53,11 +55,11 @@ const checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pengiriman</Card.Title>
-                                        <input type={"radio"} name="checkPengiriman" />
+                                        <input type={"radio"} name="checkPengiriman" value={"Ninja"} />
                                         <label>Ninja</label><br />
-                                        <input type={"radio"} name="checkPengiriman" />
+                                        <input type={"radio"} name="checkPengiriman" value={"JNT"} />
                                         <label>JNT</label><br />
-                                        <input type={"radio"} name="checkPengiriman" />
+                                        <input type={"radio"} name="checkPengiriman" value={"JNE"} />
                                         <label>JNE</label>
                                     </Card.Body>
                                 </Card>
