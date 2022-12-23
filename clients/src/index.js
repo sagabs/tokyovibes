@@ -12,10 +12,14 @@ import reportWebVitals from './reportWebVitals';
 import ProductDetails from './pages/ProductDetails'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import Payment from "./pages/Payment/index";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductDetails />
+    <Payment />
   </React.StrictMode>
 );
 

@@ -1,0 +1,113 @@
+:root {
+  --red: #9b0e09;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+.payment-page {
+  min-width: 1000px;
+  border-radius: 1rem;
+  box-shadow: 0px 3px 3px 2px var(--shadow);
+}
+
+.payment-section {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.payment-info {
+  border-radius: 1rem;
+  box-shadow: 0px 3px 3px 2px var(--shadow);
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+}
+.title {
+  font-size: 1.35rem;
+}
+.date-title {
+  font-size: 1.5rem;
+}
+.imageBankLogo {
+  width: 8rem;
+}
+
+.boldText {
+  font-weight: 700;
+}
+.copy {
+  width: 1.55rem;
+}
+.salin {
+  margin-left: 0.45rem;
+}
+
+.buttonPay {
+  border: 0px none;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  background-color: var(--red);
+  border-radius: 5rem;
+  width: 100%;
+}
+
+.buttonPay:hover {
+  opacity: 0.88;
+  background-color: var(--red);
+}
+
+.expired-notice {
+  text-align: center;
+  padding: 2rem;
+
+  margin: 0.5rem;
+}
+
+.expired-notice > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--red);
+}
+
+.expired-notice > p {
+  font-size: 1.5rem;
+}
+
+.show-counter {
+  padding: 0.5rem;
+}
+
+.show-counter .countdown-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.show-counter .countdown {
+  line-height: 1.25rem;
+  padding: 0 0.75rem 0 0.75rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-counter .countdown.danger {
+  color: #ff0000;
+}
+
+.show-counter .countdown > p {
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
