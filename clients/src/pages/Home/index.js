@@ -52,7 +52,7 @@ function home() {
             <div>
                 <h2 className="mt-3" style={{ marginLeft: 40 }}>Promo</h2>
                 {/* //Carousel 1 */}
-                <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={false} autoPlay={true} infinite={true}>
+                <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={false} autoPlay={true} infinite={true} styl>
                     <div style={{ margin: 20 }} className="d-flex justify-content-center">
                         <Card style={{ width: '35rem', height: '15rem', borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
                             <Row>
