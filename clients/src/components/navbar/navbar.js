@@ -12,34 +12,52 @@ import Col from 'react-bootstrap/Col';
 export default class navbar extends Component {
   render() {
     return (
-    <Navbar className={Styles.navbar} sticky="top">
-        <Container  className="d-flex justify-content-start" style={{position:"sticky"}}>
-        <Row xs="auto">
-            <Col>Tentang Kami</Col>
-            <Col>Daftar</Col>
-            <Col>Masuk</Col>
-        </Row>
+      <Navbar className={Styles.navbar} sticky="top">
+        <Container fluid>
+          <Row className={Styles.rownav}>
+            <Col xs={9}>
+            </Col>
+            <Col >
+              <div className='justify-content-around d-flex'>
+                <span>Tentang Kami</span>
+                <a href='#'>
+                  <span>Daf</span>
+                  <span className={Styles.spanTar}>tar</span>
+                </a>
+                <span className={Styles.spanTar}>Masuk</span>
+              </div>
+            </Col>
+          </Row>
         </Container>
         <Container fluid>
-        <Navbar.Brand href="#home">
-            <img src={Logo} className={Styles.logo}></img>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className={Styles.search}
-              aria-label="Search"
-            />
-          </Form>
-          <Cart3 size={25} color={"#D91E1E"}/>
-          <p style={{marginTop:"25px", marginLeft:"25px"}}>Request Figure</p>
-        </Navbar.Collapse>
-        
+          <Row className={Styles.rownav}>
+            <Col xs={1}>
+              <div className='text-center'>
+                <Navbar.Brand href="#home">
+                  <img src={Logo} height={"75"} width={"75"}></img>
+                </Navbar.Brand>
+              </div>
+            </Col>
+            <Col className='align-self-center' xs={8}>
+
+              <Form>
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className={Styles.search}
+                  aria-label="Search"
+                />
+              </Form>
+            </Col>
+            <Col className='align-self-center'>
+              <Cart3 size={25} color={"#D91E1E"} />
+              <a href='#' style={{ marginLeft: "25px" }}>Request Figure</a>
+
+            </Col>
+          </Row>
+
         </Container>
-      </Navbar>
+      </Navbar >
     )
   }
 }

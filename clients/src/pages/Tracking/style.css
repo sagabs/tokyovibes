@@ -1,0 +1,101 @@
+.box2 {
+    box-sizing: border-box;
+    height: auto;
+    padding: 50px;
+    background: #FEFEFE;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 10px 10px rgba(97, 97, 97, 0.5);
+    border-radius: 20px;
+}
+
+.btnFilter {
+    /* padding: 10px 30px 10px 30px; */
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 15%;
+    font-weight: 630;
+    font-size: large;
+    box-shadow: 5px 5px 5px rgba(4, 4, 4, 0.5);
+}
+
+.btnFilter:hover {
+    background-color: #13A722;
+    color: white;
+    border-color: #13A722;
+}
+
+
+.btnFilter:focus {
+    background-color: #13A722;
+    color: white;
+}
+
+.btnFilter:active {
+    background-color: #13A722 !important;
+    color: white;
+}
+
+.active {
+    background-color: #13A722 !important;
+    border-color: #13A722 !important;
+}
+
+.contentButton {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+.contentTransaksi {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: 98.5%;
+    margin-left: 10px;
+}
+
+.imgColTransaksi {
+    padding: 25px;
+}
+
+.imgTransaksi {
+    margin-left: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.spanFilter1 {
+
+    color: #feba00;
+}
+
+.spanFilter2 {
+
+    color: #e90202;
+}
+
+.spanFilter3 {
+
+    color: #13A722;
+}
+
+.cardColTransaksi {
+    padding: 25px 45px 25px 25px;
+}
+
+hr {
+    margin-left: 30px;
+    width: 95%;
+    color: rgb(0, 0, 0);
+    border: 3px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+@media (max-width:1368px) {
+    .box2 {
+        width: 950px
+    }
+}
