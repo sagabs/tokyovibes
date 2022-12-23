@@ -8,11 +8,22 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
+<<<<<<< HEAD
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.2",
+=======
+    "react-burger-menu": "^3.0.8",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.0",
+>>>>>>> bagas
     "react-scripts": "5.0.1",
+    "sweetalert2": "^11.6.16",
+    "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
