@@ -1,0 +1,14 @@
+.main{
+    display: flex;
+}
+
+.child1{
+    width: 50%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px 40px;
+}
+
+.child2{
+    width: 50%;
+}
