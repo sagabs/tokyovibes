@@ -1,14 +1,30 @@
-.main{
-    display: flex;
-}
-
 .child1{
-    width: 50%;
-    justify-content: flex-end;
-    align-items: flex-end;
     padding: 20px 40px;
 }
 
 .child2{
     width: 50%;
+}
+
+.rangkumanBelanjaMain{
+    padding-top: 60px;
+}
+
+.card{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.rangkumanBelanja{
+    width: 65%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    border: none;
+}
+
+.font{
+    font-size: 30;
+    font-weight: 400;
 }
