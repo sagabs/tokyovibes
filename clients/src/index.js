@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -11,11 +12,24 @@ import reportWebVitals from './reportWebVitals';
 // import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails'
 
+=======
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+>>>>>>> bagas
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import Payment from "./pages/Payment/index";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <ProductDetails />
+=======
+    <Payment />
+>>>>>>> bagas
   </React.StrictMode>
 );
 

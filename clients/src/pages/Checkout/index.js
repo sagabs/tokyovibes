@@ -13,7 +13,7 @@ const checkout = () => {
                         <Row>
                             <Col xs={3}>
                                 <div >
-                                    <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} />
+                                    <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} alt={"Image Checkout"} ></img>
                                 </div>
                             </Col>
                             <Col className='align-self-center'>
