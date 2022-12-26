@@ -27,6 +27,7 @@ const ProductDetails = () => {
 
         fetchData();
     }, []);
+    
 
     const addCart = () => {
         axios
