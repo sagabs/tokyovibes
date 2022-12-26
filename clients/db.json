@@ -78,9 +78,8 @@
       "id": 1
     },
     {
-      "id": "82271460-c48e-4055-afd6-841fc23cfe35",
-      "amount": 1,
-      "totalPrice": 200000,
+      "amount": 2,
+      "totalPrice": 400000,
       "product": {
         "id": 2,
         "name": "Action Figure Anime 2",
@@ -92,7 +91,8 @@
           "weight": 250
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
-      }
+      },
+      "id": "82271460-c48e-4055-afd6-841fc23cfe35"
     }
   ]
 }

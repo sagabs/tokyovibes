@@ -8,6 +8,12 @@
     border-radius: 20px;
 }
 
+.contentLeft {
+    padding: 50px;
+    font-size: large;
+    font-weight: 600;
+}
+
 .btnFilter {
     /* padding: 10px 30px 10px 30px; */
     background-color: white;
@@ -85,6 +91,12 @@
 
 .cardColTransaksi {
     padding: 25px 45px 25px 25px;
+}
+
+a {
+
+    text-decoration: none;
+    color: black;
 }
 
 hr {
