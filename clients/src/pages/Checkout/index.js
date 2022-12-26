@@ -7,6 +7,8 @@ import Carousel from "react-multi-carousel";
 import { API_URL } from '../../utils/constants'
 
 const Checkout = () => {
+
+    const [productdiskon, setproductdiskon] = useState()
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -46,13 +48,35 @@ const Checkout = () => {
         checked: ""
     }])
 
+    const [producttotal, setProducttotal] = useState([{
+        sumAmmount: 0,
+        sumPrice: 0,
+        sumPromo: 0,
+        id: 0
+    }])
+
+    const pendiskonan = (data) => {
+        let diskon1 = 0;
+        data.forEach(item => {
+            // diskon1 = diskon1 + (item.price * (item.promo / 100))
+            diskon1 = diskon1 + (item?.totalPrice * (item?.product.promo / 100))
+        })
+        return diskon1
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.get(API_URL + "carts")
             setProduct(result.data);
+
+            const resulttotal = await axios.get(API_URL + "CartSummary/1")
+            setProducttotal(resulttotal.data);
         };
+        const newdiskon = pendiskonan(product)
+        setproductdiskon(newdiskon)
         fetchData();
-    }, []);
+        // pendiskonan();
+    }, [product, productdiskon])
 
     return (
         <div>
@@ -65,11 +89,11 @@ const Checkout = () => {
                                 {product.map((item, index) => (
                                     <Row>
                                         <Col xs={4}>
-                                            <div >
+                                            <div className='text-center' >
                                                 <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} alt={"Image Checkout"} draggable="false"></img>
                                             </div>
                                         </Col>
-                                        <Col className='align-self-center'>
+                                        <Col className='align-self-center ps-0'>
                                             <div className='mb-1'>
                                                 <b>{item.product.name}</b>
                                             </div>
@@ -82,6 +106,8 @@ const Checkout = () => {
                                                     <span className='text-end'>x{item.amount}</span>
                                             </div> */}
                                             <p style={{ margin: 0, textAlign: "end", paddingRight: 40 }}>Rp. {item.product.price} </p>
+                                            {/* <div>Harga {item.totalPrice * item.product.promo / 100}</div> */}
+                                            <p hidden></p>
                                         </Col>
                                     </Row>
                                 ))}
@@ -139,7 +165,7 @@ const Checkout = () => {
                                         Total Barang
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        Rp. 469.000
+                                        Rp. {producttotal.sumPrice}
                                     </Col>
                                 </Row>
                                 <Row>
@@ -147,7 +173,7 @@ const Checkout = () => {
                                         Total Ongkos Kirim
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        Rp. 60.000
+                                        Rp. 18.000
                                     </Col>
                                 </Row>
                                 <Row>
@@ -163,7 +189,7 @@ const Checkout = () => {
                                         Biaya Admin
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        Rp. 500
+                                        Rp. 600
                                     </Col>
                                 </Row>
                                 <hr className='hrCheckout' />
@@ -172,7 +198,7 @@ const Checkout = () => {
                                         Promo
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        -Rp. 25.000
+                                        -Rp. {productdiskon}
                                     </Col>
                                 </Row>
                                 <hr className='hrCheckout' />

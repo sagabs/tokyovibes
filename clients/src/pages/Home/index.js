@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
-import { Card, Col, Row } from "react-bootstrap"
+import { Card, Col, Image, Row } from "react-bootstrap"
 import "react-multi-carousel/lib/styles.css";
 import Navbar from '../../components/navbar/navbar'
 import { API_URL } from "../../utils/constants";
@@ -78,7 +78,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const resultpromo = await axios.get(API_URL + "products?_limit=6&categorysell=promo")
+            const resultpromo = await axios.get(API_URL + "products?categorysell=promo")
             setProductpromo(resultpromo.data);
 
             const resultspecialsell = await axios.get(API_URL + "products")
@@ -87,8 +87,7 @@ const Home = () => {
             const result = await axios.get(API_URL + "products")
             setProduct(result.data);
         };
-
-        fetchData();
+        fetchData()
     }, []);
 
     return (
@@ -98,7 +97,7 @@ const Home = () => {
             <div>
                 <h2 className="mt-3" style={{ marginLeft: 40 }}>Promo</h2>
                 {/* //Carousel 1 */}
-                <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={false} autoPlay={true} infinite={true} styl>
+                <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={false} autoPlay={true} infinite={true}>
                     {productpromo.map((item, index) => (
                         <div style={{ margin: 20 }} className="d-flex justify-content-center">
                             <Card style={{ width: '35rem', height: '15rem', borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
@@ -114,13 +113,13 @@ const Home = () => {
                                                 <b>Rp. {item.price}</b>
                                             </Card.Text>
                                             <Card.Text style={{ textAlign: "center" }}>
-                                                <b>Rp. {item.price * 0.9}</b>
+                                                <b>Rp. {item.price * (1 - (item.promo / 100))}</b>
                                             </Card.Text>
                                         </Card.Body>
 
                                     </Col>
                                     <Col style={{ marginTop: 20, marginRight: 10, paddingLeft: 15 }}>
-                                        <img src={require("../../assets/img/" + item.img)} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></img>
+                                        <Image src={require(`../../assets/img/${item?.img}`)} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></Image>
                                     </Col>
                                 </Row>
                             </Card>
@@ -136,7 +135,7 @@ const Home = () => {
                                 <Col style={{ padding: 0 }}>
                                     <div className="d-flex justify-content-center mb-4"  >
                                         <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                            <Card.Img variant="top" height={"260"} src={require("../../assets/img/" + item.img)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                            <Card.Img variant="top" height={"260"} src={require("../../assets/img/produk1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
                                             <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                                 <div>{item.name}</div>
                                                 <div className="mt-1">Hololive</div>
@@ -157,7 +156,7 @@ const Home = () => {
                         {product.map((item, index) => (
                             <div className="mb-4 cardProductAll"  >
                                 <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/" + item.img)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/produk1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
                                     <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                         <div>{item.name}</div>
                                         <div className="mt-1">Hololive</div>

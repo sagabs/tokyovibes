@@ -39,6 +39,7 @@
       "name": "Broskuy",
       "price": 30000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk1.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -54,6 +55,7 @@
       "name": "Shinobi Uchiha madara",
       "price": 1000000,
       "stock": 2234,
+      "promo": 20,
       "img": "produk2.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -69,6 +71,7 @@
       "name": "Sasukeh",
       "price": 400000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk3.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -84,6 +87,7 @@
       "name": "Naruto",
       "price": 350000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk4.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -99,6 +103,7 @@
       "name": "Mata Langit",
       "price": 100000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk5.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -114,6 +119,7 @@
       "name": "Gawr Gawr",
       "price": 250000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk6.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -129,6 +135,7 @@
       "name": "Action Figure Anime 7",
       "price": 100000,
       "stock": 1234,
+      "promo": 20,
       "img": "produk7.jpg",
       "category": "Hololive ID",
       "spesification": {
@@ -138,6 +145,54 @@
       },
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
       "categorysell": ""
+    },
+    {
+      "id": 8,
+      "name": "Action Figure Anime 8",
+      "price": 100000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk7.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
+    },
+    {
+      "id": 9,
+      "name": "Action Figure Anime 9",
+      "price": 100000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk7.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
+    },
+    {
+      "id": 10,
+      "name": "Action Figure Anime 10",
+      "price": 100000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk7.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
     }
   ],
   "carts": [
@@ -146,9 +201,11 @@
       "totalPrice": 400000,
       "product": {
         "id": 1,
-        "name": "Action Figure Anime",
-        "price": 100000,
+        "name": "Broskuy",
+        "price": 30000,
         "stock": 1234,
+        "promo": 20,
+        "img": "produk1.jpg",
         "spesification": {
           "condition": "Baru",
           "color": "Biru",
@@ -161,12 +218,14 @@
     },
     {
       "amount": 2,
-      "totalPrice": 400000,
+      "totalPrice": 1000000,
       "product": {
         "id": 2,
-        "name": "Action Figure Anime 2",
-        "price": 200000,
+        "name": "Shinobi Uchiha madara",
+        "price": 1000000,
         "stock": 2234,
+        "promo": 20,
+        "img": "produk2.jpg",
         "spesification": {
           "condition": "Baru",
           "color": "Pink",
@@ -182,6 +241,7 @@
     {
       "sumAmmount": 9,
       "sumPrice": 1500000,
+      "sumPromo": 50000,
       "id": 1
     }
   ]
