@@ -119,7 +119,7 @@ const Home = () => {
 
                                     </Col>
                                     <Col style={{ marginTop: 20, marginRight: 10, paddingLeft: 15 }}>
-                                        <Image src={require(`../../assets/img/${item?.img}`)} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></Image>
+                                        <Image src={item?.img ? require(`../../assets/img/${item?.img}`) : require('../../assets/img/produk1.jpg')} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></Image>
                                     </Col>
                                 </Row>
                             </Card>
@@ -135,7 +135,7 @@ const Home = () => {
                                 <Col style={{ padding: 0 }}>
                                     <div className="d-flex justify-content-center mb-4"  >
                                         <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                            <Card.Img variant="top" height={"260"} src={require("../../assets/img/produk1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                            <Card.Img variant="top" height={"260"} src={item?.img ? require(`../../assets/img/${item?.img}`) : require('../../assets/img/produk1.jpg')} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
                                             <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                                 <div>{item.name}</div>
                                                 <div className="mt-1">Hololive</div>
@@ -156,7 +156,7 @@ const Home = () => {
                         {product.map((item, index) => (
                             <div className="mb-4 cardProductAll"  >
                                 <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/produk1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                    <Card.Img variant="top" height={"260"} src={item?.img ? require(`../../assets/img/${item?.img}`) : require('../../assets/img/produk1.jpg')} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
                                     <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                         <div>{item.name}</div>
                                         <div className="mt-1">Hololive</div>
