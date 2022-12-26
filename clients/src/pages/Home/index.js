@@ -49,6 +49,24 @@ const Home = () => {
         }
     };
 
+    const [productpromo, setProductpromo] = useState([{
+        id: "",
+        name: "",
+        price: 0,
+        stock: 0,
+        spesification: {},
+        description: ""
+    }]);
+
+    const [productspecialsell, setProductspecialsell] = useState([{
+        id: "",
+        name: "",
+        price: 0,
+        stock: 0,
+        spesification: {},
+        description: ""
+    }]);
+
     const [product, setProduct] = useState([{
         id: "",
         name: "",
@@ -60,7 +78,13 @@ const Home = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios.get(API_URL + "products?_limit=6")
+            const resultpromo = await axios.get(API_URL + "products?_limit=6&categorysell=promo")
+            setProductpromo(resultpromo.data);
+
+            const resultspecialsell = await axios.get(API_URL + "products")
+            setProductspecialsell(resultspecialsell.data);
+
+            const result = await axios.get(API_URL + "products")
             setProduct(result.data);
         };
 
@@ -75,7 +99,7 @@ const Home = () => {
                 <h2 className="mt-3" style={{ marginLeft: 40 }}>Promo</h2>
                 {/* //Carousel 1 */}
                 <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={false} autoPlay={true} infinite={true} styl>
-                    {product.map((item, index) => (
+                    {productpromo.map((item, index) => (
                         <div style={{ margin: 20 }} className="d-flex justify-content-center">
                             <Card style={{ width: '35rem', height: '15rem', borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
                                 <Row>
@@ -87,16 +111,16 @@ const Home = () => {
                                                 bulk of the card's content.
                                             </Card.Text>
                                             <Card.Text style={{ textAlign: "center", textDecoration: "line-through", color: "red" }}>
-                                                <b>Rp. 500.000</b>
+                                                <b>Rp. {item.price}</b>
                                             </Card.Text>
                                             <Card.Text style={{ textAlign: "center" }}>
-                                                <b>Rp. 400.000</b>
+                                                <b>Rp. {item.price * 0.9}</b>
                                             </Card.Text>
                                         </Card.Body>
 
                                     </Col>
                                     <Col style={{ marginTop: 20, marginRight: 10, paddingLeft: 15 }}>
-                                        <img src={require("../../assets/img/gambar1.jpg")} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></img>
+                                        <img src={require("../../assets/img/" + item.img)} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></img>
                                     </Col>
                                 </Row>
                             </Card>
@@ -108,105 +132,42 @@ const Home = () => {
                     <h2 className="mb-5 mt-2" >Special Hololive Sell</h2>
                     <div >
                         <Carousel responsive={responsive2} >
-                            <Col style={{ padding: 0 }}>
-                                <div className="d-flex justify-content-center mb-4"  >
-                                    <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                        <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                        <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                            <div>Gawr Gura</div>
-                                            <div className="mt-1">Hololive</div>
-                                            <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                            <div className="mt-1 mb-1">Terjual 500++</div>
-                                        </div>
-                                    </Card>
-                                </div>
-                            </Col>
+                            {productspecialsell.map((item, index) => (
+                                <Col style={{ padding: 0 }}>
+                                    <div className="d-flex justify-content-center mb-4"  >
+                                        <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
+                                            <Card.Img variant="top" height={"260"} src={require("../../assets/img/" + item.img)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                            <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
+                                                <div>{item.name}</div>
+                                                <div className="mt-1">Hololive</div>
+                                                <div className="mt-1" style={{ fontWeight: "700" }}>{item.price}</div>
+                                                <div className="mt-1 mb-1">Terjual 500++</div>
+                                            </div>
+                                        </Card>
+                                    </div>
+                                </Col>
+                            ))}
                         </Carousel>
                     </div>
                 </div >
 
                 <div style={{ margin: 20, verticalAlign: "middle" }}>
                     <h2 className="mb-5 mt-2" style={{ marginLeft: 10 }}>List Action Figure</h2>
-                    <Row className="mb-5 container-fluid" >
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
+                    <div className='d-flex flex-wrap justify-content-center '>
+                        {product.map((item, index) => (
+                            <div className="mb-4 cardProductAll"  >
                                 <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
+                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/" + item.img)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
                                     <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
+                                        <div>{item.name}</div>
                                         <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
+                                        <div className="mt-1" style={{ fontWeight: "700" }}>{item.price}</div>
                                         <div className="mt-1 mb-1">Terjual 500++</div>
                                     </div>
                                 </Card>
                             </div>
-                        </Col>
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col style={{ padding: 0 }}>
-                            <div className="d-flex justify-content-center mb-4"  >
-                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                    <Card.Img variant="top" height={"260"} src={require("../../assets/img/gambar1.jpg")} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
-                                    <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                                        <div>Gawr Gura</div>
-                                        <div className="mt-1">Hololive</div>
-                                        <div className="mt-1" style={{ fontWeight: "700" }}>Rp. 500</div>
-                                        <div className="mt-1 mb-1">Terjual 500++</div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </Col>
-                    </Row>
+                        ))}
+                    </div>
                 </div>
             </div >
         </>

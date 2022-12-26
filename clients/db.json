@@ -36,27 +36,108 @@
   "products": [
     {
       "id": 1,
-      "name": "Action Figure Anime",
-      "price": 100000,
+      "name": "Broskuy",
+      "price": 30000,
       "stock": 1234,
+      "img": "produk1.jpg",
+      "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
         "color": "Biru",
         "weight": 250
       },
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
     },
     {
       "id": 2,
-      "name": "Action Figure Anime 2",
-      "price": 200000,
+      "name": "Shinobi Uchiha madara",
+      "price": 1000000,
       "stock": 2234,
+      "img": "produk2.jpg",
+      "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
         "color": "Pink",
         "weight": 250
       },
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
+    },
+    {
+      "id": 3,
+      "name": "Sasukeh",
+      "price": 400000,
+      "stock": 1234,
+      "img": "produk3.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
+    },
+    {
+      "id": 4,
+      "name": "Naruto",
+      "price": 350000,
+      "stock": 1234,
+      "img": "produk4.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
+    },
+    {
+      "id": 5,
+      "name": "Mata Langit",
+      "price": 100000,
+      "stock": 1234,
+      "img": "produk5.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
+    },
+    {
+      "id": 6,
+      "name": "Gawr Gawr",
+      "price": 250000,
+      "stock": 1234,
+      "img": "produk6.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "promo"
+    },
+    {
+      "id": 7,
+      "name": "Action Figure Anime 7",
+      "price": 100000,
+      "stock": 1234,
+      "img": "produk7.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": ""
     }
   ],
   "carts": [
@@ -75,6 +156,7 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
+      "checked": true,
       "id": 1
     },
     {
@@ -92,7 +174,15 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "id": "82271460-c48e-4055-afd6-841fc23cfe35"
+      "checked": true,
+      "id": "2"
+    }
+  ],
+  "CartSummary": [
+    {
+      "sumAmmount": 9,
+      "sumPrice": 1500000,
+      "id": 1
     }
   ]
 }

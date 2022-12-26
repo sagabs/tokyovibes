@@ -1,29 +1,92 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Card, Button } from 'react-bootstrap'
 import "./style.css"
 import Header from '../../components/navbar/navbar'
+import axios from 'axios'
+import Carousel from "react-multi-carousel";
+import { API_URL } from '../../utils/constants'
 
-const checkout = () => {
+const Checkout = () => {
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 1
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 1,
+            slidesToSlide: 3
+        },
+        tablet: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+
+    const [product, setProduct] = useState([{
+        amount: 0,
+        totalPrice: 0,
+        product: {
+            id: 0,
+            name: "",
+            price: 0,
+            stock: 0,
+            spesification: {
+                condition: "",
+                color: "",
+                weight: 0
+            },
+            description: ""
+        },
+        checked: ""
+    }])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios.get(API_URL + "carts")
+            setProduct(result.data);
+        };
+        fetchData();
+    }, []);
+
     return (
         <div>
             <Header />
             <Container>
                 <Row className='mt-5 mb-5'>
-                    <Col xs={8}>
-                        <Row>
-                            <Col xs={3}>
-                                <div >
-                                    <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} alt={"Image Checkout"} ></img>
-                                </div>
-                            </Col>
-                            <Col className='align-self-center'>
-                                <div className='mb-1'>
-                                    <b>Gawr Gura</b>
-                                </div>
-                                <div className='mb-1'>Hololive En</div>
-                                <b>Rp. 500.000</b>
-                            </Col>
-                        </Row>
+                    <Col xs={8} >
+                        <div style={{ paddingRight: 100 }}>
+                            <Carousel responsive={responsive} showDots={true} arrows={false}>
+                                {product.map((item, index) => (
+                                    <Row>
+                                        <Col xs={4}>
+                                            <div >
+                                                <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} alt={"Image Checkout"} draggable="false"></img>
+                                            </div>
+                                        </Col>
+                                        <Col className='align-self-center'>
+                                            <div className='mb-1'>
+                                                <b>{item.product.name}</b>
+                                            </div>
+                                            <Row>
+                                                <Col xs={9}>Hololive En</Col>
+                                                <Col style={{ textAlign: "end", paddingRight: 52 }}> x{item.amount}</Col>
+                                            </Row>
+                                            {/* <div className='mb-1'>Hololive En
+                                                
+                                                    <span className='text-end'>x{item.amount}</span>
+                                            </div> */}
+                                            <p style={{ margin: 0, textAlign: "end", paddingRight: 40 }}>Rp. {item.product.price} </p>
+                                        </Col>
+                                    </Row>
+                                ))}
+                            </Carousel>
+                        </div>
                         <div>
                             <Card className="mt-5 cardCheckoutlg">
                                 <Card.Body>
@@ -103,7 +166,7 @@ const checkout = () => {
                                         Rp. 500
                                     </Col>
                                 </Row>
-                                <hr />
+                                <hr className='hrCheckout' />
                                 <Row>
                                     <Col>
                                         Promo
@@ -112,7 +175,7 @@ const checkout = () => {
                                         -Rp. 25.000
                                     </Col>
                                 </Row>
-                                <hr />
+                                <hr className='hrCheckout' />
                                 <Row>
                                     <Col style={{ fontWeight: "700" }}>
                                         Total
@@ -121,6 +184,7 @@ const checkout = () => {
                                         Rp. 370.000
                                     </Col>
                                 </Row>
+                                <Button className='w-100 mt-5 mb-4 btnUbahAlamat'>Bayar Sekarang</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -130,4 +194,4 @@ const checkout = () => {
     )
 }
 
-export default checkout
+export default Checkout
