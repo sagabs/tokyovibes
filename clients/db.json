@@ -246,5 +246,54 @@
       "sumPromo": 50000,
       "id": 1
     }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "carts": [
+        {
+          "amount": 6,
+          "totalPrice": 600000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive EN",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true
+        },
+        {
+          "amount": 2,
+          "totalPrice": 1000000,
+          "product": {
+            "id": 2,
+            "name": "Shinobi Uchiha madara",
+            "price": 1000000,
+            "stock": 2234,
+            "promo": 20,
+            "img": "produk2.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Pink",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true
+        }
+      ],
+      "total": 800000,
+      "status": "Belum dibayar"
+    }
   ]
 }
