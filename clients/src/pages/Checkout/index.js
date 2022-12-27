@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Card, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import "./style.css"
 import Header from '../../components/navbar/navbar'
 import axios from 'axios'
@@ -8,8 +8,12 @@ import Carousel from "react-multi-carousel";
 import { API_URL } from '../../utils/constants'
 
 const Checkout = () => {
+    const location = useLocation()
+    const { dataProps } = location.state
 
-    const [productdiskon, setproductdiskon] = useState()
+    const [checkoutData, setCheckoutData] = useState(dataProps)
+
+    // const [productdiskon, setproductdiskon] = useState()
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -31,53 +35,53 @@ const Checkout = () => {
         }
     };
 
-    const [product, setProduct] = useState([{
-        amount: 0,
-        totalPrice: 0,
-        product: {
-            id: 0,
-            name: "",
-            price: 0,
-            stock: 0,
-            spesification: {
-                condition: "",
-                color: "",
-                weight: 0
-            },
-            description: ""
-        },
-        checked: ""
-    }])
+    // const [product, setProduct] = useState([{
+    //     amount: 0,
+    //     totalPrice: 0,
+    //     product: {
+    //         id: 0,
+    //         name: "",
+    //         price: 0,
+    //         stock: 0,
+    //         spesification: {
+    //             condition: "",
+    //             color: "",
+    //             weight: 0
+    //         },
+    //         description: ""
+    //     },
+    //     checked: ""
+    // }])
 
-    const [producttotal, setProducttotal] = useState([{
-        sumAmmount: 0,
-        sumPrice: 0,
-        sumPromo: 0,
-        id: 0
-    }])
+    // const [producttotal, setProducttotal] = useState([{
+    //     sumAmmount: 0,
+    //     sumPrice: 0,
+    //     sumPromo: 0,
+    //     id: 0
+    // }])
 
-    const pendiskonan = (data) => {
-        let diskon1 = 0;
-        data.forEach(item => {
-            // diskon1 = diskon1 + (item.price * (item.promo / 100))
-            diskon1 = diskon1 + (item?.totalPrice * (item?.product.promo / 100))
-        })
-        return diskon1
-    }
+    // const pendiskonan = (data) => {
+    //     let diskon1 = 0;
+    //     data.forEach(item => {
+    //         // diskon1 = diskon1 + (item.price * (item.promo / 100))
+    //         diskon1 = diskon1 + (item?.totalPrice * (item?.product.promo / 100))
+    //     })
+    //     return diskon1
+    // }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios.get(API_URL + "carts")
-            setProduct(result.data);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = await axios.get(API_URL + "carts")
+    //         setProduct(result.data);
 
-            const resulttotal = await axios.get(API_URL + "CartSummary/1")
-            setProducttotal(resulttotal.data);
-        };
-        const newdiskon = pendiskonan(product)
-        setproductdiskon(newdiskon)
-        fetchData();
-        // pendiskonan();
-    }, [product, productdiskon])
+    //         const resulttotal = await axios.get(API_URL + "CartSummary/1")
+    //         setProducttotal(resulttotal.data);
+    //     };
+    //     const newdiskon = pendiskonan(product)
+    //     setproductdiskon(newdiskon)
+    //     fetchData();
+    //     // pendiskonan();
+    // }, [])
 
     return (
         <div>
@@ -87,7 +91,7 @@ const Checkout = () => {
                     <Col xs={8} >
                         <div style={{ paddingRight: 100 }}>
                             <Carousel responsive={responsive} showDots={true} arrows={false}>
-                                {product.map((item, index) => (
+                                {checkoutData.carts.map((item, index) => (
                                     <Row>
                                         <Col xs={4}>
                                             <div className='text-center' >
@@ -166,7 +170,7 @@ const Checkout = () => {
                                         Total Barang
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        Rp. {producttotal.sumPrice}
+                                        Rp. {checkoutData.totalSummary.sumPrice}
                                     </Col>
                                 </Row>
                                 <Row>
@@ -199,7 +203,7 @@ const Checkout = () => {
                                         Promo
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        -Rp. {productdiskon}
+                                        -Rp. 
                                     </Col>
                                 </Row>
                                 <hr className='hrCheckout' />

@@ -9,9 +9,12 @@ import Gundambg from "../../assets/gundambg.png";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
+  const navigate = useNavigate()
+
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -56,6 +59,7 @@ const Register = () => {
         .post(API_URL + "users", data)
         .then((res) => {
           alert("Sukses Daftar Akun")
+          navigate("/login")
         })
         .catch((error) => {
           console.log("Error yaa", error);

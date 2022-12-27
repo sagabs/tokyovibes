@@ -31,6 +31,15 @@
       "mobilePhone": "082134567890",
       "email": "fikridev2@tokyovibes.com",
       "password": "fikridev2"
+    },
+    {
+      "id": "e03561a9-4f16-4790-87cf-7e74cc1c01cd",
+      "firstName": "test",
+      "lastName": "navigate",
+      "address": "jl. test",
+      "mobilePhone": "082134567890",
+      "email": "test@gmail.com",
+      "password": "test"
     }
   ],
   "products": [
@@ -218,8 +227,8 @@
       "id": 1
     },
     {
-      "amount": 2,
-      "totalPrice": 1000000,
+      "amount": 3,
+      "totalPrice": 2000000,
       "product": {
         "id": 2,
         "name": "Shinobi Uchiha madara",
@@ -233,7 +242,8 @@
           "color": "Pink",
           "weight": 250
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "specialsell"
       },
       "checked": true,
       "id": 2
