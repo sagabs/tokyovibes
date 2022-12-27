@@ -56,6 +56,24 @@ const Checkout = () => {
         id: 0
     }])
 
+    // const paymentProduct = () => {
+    //     const cart = {
+    //         id: uuidv4(),
+    //         amount: 1,
+    //         totalPrice: product.price,
+    //         product: product,
+    //     };
+
+    //     axios
+    //         .post(API_URL + "carts", cart)
+    //         .then((res) => {
+    //             alert("Sukses Masuk Keranjang " + product.name);
+    //         })
+    //         .catch((error) => {
+    //             console.log("Error yaa ", error);
+    //         });
+    // }
+
     const pendiskonan = (data) => {
         let diskon1 = 0;
         data.forEach(item => {
@@ -132,7 +150,7 @@ const Checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pembayaran</Card.Title>
-                                        <input type={"radio"} name="checkPembayaran" value={"BankSinarmas"} />
+                                        <input type={"radio"} name="checkPembayaran" value={"BankSinarmas"} defaultChecked />
                                         <label>Bank Sinarmas</label><br />
                                         <input type={"radio"} name="checkPembayaran" value={"Mandiri"} />
                                         <label>Mandiri</label><br />
@@ -145,7 +163,7 @@ const Checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pengiriman</Card.Title>
-                                        <input type={"radio"} name="checkPengiriman" value={"Ninja"} />
+                                        <input type={"radio"} name="checkPengiriman" value={"Ninja"} defaultChecked />
                                         <label>Ninja</label><br />
                                         <input type={"radio"} name="checkPengiriman" value={"JNT"} />
                                         <label>JNT</label><br />
@@ -208,7 +226,7 @@ const Checkout = () => {
                                         Total
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                        Rp. 370.000
+                                        Rp. {producttotal.sumPrice - productdiskon + 18000 + 600 + 400}
                                     </Col>
                                 </Row>
                                 <Link to="/payment"><Button className='w-100 mt-5 mb-4 btnUbahAlamat'>Bayar Sekarang</Button></Link>

@@ -8,9 +8,11 @@ import Button from "react-bootstrap/Button";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
+  const params = useParams()
+
   const [product, setProduct] = useState({
     id: "",
     name: "",
@@ -22,7 +24,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(API_URL + "products/2");
+      const result = await axios.get(API_URL + "products/" + params.id);
       setProduct(result.data);
     };
 
@@ -76,7 +78,7 @@ const ProductDetails = () => {
       <Navbar />
       <div className={Styles.main}>
         <div className={Styles.col1}>
-          <img className={Styles.productex} src={Productex} alt="background gundam"></img>
+          {product.img ? <img className={Styles.productex} src={require(`../../assets/img/${product.img}`)} alt="background gundam"></img> : <span>Loading....</span>}
         </div>
         <div className={Styles.col2}>
           <div className={Styles.col2row1}>

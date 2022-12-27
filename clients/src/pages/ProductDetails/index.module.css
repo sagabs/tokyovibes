@@ -118,6 +118,18 @@
     border-radius: 25px;
 }
 
+.buynow:hover {
+    background-color: white;
+    color: #9b0e09;
+    border-color: #9b0e09;
+    font-weight: 400px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
 .addcart {
     background-color: #9b0e09;
     color: white;
@@ -126,4 +138,15 @@
     margin-bottom: 20px;
     width: 100%;
     border-radius: 25px;
+}
+
+.addcart:hover {
+    background-color: #9b0e09;
+    color: white;
+    border-color: #9b0e09;
+    font-weight: 400px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: 600;
 }
