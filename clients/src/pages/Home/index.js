@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar/navbar'
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import "./style.css"
+import { Link } from "react-router-dom";
 const Home = () => {
     const responsive = {
         superLargeDesktop: {
@@ -32,21 +33,21 @@ const Home = () => {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 5
+            items: 6,
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 6,
-            slidesToSlide: 3
+            slidesToSlide: 3,
         },
         tablet: {
             breakpoint: { max: 464, min: 0 },
-            items: 2
+            items: 2,
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 3
-        }
+            items: 2,
+        },
     };
 
     const [productpromo, setProductpromo] = useState([{
@@ -171,6 +172,7 @@ const Home = () => {
             </div >
         </>
     )
+
 }
 
 export default Home;

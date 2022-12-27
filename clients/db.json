@@ -197,8 +197,8 @@
   ],
   "carts": [
     {
-      "amount": 4,
-      "totalPrice": 400000,
+      "amount": 6,
+      "totalPrice": 600000,
       "product": {
         "id": 1,
         "name": "Broskuy",
@@ -206,6 +206,7 @@
         "stock": 1234,
         "promo": 20,
         "img": "produk1.jpg",
+        "category": "Hololive EN",
         "spesification": {
           "condition": "Baru",
           "color": "Biru",
@@ -226,6 +227,7 @@
         "stock": 2234,
         "promo": 20,
         "img": "produk2.jpg",
+        "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
           "color": "Pink",
@@ -234,7 +236,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
       "checked": true,
-      "id": "2"
+      "id": 2
     }
   ],
   "CartSummary": [

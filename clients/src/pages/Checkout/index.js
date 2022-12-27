@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import "./style.css"
 import Header from '../../components/navbar/navbar'
 import axios from 'axios'
@@ -210,7 +211,7 @@ const Checkout = () => {
                                         Rp. 370.000
                                     </Col>
                                 </Row>
-                                <Button className='w-100 mt-5 mb-4 btnUbahAlamat'>Bayar Sekarang</Button>
+                                <Link to="/payment"><Button className='w-100 mt-5 mb-4 btnUbahAlamat'>Bayar Sekarang</Button></Link>
                             </Card.Body>
                         </Card>
                     </Col>
