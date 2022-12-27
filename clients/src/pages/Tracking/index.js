@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import './style.css'
 
@@ -69,7 +69,22 @@ const Tracking = () => {
                 </Row>
                 <Row className='mt-3'>
                     <Col xs={3}>
-                        Hallo
+                        <div className='contentLeft'>
+                            <p className='text-center'>Ichigaya Naruto</p>
+                            <div className='text-center'>
+                                <img src={require('../../assets/img/produk1.jpg')} height={100} width={100} className='rounded-circle center-block' /> <br />
+                                <div className='mt-3'>
+                                    <a href='#' >Home</a> <br />
+                                </div>
+                                <div className='mt-3'>
+                                    <a href='#'>Profil Saya</a> <br />
+                                </div>
+                                <div className='mt-3'>
+                                    <a href='#'>Pengaturan</a><br />
+                                </div>
+                            </div>
+
+                        </div>
                     </Col>
                     <Col xs={8} className='box2'>
                         <Container >

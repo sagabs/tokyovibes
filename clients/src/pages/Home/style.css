@@ -24,8 +24,16 @@ p:empty {
     background: #3E3E3E;
 }
 
+.item1 {
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
+}
+
 .imgCard {
     height: 260px;
+}
+
+.cardProductAll {
+    margin: 20px;
 }
 
 img {
