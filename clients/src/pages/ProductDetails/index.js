@@ -115,7 +115,7 @@ const ProductDetails = () => {
               <Link to="/checkout">
                 <Button className={Styles.buynow}>Beli Sekarang</Button>
               </Link>
-              <Link to="/basket">
+              <Link to="/carts">
                 <Button className={Styles.addcart} onClick={addCart}>
                   Tambah Keranjang
                 </Button>

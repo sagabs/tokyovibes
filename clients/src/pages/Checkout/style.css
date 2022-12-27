@@ -25,6 +25,7 @@
 
 .btnUbahAlamat {
     box-shadow: rgba(0, 0, 0, 0.19) 10px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: #A50E09;
     border-radius: 10px;
     background-color: #A50E09 !important;
     font-weight: 600;
@@ -33,7 +34,8 @@
 .btnUbahAlamat:hover,
 .btnUbahAlamat:active,
 .btnUbahAlamat:focus,
-.btnUbahAlamat:visited {
+.btnUbahAlamat:visited,
+.btnUbahAlamat:active:hover {
     background-color: #ffffff !important;
     border-color: #A50E09 !important;
     color: #A50E09;
@@ -41,10 +43,11 @@
     font-weight: 600;
 }
 
-hr {
-    color: red;
-    border: 1px solid red;
-    margin: 10px 0px 10px 0px
+.hrCheckout {
+    color: red !important;
+    border: 0 !important;
+    border-top: 2px solid red !important;
+    margin: 10px 0px 10px 5px !important;
 }
 
 label {
