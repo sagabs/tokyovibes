@@ -66,6 +66,7 @@ const ProductDetails = () => {
             .post(API_URL + "carts", cart)
             .then((res) => {
               alert("Sukses Masuk Keranjang " + product.name);
+              navigate("/carts")
             })
             .catch((error) => {
               console.log("Error yaa ", error);
@@ -81,6 +82,7 @@ const ProductDetails = () => {
             .put(API_URL + "carts/" + res.data[0].id, cart)
             .then((res) => {
               alert("Sukses Masuk Keranjang " + product.name);
+              navigate("/carts")
             })
             .catch((error) => {
               console.log("Error yaa ", error);
