@@ -31,6 +31,14 @@
       "mobilePhone": "082134567890",
       "email": "fikridev2@tokyovibes.com",
       "password": "fikridev2"
+    },
+    {
+      "id": "aefa1b63-9163-4ea5-aa7f-876923d64a5b",
+      "firstName": "fikri",
+      "lastName": "test",
+      "mobilePhone": "082134567890",
+      "email": "fikritest@gmail.com",
+      "password": "fikri"
     }
   ],
   "products": [
@@ -57,12 +65,24 @@
         "weight": 250
       },
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+    },
+    {
+      "id": 3,
+      "name": "Action Figure Anime 3",
+      "price": 500000,
+      "stock": 678,
+      "spesification": {
+        "condition": "Baru",
+        "color": "Red",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
     }
   ],
   "carts": [
     {
-      "amount": 4,
-      "totalPrice": 400000,
+      "amount": 6,
+      "totalPrice": 600000,
       "product": {
         "id": 1,
         "name": "Action Figure Anime",
@@ -78,7 +98,7 @@
       "id": 1
     },
     {
-      "id": "82271460-c48e-4055-afd6-841fc23cfe35",
+      "id": "83d6edf5-46c8-4b08-8da7-5de14344faec",
       "amount": 1,
       "totalPrice": 200000,
       "product": {
@@ -93,6 +113,82 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       }
+    },
+    {
+      "id": 3,
+      "amount": 1,
+      "totalPrice": 500000,
+      "product": {
+        "id": 3,
+        "name": "Action Figure Anime 3",
+        "price": 500000,
+        "stock": 678,
+        "spesification": {
+          "condition": "Baru",
+          "color": "Red",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+      }
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "carts": [
+        {
+          "amount": 6,
+          "totalPrice": 600000,
+          "product": {
+            "id": 1,
+            "name": "Action Figure Anime",
+            "price": 100000,
+            "stock": 1234,
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "id": 1
+        },
+        {
+          "id": "83d6edf5-46c8-4b08-8da7-5de14344faec",
+          "amount": 1,
+          "totalPrice": 200000,
+          "product": {
+            "id": 2,
+            "name": "Action Figure Anime 2",
+            "price": 200000,
+            "stock": 2234,
+            "spesification": {
+              "condition": "Baru",
+              "color": "Pink",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          }
+        },
+        {
+          "id": 3,
+          "amount": 1,
+          "totalPrice": 500000,
+          "product": {
+            "id": 3,
+            "name": "Action Figure Anime 3",
+            "price": 500000,
+            "stock": 678,
+            "spesification": {
+              "condition": "Baru",
+              "color": "Red",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          }
+        }
+      ],
+      "total": 800000
     }
   ]
 }

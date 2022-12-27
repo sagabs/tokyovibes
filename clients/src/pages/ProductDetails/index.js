@@ -21,7 +21,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios.get(API_URL + "products/2")
+            const result = await axios.get(API_URL + "products/1")
             setProduct(result.data);
         };
 

@@ -1,9 +1,40 @@
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { API_URL } from "../../utils/constants";
+import axios from "axios";
+
 export const Login = () => {
+  const [userDetails, setUserDetails] = useState({
+    email: "",
+    password: ""
+  })
+
+  const handleChange = (event) => {
+    setUserDetails({ ...userDetails, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // axios
+    //   .get(API_URL + "users?email=" + userDetails.email)
+    //   .then((res) => {
+    //     console.log(res);
+    //     if (res.data.length === 0) {
+    //       alert("Akun belum terdaftar")
+    //     } else {
+    //       alert("Berhasil masuk")
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error yaa ", error);
+    //   });
+
+  };
+
   return (
     <Container fluid className="main">
       <Row className="Login">
@@ -20,7 +51,7 @@ export const Login = () => {
         </Col>
         <Col className="Col2">
           <div>
-            <Form className="loginform">
+            <Form className="loginform" onSubmit={handleSubmit}>
               <div className="TokyoLogo">
                 <img src={require("../../assets/img/TokyoVibesLogo.png")} alt={"Tokyo Vibes Logo"}></img>
               </div>
@@ -28,12 +59,21 @@ export const Login = () => {
               <Form>
                 <Form.Group className="formgroup" controlId="formBasicEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control className="form-input" type="email" />
+                  <Form.Control 
+                    className="form-input" 
+                    type="email"
+                    required
+                    onChange={handleChange}
+                  />
                 </Form.Group>
 
                 <Form.Group className="formgroup" controlId="formBasicPassword">
                   <Form.Label>Kata Sandi</Form.Label>
-                  <Form.Control type="password" />
+                  <Form.Control 
+                    type="password"
+                    required
+                    onChange={handleChange}
+                  />
                 </Form.Group>
                 <p className="lupa-sandi">Lupa Kata Sandi?</p>
                 <Button className="loginbutton w-100" type="submit">

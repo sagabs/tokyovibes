@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import Home from './pages/Home/index'
 import Register from './pages/Register/index';
+import Login from './pages/Login/index';
 import Keranjang from './pages/Keranjang/index';
 import Checkout from './pages/Checkout/index'
 import Tracking from './pages/Tracking/index'
 import reportWebVitals from './reportWebVitals';
 // import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails'
+import TransactionDetails from './components/transactionDetails'
 
 
 import Payment from "./pages/Payment/index";
@@ -19,7 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductDetails />
+    <Login />
   </React.StrictMode>
 );
 
