@@ -1,6 +1,6 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
-import "./styles/Sidebar.css";
+import "./styles/SidebarAdmin.css";
 
 const Sidebar = () => {
   return (
