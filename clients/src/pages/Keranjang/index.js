@@ -1,12 +1,12 @@
-import React from 'react'
-import Styles from './index.module.css'
-import Navbar from '../../components/navbar/navbar'
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import Styles from "./index.module.css";
+import Navbar from "../../components/navbar/navbar";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import Logo from "../../assets/logo.png";
 import { DashCircle, Trash, PlusCircle } from 'react-bootstrap-icons';
 import {useState, useEffect } from "react";
@@ -346,7 +346,7 @@ const Keranjang = () => {
           <Card body className={Styles.rangkumanBelanja}>
               <Container>
                 <h5>Rangkuman Belanja</h5>
-                <hr style={{margin:"15px 0px"}}></hr>
+                <hr style={{ margin: "15px 0px" }}></hr>
               </Container>
               <Container>
                 <Row style={{paddingBottom:"15px"}}>
@@ -357,18 +357,19 @@ const Keranjang = () => {
                   <Col><span className={Styles.font}>Total Harga</span></Col>
                   <Col><span className={Styles.font}>Rp. {RangkumBelanja.sumPrice}</span></Col>
                 </Row>
-                <hr style={{margin:"15px 0px"}}></hr>
+                <hr style={{ margin: "15px 0px" }}></hr>
                 <Row>
-                  <Button variant="success" style={{borderRadius:"20px"}}>Bayar</Button>
+                  <Button variant="success" style={{ borderRadius: "20px" }}>
+                    Bayar
+                  </Button>
                 </Row>
-            </Container>
-          </Card>
-        </Col>
-      </Row>   
-    </Container>
+              </Container>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </>
-  )
-}
+  );
+};
 
-
-export default Keranjang
+export default Keranjang;
