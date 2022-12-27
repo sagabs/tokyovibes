@@ -269,8 +269,7 @@
             },
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
           },
-          "checked": true,
-          "id": 1
+          "checked": true
         },
         {
           "amount": 2,
@@ -290,11 +289,11 @@
             },
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
           },
-          "checked": true,
-          "id": 2
+          "checked": true
         }
       ],
-      "total": 800000
+      "total": 800000,
+      "status": "Belum dibayar"
     }
   ]
 }
