@@ -15,11 +15,14 @@ const Register = () => {
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
+    address: "",
     mobilePhone: "",
     email: "",
     password: "",
     c_password: ""
   })
+
+  const [validated, setValidated] = useState(false);
 
   const handleChange = (event) => {
     setUserDetails({ ...userDetails, [event.target.id]: event.target.value });
@@ -28,16 +31,23 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+
     const data = {
       id: uuidv4(),
       firstName: userDetails.firstName,
       lastName: userDetails.lastName,
+      address: userDetails.address,
       mobilePhone: userDetails.mobilePhone,
       email: userDetails.email,
       password: userDetails.password
     }
-
-    //console.log(userDetails)
 
     if (userDetails.password !== userDetails.c_password) {
       alert("Konfirmasi password belum benar")
@@ -64,17 +74,21 @@ const Register = () => {
             <img className={Styles.logo} src={Logo} alt="logo" />
             <h4>Daftar</h4>
           </div>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className={Styles.inputform} required>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form.Group className={Styles.inputform}>
               <Form.Label>Nama Depan</Form.Label>
               <Form.Control 
                 id="firstName"
                 type="text" 
                 placeholder="Masukkan Nama Depan"
+                required
                 onChange={handleChange}
               />
+              <Form.Control.Feedback type="invalid">
+                Nama depan tidak boleh kosong.
+              </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className={Styles.inputform} required>
+            <Form.Group className={Styles.inputform}>
               <Form.Label>Nama Belakang</Form.Label>
               <Form.Control
                 id="lastName" 
@@ -83,14 +97,31 @@ const Register = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className={Styles.inputform} required>
+            <Form.Group className={Styles.inputform}>
+              <Form.Label>Alamat</Form.Label>
+              <Form.Control
+                id="address" 
+                type="text" 
+                placeholder="Masukkan Alamat"
+                required
+                onChange={handleChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Alamat tidak boleh kosong.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className={Styles.inputform}>
               <Form.Label>Nomor Handphone</Form.Label>
               <Form.Control
                 id="mobilePhone" 
                 type="text" 
                 placeholder="Masukkan nomor telepon"
+                required
                 onChange={handleChange} 
               />
+              <Form.Control.Feedback type="invalid">
+                Nomor handphone tidak boleh kosong.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className={Styles.inputform}>
               <Form.Label>Email</Form.Label>
@@ -98,30 +129,38 @@ const Register = () => {
                 id="email"
                 type="email" 
                 placeholder="Masukkan email"
+                required
                 onChange={handleChange} 
               />
+              <Form.Control.Feedback type="invalid">
+                Email tidak boleh kosong.
+              </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group
-              className={Styles.inputform}
-            >
+            <Form.Group className={Styles.inputform}>
               <Form.Label>Kata Sandi</Form.Label>
               <Form.Control
                 id="password" 
                 type="password" 
                 placeholder="Enter password"
+                required
                 onChange={handleChange}
               />
+              <Form.Control.Feedback type="invalid">
+                Kata sandi tidak boleh kosong.
+              </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group
-              className={Styles.inputform}
-            >
+            <Form.Group className={Styles.inputform}>
               <Form.Label>Konfirmasi Kata Sandi</Form.Label>
               <Form.Control
                 id="c_password" 
                 type="password" 
                 placeholder="Enter password"
+                required
                 onChange={handleChange}
               />
+              <Form.Control.Feedback type="invalid">
+                Konfirmasi kata sandi tidak boleh kosong.
+              </Form.Control.Feedback>
             </Form.Group>
             <Button className={Styles.daftar} type="submit">
               Daftar
