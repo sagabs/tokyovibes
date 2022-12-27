@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
-    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-icons": "^1.10.2",
@@ -46,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }

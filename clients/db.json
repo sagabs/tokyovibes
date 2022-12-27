@@ -39,6 +39,8 @@
       "name": "Action Figure Anime",
       "price": 100000,
       "stock": 1234,
+      "image": "product1.png",
+      "category": "Hololive EN",
       "spesification": {
         "condition": "Baru",
         "color": "Biru",
@@ -51,6 +53,8 @@
       "name": "Action Figure Anime 2",
       "price": 200000,
       "stock": 2234,
+      "image": "product2.png",
+      "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
         "color": "Pink",
@@ -61,13 +65,15 @@
   ],
   "carts": [
     {
-      "amount": 4,
-      "totalPrice": 400000,
+      "amount": 6,
+      "totalPrice": 600000,
       "product": {
         "id": 1,
         "name": "Action Figure Anime",
         "price": 100000,
         "stock": 1234,
+        "image": "product1.png",
+        "category": "Hololive EN",
         "spesification": {
           "condition": "Baru",
           "color": "Biru",
@@ -75,24 +81,35 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "id": 1
+      "checked": true,
+      "id": "82271460-c48e-4055-afd6-841fc23cfe35"
     },
     {
-      "id": "82271460-c48e-4055-afd6-841fc23cfe35",
-      "amount": 1,
-      "totalPrice": 200000,
+      "amount": 6,
+      "totalPrice": 1200000,
       "product": {
         "id": 2,
         "name": "Action Figure Anime 2",
         "price": 200000,
         "stock": 2234,
+        "image": "product2.png",
+        "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
           "color": "Pink",
           "weight": 250
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
-      }
+      },
+      "checked": true,
+      "id": 1
+    }
+  ],
+  "CartSummary": [
+    {
+      "sumAmmount": 12,
+      "sumPrice": 1800000,
+      "id": 1
     }
   ]
 }

@@ -38,7 +38,7 @@ const Navigat = () => {
             <Col xs={1}>
               <div className="text-center">
                 <Navbar.Brand href="#home">
-                  <img src={Logo} height={"75"} width={"75"} alt="Image"></img>
+                  <img src={Logo} height={"75"} width={"75"} ></img>
                 </Navbar.Brand>
               </div>
             </Col>

@@ -5,7 +5,6 @@ import Navigat from "../../components/navbar/navbar";
 import "./style.css";
 
 import { Link } from "react-router-dom";
-import Navigation from "../../components/navbar/navbar";
 function Home() {
   const responsive = {
     superLargeDesktop: {

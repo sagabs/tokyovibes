@@ -15,8 +15,9 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/details" element={<ProductDetails />} />
-        <Route exact path="/basket" element={<Keranjang />} />
+        <Route exact path="/carts" element={<Keranjang />} />
         <Route exact path="/checkout" element={<Checkout />} />
+        <Route exact path="/tracks" element={<Tracking />} />
       </Routes>
     </BrowserRouter>
   );
