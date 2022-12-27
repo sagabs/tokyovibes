@@ -81,7 +81,7 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "checked": false,
+      "checked": true,
       "id": "82271460-c48e-4055-afd6-841fc23cfe35"
     },
     {
@@ -101,14 +101,14 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "checked": false,
+      "checked": true,
       "id": 1
     }
   ],
   "CartSummary": [
     {
-      "sumAmmount": 0,
-      "sumPrice": 0,
+      "sumAmmount": 12,
+      "sumPrice": 1800000,
       "id": 1
     }
   ]
