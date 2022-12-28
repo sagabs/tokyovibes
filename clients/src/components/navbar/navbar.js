@@ -1,39 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Cart3 } from "react-bootstrap-icons";
 import "./navbar.css";
 import "../styles/Modal.css";
 
-const Navbars = () => {
-  const Profile = "C Ronaldo";
+const Navbars = ({searchParams}) => {
+  //const Profile = "C Ronaldo";
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [isLoggedin, setIsLoggedin] = useState()
+  const [userName, setUserName] = useState()
+
+  useEffect(() => {
+    const isLoggedinLS = localStorage.getItem('isLoggedin');
+    isLoggedinLS ? setIsLoggedin(true) : setIsLoggedin(false);
+
+    if(isLoggedinLS) setUserName(localStorage.getItem('userName'))
+  }, [isLoggedin]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedin")
+    localStorage.removeItem("userId")
+    localStorage.removeItem("userName")
+
+    setIsLoggedin(false)
+  }
+
+  const showContent = () => {
+    if(isLoggedin) {
+      return (
+        <Nav className="justify-content-end " style={{ width: "100%" }}>
+          <Nav.Link>
+            <button className="button-request" style={{ color: "#fff", fontWeight: "400" }} onClick={handleShow}>
+              Request Figure
+            </button>
+          </Nav.Link>
+          <Nav.Link as={Link} to="/about" style={{ color: "#fff", fontWeight: "400" }}>
+            Tentang Kami
+          </Nav.Link>
+          <Nav.Link as={Link} to="/" style={{ color: "#fff", fontWeight: "400" }}>
+            <button className="button-request" style={{ color: "#fff", fontWeight: "400" }} onClick={handleLogout}>
+              Keluar
+            </button>
+          </Nav.Link>
+          <Nav.Link as={Link} to="/profile">
+            <img className="profile-nav" src={require("../../assets/img/lionelmessi.jpg")} alt="profile nav"></img>
+            <span className="name-nav">{userName}</span>
+          </Nav.Link>
+        </Nav>
+      )
+    } else {
+      return (
+        <Nav className="justify-content-end " style={{ width: "100%" }}>
+          <Nav.Link as={Link} to="/about" style={{ color: "#fff", fontWeight: "400" }}>
+            Tentang Kami
+          </Nav.Link>
+          <Nav.Link as={Link} to="/register" style={{ color: "#fff", fontWeight: "400" }}>
+            Daftar
+          </Nav.Link>
+          <Nav.Link as={Link} to="/login" style={{ color: "#fff", fontWeight: "400" }}>
+            Masuk
+          </Nav.Link>
+        </Nav>
+      )
+    }
+  }
+
+  const showCart = () => {
+    if(isLoggedin) {
+      return (
+        <Link to="/carts">
+          <Cart3 className="Cart" color={"#8b0500"} />
+        </Link>
+      )
+    }
+  }
+
   return (
     <>
       <Navbar collapseOnSelect expands="sm" className="navbars ">
         <Container className="ml-auto navlinks">
-          <Nav className="justify-content-end " style={{ width: "100%" }}>
-            <Nav.Link>
-              <button className="button-request" style={{ color: "#fff", fontWeight: "400" }} onClick={handleShow}>
-                Request Figure
-              </button>
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about" style={{ color: "#fff", fontWeight: "400" }}>
-              Tentang Kami
-            </Nav.Link>
-            <Nav.Link as={Link} to="/register" style={{ color: "#fff", fontWeight: "400" }}>
-              Daftar
-            </Nav.Link>
-            <Nav.Link as={Link} to="/login" style={{ color: "#fff", fontWeight: "400" }}>
-              Masuk
-            </Nav.Link>
-            <Nav.Link as={Link} to="/profile">
-              <img className="profile-nav" src={require("../../assets/img/lionelmessi.jpg")} alt="profile nav"></img>
-              <span className="name-nav">{Profile}</span>
-            </Nav.Link>
-          </Nav>
+          {showContent()}
         </Container>
         <Modal centered className="modals" show={show} onHide={handleClose}>
           <Modal.Body>
@@ -62,11 +112,15 @@ const Navbars = () => {
               </Navbar.Brand>
             </Link>
             <Form className="mx-4 search">
-              <Form.Control type="search" placeholder="Search" className="search" aria-label="Search" />
+              <Form.Control 
+                type="search" 
+                placeholder="Search" 
+                className="search" 
+                aria-label="Search"
+                onChange={event => searchParams(event.target.value)}
+              />
             </Form>
-            <Link to="/carts">
-              <Cart3 className="Cart" color={"#8b0500"} />
-            </Link>
+            {showCart()}
           </Nav>
         </Container>
       </Navbar>
