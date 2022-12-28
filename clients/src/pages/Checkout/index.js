@@ -7,6 +7,7 @@ import axios from 'axios'
 import Carousel from "react-multi-carousel";
 import { API_URL } from '../../utils/constants'
 import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
     const location = useLocation()
@@ -22,6 +23,7 @@ const Checkout = () => {
         noResi : ""
     })
 
+    const navigate = useNavigate()
     //const [productdiskon, setproductdiskon] = useState()
     const responsive = {
         superLargeDesktop: {
@@ -48,7 +50,6 @@ const Checkout = () => {
         const tempTotal = checkoutData.totalsummary.sumPromo + 1000 + DetailLainnya.ongkir
         setDetailLainnya(
             DetailLainnya=>({...DetailLainnya, total:tempTotal}))
-        // console.log(DetailLainnya)
     }, [DetailLainnya.ongkir])
 
     const changePembayaran = (data) =>{
@@ -89,15 +90,15 @@ const Checkout = () => {
         }else{
             const randNumber = Math.floor(Math.random() * 900000000) + 100000000
             const tempResi = "KGP".concat("",randNumber)
-            if (checkoutData.asal === "carts") {
-                checkoutData.carts.forEach(data => {
-                    axios
-                    .delete(API_URL+"carts/"+data.id)
-                    .catch(error =>{
-                        console.log("error ya"+ error)
-                    })
-                });
-            }
+            // if (checkoutData.asal === "carts") {
+            //     checkoutData.carts.forEach(data => {
+            //         axios
+            //         .delete(API_URL+"carts/"+data.id)
+            //         .catch(error =>{
+            //             console.log("error ya"+ error)
+            //         })
+            //     });
+            // }
             const data = {
                 carts : checkoutData.carts,
                 totalsummary : checkoutData.totalsummary,
@@ -110,15 +111,17 @@ const Checkout = () => {
                 namaTerima : "Angin",
                 noResi : tempResi
             }
-            console.log(data)
-            axios
-            .post(API_URL + "transactions", data)
-            .then(res => {
-                swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
-            })
-            .catch(error =>{
-                console.log("error" + error)
-            })
+            // console.log(data)
+            // axios
+            // .post(API_URL + "transactions", data)
+            // .then(res => {
+            //     swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
+            // })
+            // .catch(error =>{
+            //     console.log("error" + error)
+            // })
+            swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
+            navigate("/payment", { state: { dataProps: data } })
         }
     }
 
