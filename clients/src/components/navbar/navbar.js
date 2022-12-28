@@ -1,59 +1,39 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Logo from "../../assets/logo.png";
-import Styles from "./navbar.module.css";
-import { Cart3 } from "react-bootstrap-icons";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Navbar, Nav, Container, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Form, Modal } from "react-bootstrap";
+import { Cart3 } from "react-bootstrap-icons";
+import "./navbar.css";
 import "../styles/Modal.css";
 
-const Navigat = () => {
+const Navbars = () => {
+  const Profile = "C Ronaldo";
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <Navbar className={Styles.navbar} sticky="top">
-        <Container fluid>
-          <Row className={Styles.rownav}>
-            <Col xs={9}></Col>
-            <Col>
-              <div className="justify-content-around d-flex">
-                <li>
-                  <Link to="about">Tentang Kami</Link>
-                </li>
-                <li>
-                  <Link to="/register">Daftar</Link>
-                </li>
-                <li></li>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <Container fluid>
-          <Row className={Styles.rownav}>
-            <Col xs={1}>
-              <div className="text-center">
-                <Link to="/">
-                  <img src={Logo} height={"75"} width={"75"} ></img>
-                </Link>
-              </div>
-            </Col>
-            <Col className="align-self-center" xs={8}>
-              <Form>
-                <Form.Control type="search" placeholder="Search" className={Styles.search} aria-label="Search" />
-              </Form>
-            </Col>
-            <Col className="align-self-center">
-              <Cart3 size={25} color={"#D91E1E"} />
-              <button style={{ marginLeft: "25px" }} onClick={handleShow}>
+      <Navbar collapseOnSelect expands="sm" className="navbars ">
+        <Container className="ml-auto navlinks">
+          <Nav className="justify-content-end " style={{ width: "100%" }}>
+            <Nav.Link>
+              <button className="button-request" style={{ color: "#fff", fontWeight: "400" }} onClick={handleShow}>
                 Request Figure
               </button>
-            </Col>
-          </Row>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" style={{ color: "#fff", fontWeight: "400" }}>
+              Tentang Kami
+            </Nav.Link>
+            <Nav.Link as={Link} to="/register" style={{ color: "#fff", fontWeight: "400" }}>
+              Daftar
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login" style={{ color: "#fff", fontWeight: "400" }}>
+              Masuk
+            </Nav.Link>
+            <Nav.Link as={Link} to="/profile">
+              <img className="profile-nav" src={require("../../assets/img/lionelmessi.jpg")} alt="profile nav"></img>
+              <span className="name-nav">{Profile}</span>
+            </Nav.Link>
+          </Nav>
         </Container>
         <Modal centered className="modals" show={show} onHide={handleClose}>
           <Modal.Body>
@@ -72,8 +52,26 @@ const Navigat = () => {
           </Modal.Body>
         </Modal>
       </Navbar>
+      <Navbar className="nav-bottoms">
+        <Container>
+          <Nav className="searchable d-flex align-items-center justify-content-center">
+            <Link to="/" className="mx-5">
+              <Navbar.Brand>
+                <img className="logo" src={require("../../assets/logo.png")} alt="Navigation Pic"></img>
+                <span className="tokyoVibes justify-content-center align-items-center">東京バイブス</span>
+              </Navbar.Brand>
+            </Link>
+            <Form className="mx-4 search">
+              <Form.Control type="search" placeholder="Search" className="search" aria-label="Search" />
+            </Form>
+            <Link to="/carts">
+              <Cart3 className="Cart" color={"#8b0500"} />
+            </Link>
+          </Nav>
+        </Container>
+      </Navbar>
     </>
   );
 };
 
-export default Navigat;
+export default Navbars;
