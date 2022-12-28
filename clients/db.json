@@ -6,7 +6,8 @@
       "lastName": "dev",
       "mobilePhone": "082134567890",
       "email": "userdev@tokyovibes.com",
-      "password": "userdev"
+      "password": "userdev",
+      "alamat": "jl kali urang 123"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "lastName": "dev2",
       "mobilePhone": "082134567890",
       "email": "userdev2@tokyovibes.com",
-      "password": "userdev2"
+      "password": "userdev2",
+      "alamat": "jl kali mandarin 7512q ad"
     },
     {
       "id": "c024f2b3-d245-4b6c-9d27-01462f524d18",
@@ -22,7 +24,8 @@
       "lastName": "dev",
       "mobilePhone": "082134567890",
       "email": "fikri@tokyovibes.com",
-      "password": "fikri"
+      "password": "fikri",
+      "alamat": "jl padang 512"
     },
     {
       "id": "ac8a10cc-82ec-4bde-a369-f76d631b778c",
@@ -30,7 +33,8 @@
       "lastName": "dev2",
       "mobilePhone": "082134567890",
       "email": "fikridev2@tokyovibes.com",
-      "password": "fikridev2"
+      "password": "fikridev2",
+      "alamat": "jl monster"
     }
   ],
   "products": [
@@ -318,6 +322,27 @@
         "stock": 1234,
         "promo": 20,
         "img": "produk4.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
+      }
+    },
+    {
+      "id": "f166af37-04d5-4934-9473-10c61a20e50f",
+      "amount": 1,
+      "totalPrice": 100000,
+      "product": {
+        "id": 9,
+        "name": "Action Figure Anime 9",
+        "price": 100000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk7.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
