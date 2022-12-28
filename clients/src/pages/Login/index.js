@@ -41,6 +41,7 @@ export const Login = () => {
             localStorage.removeItem("historyLink")
             localStorage.setItem('isLoggedin', true);
             localStorage.setItem('userId', res.data[0].id);
+            localStorage.setItem('userName', res.data[0].firstName + " " + res.data[0].lastName)
             alert("Berhasil masuk")
             navigate(link)
           }

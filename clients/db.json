@@ -288,6 +288,14 @@
       },
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
       "categorysell": "specialsell"
+    },
+    {
+      "firstName": "user",
+      "lastName": "dev2",
+      "mobilePhone": "082134567890",
+      "email": "userdev2@tokyovibes.com",
+      "password": "userdev2",
+      "id": 14
     }
   ],
   "carts": [
@@ -644,6 +652,46 @@
       "namaTerima": "Angin",
       "noResi": "KGP938705961",
       "id": 4
+    },
+    {
+      "userid": 9,
+      "carts": [
+        {
+          "amount": 2,
+          "totalPrice": 700000,
+          "product": {
+            "id": 4,
+            "name": "Naruto",
+            "price": 350000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk4.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 2,
+        "sumPrice": 700000,
+        "sumPromo": 560000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 576000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": "Angin",
+      "noResi": "KGP665676498",
+      "id": 5
     }
   ]
 }

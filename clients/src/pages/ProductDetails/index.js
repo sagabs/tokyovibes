@@ -107,7 +107,7 @@ const ProductDetails = () => {
             product: product
           }
         ],
-        totalSummary: {
+        totalsummary: {
           sumAmount: amount,
           sumPrice: totalPrice,
           sumPromo: totalPromo,

@@ -97,7 +97,11 @@ const Checkout = () => {
                     })
                 }) 
             }
+            const userId = parseInt(localStorage.getItem('userId'));
+            const userName = parseInt(localStorage.getItem('userName'));
+
             const data = {
+                userid: userId,
                 carts: checkoutData.carts,
                 totalsummary: checkoutData.totalsummary,
                 status: "belum bayar",
@@ -106,7 +110,7 @@ const Checkout = () => {
                 metodeBayar : DetailLainnya.metodeBayar,
                 alamat : DetailLainnya.alamat,
                 kurir : DetailLainnya.kurir,
-                namaTerima : "Angin",
+                namaTerima : userName,
                 noResi : ""
             }
             axios
@@ -134,7 +138,7 @@ const Checkout = () => {
                                     <Row>
                                         <Col xs={4}>
                                             <div className='text-center' >
-                                                <img src={require("../../assets/img/gambar2.png")} className='imgCheckout' height={200} width={200} alt={"Image Checkout"} draggable="false"></img>
+                                                {item.product.img ? <img className="imgCheckout" height={200} width={200} src={require(`../../assets/img/${item.product.img}`)} alt={"Image Checkout"} draggable="false"></img> : <span>Loading....</span>}
                                             </div>
                                         </Col>
                                         <Col className='align-self-center ps-0'>

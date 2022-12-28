@@ -60,7 +60,7 @@ const Payment = () => {
     .put(API_URL + `transactions/` + IdTrans, data)
     .then(result => {
       swal("Tunggu ya","Sistem akan memeriksan pembayaran", "info")
-      navigate("/tracks")
+      navigate("/profile/tracks")
     })
     .catch(error => {
       console.log("error ya "+ error)
