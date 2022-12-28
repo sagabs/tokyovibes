@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
+:root {
+  --red: #9b0e09;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+.mains {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.mains .title {
+  font-family: "Grand Hotel", cursive;
+  font-size: 64px;
+  margin-bottom: 1rem;
+}
+
+.mains-text {
+  font-size: 1.145rem;
+  text-align: center;
+}
+
+.pad {
+  padding: 0 60px;
+}
+
+.hiragana {
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.71rem;
+  margin-bottom: 1rem;
+}
+
+.icon-pic {
+  width: 3.35rem;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.card-sec,
+.member {
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.card {
+  min-height: 200px;
+  margin: 0 1rem;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+}
+
+.member {
+  border: 1px;
+  border-radius: 1em;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+}
+.member-content {
+  padding: 1rem;
+}
+.member-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+.member img {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  border: 1px;
+  border-radius: 1em;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+}
+
+.team-member {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0.7rem;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  bottom: 20px;
+  right: 0px;
+  width: 100%;
+  color: #aaaaaa;
+  z-index: 4;
+  text-align: right;
+  margin-top: 50px;
+}
