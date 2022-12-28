@@ -16,11 +16,11 @@ const Checkout = () => {
     const [DetailLainnya, setDetailLainnya] = useState({
         ongkir: 0,
         total: 0,
-        metodeBayar : "",
-        alamat : "Jln percobaan",
-        kurir : "",
-        namaTerima : "",
-        noResi : ""
+        metodeBayar: "",
+        alamat: "Jln percobaan",
+        kurir: "",
+        namaTerima: "",
+        noResi: ""
     })
 
     const navigate = useNavigate()
@@ -49,39 +49,39 @@ const Checkout = () => {
     useEffect(() => {
         const tempTotal = checkoutData.totalsummary.sumPromo + 1000 + DetailLainnya.ongkir
         setDetailLainnya(
-            DetailLainnya=>({...DetailLainnya, total:tempTotal}))
+            DetailLainnya => ({ ...DetailLainnya, total: tempTotal }))
     }, [DetailLainnya.ongkir])
 
-    const changePembayaran = (data) =>{
+    const changePembayaran = (data) => {
         setDetailLainnya(
-            DetailLainnya =>({...DetailLainnya, metodeBayar:data}))
+            DetailLainnya => ({ ...DetailLainnya, metodeBayar: data }))
     }
 
-    const changePengiriman = (nama, harga) =>{
+    const changePengiriman = (nama, harga) => {
         setDetailLainnya(
-            DetailLainnya =>({...DetailLainnya, kurir:nama, ongkir:harga}))
+            DetailLainnya => ({ ...DetailLainnya, kurir: nama, ongkir: harga }))
     }
 
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-          {props.text}
+            {props.text}
         </Tooltip>
-      );
-    
-    const ubahAlamat = () =>{
+    );
+
+    const ubahAlamat = () => {
         swal({
             title: "Masukkan Alamat Baru",
             text: "Alamat yang diinputkan akan menjadi alamat pengiriman!",
             icon: "info",
             content: "input",
             buttons: ["Tidak jadi", "Ubah"],
-          })
-          .then((value) => {
-            if (value) {
-                setDetailLainnya(DetailLainnya =>({...DetailLainnya, alamat:value}))
-                swal("Sukses!", "Alamat berhasil diubah!", "success")
-            } 
-          });
+        })
+            .then((value) => {
+                if (value) {
+                    setDetailLainnya(DetailLainnya => ({ ...DetailLainnya, alamat: value }))
+                    swal("Sukses!", "Alamat berhasil diubah!", "success")
+                }
+            });
     }
 
     const BayarSekarang = () => {
@@ -98,8 +98,8 @@ const Checkout = () => {
                 }) 
             }
             const data = {
-                carts : checkoutData.carts,
-                totalsummary : checkoutData.totalsummary,
+                carts: checkoutData.carts,
+                totalsummary: checkoutData.totalsummary,
                 status: "belum bayar",
                 ongkir: DetailLainnya.ongkir,
                 total: DetailLainnya.total,
@@ -145,20 +145,20 @@ const Checkout = () => {
                                                 <Col xs={9}>Hololive En</Col>
                                                 <Col style={{ textAlign: "end", paddingRight: 52 }}> x{item.amount}</Col>
                                             </Row>
-                                            {item.product.promo? (
+                                            {item.product.promo ? (
                                                 <div style={{ margin: 0, textAlign: "end", paddingRight: 40 }}>
-                                                    <span style={{ textDecoration: "line-through", color: "red"}}>Rp.{item.product.price} </span>
-                                                    <span style={{ marginRight: "10px"}}></span>
-                                                    <span>Rp.{item.product.price * (1-(item.product.promo/100))}</span>
+                                                    <span style={{ textDecoration: "line-through", color: "red" }}>Rp.{item.product.price} </span>
+                                                    <span style={{ marginRight: "10px" }}></span>
+                                                    <span>Rp.{item.product.price * (1 - (item.product.promo / 100))}</span>
                                                 </div>
-                                            ):(
+                                            ) : (
                                                 <p style={{ margin: 0, textAlign: "end", paddingRight: 40 }}>Rp. {item.product.price} </p>
-                                            )}                 
+                                            )}
                                             <p hidden></p>
-                                            <hr style={{margin:"0"}}/>
-                                            <div style={{ margin: 0, display:"flex", justifyContent:"space-between", paddingRight: 40 }}>
-                                                <span style={{ fontWeight: 650}}>Subtotal </span>
-                                                <span style={{ fontWeight: 650}}>Rp.{item.product.price * (1-(item.product.promo/100)) * item.amount}</span>
+                                            <hr style={{ margin: "0" }} />
+                                            <div style={{ margin: 0, display: "flex", justifyContent: "space-between", paddingRight: 40 }}>
+                                                <span style={{ fontWeight: 650 }}>Subtotal </span>
+                                                <span style={{ fontWeight: 650 }}>Rp.{item.product.price * (1 - (item.product.promo / 100)) * item.amount}</span>
                                             </div>
                                         </Col>
                                     </Row>
@@ -173,7 +173,7 @@ const Checkout = () => {
                                         {DetailLainnya.alamat}
                                     </Card.Text>
                                     <div className='text-end'>
-                                        <Button className='btn btn-danger btn-sm btnUbahAlamat' onClick={()=>{ubahAlamat()}}>Ubah Alamat</Button>
+                                        <Button className='btn btn-danger btn-sm btnUbahAlamat' onClick={() => { ubahAlamat() }}>Ubah Alamat</Button>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -183,11 +183,11 @@ const Checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pembayaran</Card.Title>
-                                        <input type={"radio"} name="checkPembayaran" onClick={()=>changePembayaran("Sinarmas")} />
+                                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Sinarmas")} />
                                         <label>Bank Sinarmas</label><br />
-                                        <input type={"radio"} name="checkPembayaran" onClick={()=>changePembayaran("Mandiri")} />
+                                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Mandiri")} />
                                         <label>Mandiri</label><br />
-                                        <input type={"radio"} name="checkPembayaran" onClick={()=>changePembayaran("BCA")} />
+                                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("BCA")} />
                                         <label>BCA</label>
                                     </Card.Body>
                                 </Card>
@@ -196,11 +196,11 @@ const Checkout = () => {
                                 <Card className="cardCheckout">
                                     <Card.Body>
                                         <Card.Title>Metode Pengiriman</Card.Title>
-                                        <input type={"radio"} name="checkPengiriman" onClick={()=>changePengiriman("Ninja", 15000)} />
+                                        <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("Ninja", 15000)} />
                                         <label>Ninja (5-6 Hari)</label><br />
-                                        <input type={"radio"} name="checkPengiriman" onClick={()=>changePengiriman("JNT", 20000)} />
+                                        <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("JNT", 20000)} />
                                         <label>JNT (3-4 Hari)</label><br />
-                                        <input type={"radio"} name="checkPengiriman" onClick={()=>changePengiriman("JNE", 25000)} />
+                                        <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("JNE", 25000)} />
                                         <label>JNE (1-2 Hari)</label>
                                     </Card.Body>
                                 </Card>
@@ -230,8 +230,8 @@ const Checkout = () => {
                                 </Row>
                                 <Row>
                                     <Col xs={8}>
-                                        <OverlayTrigger placement="bottom" delay={{ show: 100, hide: 150 }} 
-                                        overlay={renderTooltip({text:"Proteksi barang dari segala gangguan"})}>
+                                        <OverlayTrigger placement="bottom" delay={{ show: 100, hide: 150 }}
+                                            overlay={renderTooltip({ text: "Proteksi barang dari segala gangguan" })}>
                                             <span>Asuransi Pengiriman</span>
                                         </OverlayTrigger>
                                     </Col>
@@ -241,8 +241,8 @@ const Checkout = () => {
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <OverlayTrigger placement="bottom" delay={{ show: 100, hide: 150 }} 
-                                        overlay={renderTooltip({text:"Agar kami semakin semangat meningkatkan pelayanan :)"})}>
+                                        <OverlayTrigger placement="bottom" delay={{ show: 100, hide: 150 }}
+                                            overlay={renderTooltip({ text: "Agar kami semakin semangat meningkatkan pelayanan :)" })}>
                                             <span>Biaya Admin</span>
                                         </OverlayTrigger>
                                     </Col>
@@ -256,7 +256,7 @@ const Checkout = () => {
                                         Promo
                                     </Col>
                                     <Col style={{ textAlign: "end" }}>
-                                       - Rp. {checkoutData.totalsummary.sumPrice - checkoutData.totalsummary.sumPromo}
+                                        - Rp. {checkoutData.totalsummary.sumPrice - checkoutData.totalsummary.sumPromo}
                                     </Col>
                                 </Row>
                                 <hr className='hrCheckout' />

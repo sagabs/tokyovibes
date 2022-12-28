@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import CountdownTimer from "../../components/countdownTimer";
 import Navbars from "../../components/navbar/navbar";
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom'
 import "./style.css";
 import axios from "axios";
@@ -20,7 +20,7 @@ const Payment = () => {
   const [DataPembayaran, setDataPembayaran] = useState(dataProps)
   const [IdTrans, setIdTrans] = useState(idTrx)
   const [Rekening, setRekening] = useState()
-  const [Logo, setLogo] =  useState()
+  const [Logo, setLogo] = useState()
 
   const navigate = useNavigate()
 
@@ -28,13 +28,13 @@ const Payment = () => {
   const tagihan = dataProps.total.toLocaleString("id-ID");
 
   useEffect(() => {
-    if(dataProps.metodeBayar==="Sinarmas"){
+    if (dataProps.metodeBayar === "Sinarmas") {
       setRekening("1234-0098-9987773")
       setLogo("logosimas")
-    }else if(dataProps.metodeBayar==="Mandiri"){
+    } else if (dataProps.metodeBayar === "Mandiri") {
       setRekening("1234-0098-1000-2034")
       setLogo("logomandiri")
-    }else if(dataProps.metodeBayar==="BCA"){
+    } else if (dataProps.metodeBayar === "BCA") {
       setRekening("774-100323942")
       setLogo("logobca")
     }
@@ -90,7 +90,7 @@ const Payment = () => {
                   </Col>
                   <Col className="d-flex align-items-center justify-content-center">
                     <div>
-                      <img src={Logo? require(`../../assets/img/${Logo}.png`) : require(`../../assets/img/logosimas.png`)} alt={"Logo Bank"} className="imageBankLogo"></img>
+                      <img src={Logo ? require(`../../assets/img/${Logo}.png`) : require(`../../assets/img/logosimas.png`)} alt={"Logo Bank"} className="imageBankLogo"></img>
                     </div>
                   </Col>
                 </Row>
