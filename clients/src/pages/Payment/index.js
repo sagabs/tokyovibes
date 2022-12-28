@@ -17,7 +17,6 @@ const Payment = () => {
   const [Rekening, setRekening] = useState()
   const [Logo, setLogo] =  useState()
 
-  const rekening = "1234-0098-9987773";
   const atasNamaRekening = "PT. Tokoh Aksi Makmur";
   const tagihan = dataProps.total.toLocaleString("id-ID");
 
@@ -28,7 +27,7 @@ const Payment = () => {
     }else if(dataProps.metodeBayar==="Mandiri"){
       setRekening("1234-0098-1000-2034")
       setLogo("logomandiri")
-    }else if(dataProps.metodeBayar===""){
+    }else if(dataProps.metodeBayar==="BCA"){
       setRekening("774-100323942")
       setLogo("logobca")
     }
@@ -65,19 +64,19 @@ const Payment = () => {
                   </Col>
                   <Col className="d-flex align-items-center justify-content-center">
                     <div>
-                      <img src={require("../../assets/img/logosimas.png")} alt={"Logo Bank Sinarmas"} className="imageBankLogo"></img>
+                      <img src={Logo? require(`../../assets/img/${Logo}.png`) : require(`../../assets/img/logosimas.png`)} alt={"Logo Bank"} className="imageBankLogo"></img>
                     </div>
                   </Col>
                 </Row>
                 <Row className="mb-2">
                   <Col>
                     <div>Nomor Rekening</div>
-                    <div className="boldText">{rekening}</div>
+                    <div className="boldText">{Rekening}</div>
                   </Col>
                   <Col className="d-flex align-items-center justify-content-center">
                     <div
                       onClick={() => {
-                        navigator.clipboard.writeText(rekening);
+                        navigator.clipboard.writeText(Rekening);
                       }}
                       style={{ cursor: "pointer" }}
                     >
