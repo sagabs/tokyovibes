@@ -5,6 +5,10 @@ import Navbars from "../../components/navbar/navbar";
 import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom'
 import "./style.css";
+import axios from "axios";
+import swal from 'sweetalert';
+import { API_URL } from "../../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
   const OneDayInMS = 1 * 24 * 60 * 60 * 1000;
@@ -12,10 +16,13 @@ const Payment = () => {
   const dateTimeAfterOneDays = NowInMs + OneDayInMS;
 
   const location = useLocation()
-  const { dataProps } = location.state
+  const { dataProps, idTrx } = location.state
   const [DataPembayaran, setDataPembayaran] = useState(dataProps)
+  const [IdTrans, setIdTrans] = useState(idTrx)
   const [Rekening, setRekening] = useState()
   const [Logo, setLogo] = useState()
+
+  const navigate = useNavigate()
 
   const atasNamaRekening = "PT. Tokoh Aksi Makmur";
   const tagihan = dataProps.total.toLocaleString("id-ID");
@@ -40,6 +47,25 @@ const Payment = () => {
     { description: "Masukkan Jumlah Tagihan", key: 3 },
     { description: "Simpan Bukti Transfer", key: 4 },
   ];
+
+  const SudahBayar = () => {
+    const randNumber = Math.floor(Math.random() * 900000000) + 100000000
+    const tempResi = "KGP".concat("",randNumber)
+    const data = {
+      ...DataPembayaran,
+      noResi : tempResi,
+      status : "Sudah Bayar"
+    }
+    axios
+    .put(API_URL + `transactions/` + IdTrans, data)
+    .then(result => {
+      swal("Tunggu ya","Sistem akan memeriksan pembayaran", "info")
+      navigate("/tracks")
+    })
+    .catch(error => {
+      console.log("error ya "+ error)
+    })
+  }
   return (
     <>
       <Navbars />
@@ -115,7 +141,7 @@ const Payment = () => {
               <button className="buttonPay" style={{ backgroundColor: "#9b0e09", border: "0 none", borderRadius: "2rem" }}>
                 Cek Status Pembayaran
               </button>
-              <button className="Pay" style={{ backgroundColor: "#fff", border: "2px solid", borderRadius: "2rem" }}>
+              <button className="Pay" style={{ backgroundColor: "#fff", border: "2px solid", borderRadius: "2rem"  }} onClick={SudahBayar}>
                 Sudah Bayar
               </button>
             </div>

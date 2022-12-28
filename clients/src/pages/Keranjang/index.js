@@ -32,6 +32,7 @@ const Keranjang = () => {
       setRangkumBelanja(res2.data[0])
 
     }
+    console.log(DataKeranjang)
     fetchData();
   }, [total, count])
 
@@ -352,68 +353,75 @@ const Keranjang = () => {
 
   return (
     <>
-      <Navbar />
-      <Container fluid>
-        <Row>
-          <Col className={Styles.child1} xs={7}>
-            <Container>
-              <h3>Keranjang</h3>
-              <Container className='d-flex justify-content-between p-0'>
-                <Button variant="success" size='sm' onClick={selectAll}>Pilih Semua</Button>
-                <Button variant="danger" size="sm" onClick={deleteAll}>Hapus Semua</Button>
-              </Container>
-              <hr style={{ margin: "0" }} />
+    <Navbar />
+    <Container fluid>
+      
+      <Row>
+        <Col className={Styles.child1} xs={7}>
+          <Container>
+            <h3>Keranjang</h3>
+            <Container className='d-flex justify-content-between p-0'>
+              <Button variant="success" size='sm'onClick={selectAll}>Pilih Semua</Button>
+              <Button variant="danger" size="sm" onClick={deleteAll}>Hapus Semua</Button>
             </Container>
-            <Container className='mt-2'>
-              {DataKeranjang?.map((item, index) => (
-                <Card key={index} className={Styles.card}>
-                  <Row>
-                    <Col className="py-2 ps-4" xs={3}>
-                      <Card.Img style={{ height: "150px", width: "150px", maxWidth: "100%" }} src={Logo} />
-                    </Col>
-                    <Col>
-                      <Card.Body styles>
-                        <Row Row className='py-1'>
-                          <Col xs={11}><Card.Title style={{ margin: "0" }}>{item.product.name}</Card.Title></Col>
-                          <Col>
-                            <Form.Check aria-label="option 1"
-                              id={index} name="barang"
-                              defaultChecked={item.checked}
-                              value={[item.id, item.amount, item.product.price]}
-                              onChange={handleChange} />
-                          </Col>
-                        </Row>
-                        <Row className='py-3'>
-                          <Card.Text styles={{ margin: "0" }}>{item.product.category}</Card.Text>
-                        </Row>
-                        <Row style={{ height: "100%" }}>
-                          <Col>
-                            {item.product.promo ?
-                              (
-                                <div>
-                                  <span style={{ margin: "0", textAlign: "center", textDecoration: "line-through", color: "red" }}>Rp. {item.product.price}</span>
-                                  <span style={{ marginRight: "10px" }}></span>
-                                  <span style={{ margin: "0" }}>Rp. {item.product.price * (1 - (item.product.promo / 100))}</span>
-                                </div>
-                              )
-                              : (<span style={{ margin: "0" }}>Rp. {item.product.price}</span>)}
-                          </Col>
-                          <Col xs={4} className='d-flex justify-content-between'>
-                            <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)} />
-                            <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)} />
-                            <span>{item.amount}</span>
-                            <PlusCircle size={20} color={"green"} onClick={() => addAmount(item.id, item.product.price)} />
-                          </Col>
-                        </Row>
-                      </Card.Body>
-                    </Col>
-                  </Row>
-                </Card>
-              ))}
-            </Container>
-          </Col>
-          <Col className={Styles.rangkumanBelanjaMain}>
-            <Card body className={Styles.rangkumanBelanja}>
+            <hr style={{margin:"0"}}/>
+          </Container>
+         {DataKeranjang[0]?  
+          <Container className='mt-2'>
+            {DataKeranjang.map((item, index) => (
+              <Card key={index} className={Styles.card}>
+              <Row>
+                <Col className="py-2 ps-4" xs={3}>
+                  <Card.Img style={{height:"150px", width:"150px", maxWidth: "100%"}} src={Logo}/> 
+                </Col>
+                <Col>
+                  <Card.Body styles>
+                    <Row Row className='py-1'>
+                      <Col xs={11}><Card.Title style={{margin:"0"}}>{item.product.name}</Card.Title></Col>
+                      <Col>
+                        <Form.Check aria-label="option 1" 
+                        id={index} name="barang" 
+                        checked={item.checked? item.checked: false}
+                        value={[item.id ,item.amount, item.product.price]}
+                        onChange={handleChange}/>
+                      </Col>   
+                    </Row>
+                    <Row className='py-3'>
+                      <Card.Text styles={{margin:"0"}}>{item.product.category}</Card.Text>
+                    </Row>
+                    <Row style={{height:"100%"}}>
+                      <Col>
+                      {item.product.promo?
+                        (
+                          <div>
+                            <span style={{margin:"0", textAlign: "center", textDecoration: "line-through", color: "red"}}>Rp. {item.product.price}</span>
+                            <span style={{marginRight:"10px"}}></span>
+                            <span style={{margin:"0"}}>Rp. {item.product.price * (1 - (item.product.promo / 100))}</span>
+                          </div>
+                        )
+                        :(<span style={{margin:"0"}}>Rp. {item.product.price}</span>)}  
+                      </Col>
+                      <Col xs={4} className='d-flex justify-content-between'>
+                        <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)}/>
+                        <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)}/>
+                        <span>{item.amount}</span>
+                        <PlusCircle size={20} color={"green"} onClick={() => addAmount(item.id, item.product.price)}/>
+                      </Col>
+                    </Row>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
+            ))}
+          </Container>: 
+          <Container className="d-flex flex-column align-items-center justify-content-center" style={{paddingTop:"40px"}}>
+            <span>Keranjang Masih Kosong !</span>
+            <img src={require("../../assets/img/cartkosong.jpg")} style={{width:"50%", borderRadius:"100px"}} ></img>
+          </Container>  
+          }
+        </Col>
+        <Col className={Styles.rangkumanBelanjaMain}>
+          <Card body className={Styles.rangkumanBelanja}>
               <Container>
                 <h5>Rangkuman Belanja</h5>
                 <hr style={{ margin: "15px 0px" }}></hr>
