@@ -358,6 +358,28 @@
       },
       "checked": true,
       "id": 3
+    },
+    {
+      "userid": 8,
+      "amount": 2,
+      "totalPrice": 640000,
+      "product": {
+        "id": 13,
+        "name": "Sasukeh",
+        "price": 400000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk3.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "specialsell"
+      },
+      "id": 4
     }
   ],
   "CartSummary": [
