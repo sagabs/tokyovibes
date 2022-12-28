@@ -19,7 +19,7 @@
       "alamat": "jl kali mandarin 7512q ad"
     },
     {
-      "id": "c024f2b3-d245-4b6c-9d27-01462f524d18",
+      "id": 3,
       "firstName": "fikri",
       "lastName": "dev",
       "mobilePhone": "082134567890",
@@ -28,13 +28,38 @@
       "alamat": "jl padang 512"
     },
     {
-      "id": "ac8a10cc-82ec-4bde-a369-f76d631b778c",
+      "id": 4,
       "firstName": "fikri",
       "lastName": "dev2",
       "mobilePhone": "082134567890",
       "email": "fikridev2@tokyovibes.com",
-      "password": "fikridev2",
-      "alamat": "jl monster"
+      "password": "fikridev2"
+    },
+    {
+      "id": 5,
+      "firstName": "test",
+      "lastName": "navigate",
+      "address": "jl. test",
+      "mobilePhone": "082134567890",
+      "email": "test@gmail.com",
+      "password": "test"
+    },
+    {
+      "firstName": "user",
+      "lastName": "dev2",
+      "mobilePhone": "082134567890",
+      "email": "userdev2@tokyovibes.com",
+      "password": "userdev2",
+      "id": 6
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "address": "test",
+      "mobilePhone": "082134567890",
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 7
     }
   ],
   "products": [
@@ -266,12 +291,12 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "checked": true,
+      "checked": false,
       "id": 1
     },
     {
-      "amount": 2,
-      "totalPrice": 1000000,
+      "amount": 3,
+      "totalPrice": 2000000,
       "product": {
         "id": 2,
         "name": "Shinobi Uchiha madara",
@@ -285,13 +310,13 @@
           "color": "Pink",
           "weight": 250
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "specialsell"
       },
-      "checked": true,
+      "checked": false,
       "id": 2
     },
     {
-      "id": "c4f8de94-426c-473e-900e-a8dad5e52fab",
       "amount": 1,
       "totalPrice": 100000,
       "product": {
@@ -309,56 +334,15 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
-      }
-    },
-    {
-      "id": "a2bb0522-88a8-4ab9-9b64-1b056d927f07",
-      "amount": 1,
-      "totalPrice": 350000,
-      "product": {
-        "id": 4,
-        "name": "Naruto",
-        "price": 350000,
-        "stock": 1234,
-        "promo": 20,
-        "img": "produk4.jpg",
-        "category": "Hololive ID",
-        "spesification": {
-          "condition": "Baru",
-          "color": "Biru",
-          "weight": 250
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "promo"
-      }
-    },
-    {
-      "id": "f166af37-04d5-4934-9473-10c61a20e50f",
-      "amount": 1,
-      "totalPrice": 100000,
-      "product": {
-        "id": 9,
-        "name": "Action Figure Anime 9",
-        "price": 100000,
-        "stock": 1234,
-        "promo": 20,
-        "img": "produk7.jpg",
-        "category": "Hololive ID",
-        "spesification": {
-          "condition": "Baru",
-          "color": "Biru",
-          "weight": 250
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "promo"
-      }
+      },
+      "checked": false,
+      "id": 3
     }
   ],
   "CartSummary": [
     {
-      "sumAmmount": 9,
-      "sumPrice": 1500000,
-      "sumPromo": 50000,
+      "sumAmmount": 0,
+      "sumPrice": 0,
       "id": 1
     }
   ],

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+:root {
+  --red: #9b0e09;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+.navbars {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--red);
+}
+
+.profile-nav {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.name-nav {
+  color: #fff;
+  margin-left: 0.5rem;
+}
+.button-request {
+  background: none;
+  border: none;
+  line-height: 10%;
+}
+
+.searchable {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.tokyoVibes {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1.315rem;
+  color: var(--red);
+}
+.search {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px -2px, rgba(0, 0, 0, 0.3) 0px 0px px -3px;
+  width: 100%;
+  background-color: #dddddd;
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.logo {
+  height: 85px;
+  width: 85px;
+}
+
+.Cart {
+  height: 45px;
+  width: 45px;
+}
+
+.nav-bottoms {
+  border: 1px;
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 3px 2px var(--shadow);
+}

@@ -64,10 +64,10 @@ const Home = () => {
                             {productpromo.map((item, index) => (
                                 <div className="d-flex justify-content-center mb-2">
                                     <Link to={`/details/${item.id}`} className="linkCard" draggable={false} >
-                                        <Card style={{ width: '35rem', height: '15rem', borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
-                                            <Row>
-                                                <Col xs={7}>
-                                                    <Card.Body style={{ marginTop: 7, maxWidth: "100%", maxHeight: "100%" }}>
+                                        <Card style={{ width: '35rem', height: '15rem', paddingTop: 0, borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
+                                            <Row className=" h-100" >
+                                                <Col xs={7} className="align-self-center p-3">
+                                                    <Card.Body style={{ maxWidth: "100%", maxHeight: "100%", padding: "0px 0px 0px 0px" }}>
                                                         <Card.Title style={{ textAlign: "center" }}>{item.name}</Card.Title>
                                                         <Card.Text style={{ textAlign: "center" }}>
                                                             Some quick example text to build on the card title and make up the
@@ -82,7 +82,7 @@ const Home = () => {
                                                     </Card.Body>
 
                                                 </Col>
-                                                <Col style={{ marginTop: 20, marginRight: 10, paddingLeft: 15 }}>
+                                                <Col style={{ paddingLeft: 20, paddingRight: 5 }} className="align-self-center">
                                                     {item?.img ? <Image src={require(`../../assets/img/${item?.img}`)} alt={"Gambar1"} height={200} width={200} style={{ borderRadius: 20 }}></Image> : <span>Loading...</span>}
                                                 </Col>
                                             </Row>
@@ -100,7 +100,7 @@ const Home = () => {
                                     <Col style={{ padding: 0 }}>
                                         <div className="d-flex justify-content-center mb-4"  >
                                             <Link to={`/details/${item.id}`} className="linkCard" draggable={false} >
-                                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
+                                                <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
                                                     {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} /> : <span>Loading ...</span>}
                                                     <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                                         <div>{item.name}</div>
@@ -123,9 +123,8 @@ const Home = () => {
                             {product.map((item, index) => (
                                 <div className="mb-4 cardProductAll"  >
                                     <Link to={`/details/${item.id}`} className="linkCard" draggable={false} >
-                                        <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
-                                            {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} /> : <span>Loading...</span>}
-                                            <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
+                                        <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
+                                            {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, padding: 0 }} /> : <span>Loading...</span>}                                            <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
                                                 <div>{item.name}</div>
                                                 <div className="mt-1">Hololive</div>
                                                 <div className="mt-1" style={{ fontWeight: "700" }}>{item.price}</div>
