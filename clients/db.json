@@ -291,10 +291,11 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
       },
-      "checked": false,
+      "checked": true,
       "id": 1
     },
     {
+      "userid": "1",
       "amount": 3,
       "totalPrice": 2000000,
       "product": {
@@ -313,10 +314,11 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "specialsell"
       },
-      "checked": false,
+      "checked": true,
       "id": 2
     },
     {
+      "userid": 2,
       "amount": 1,
       "totalPrice": 100000,
       "product": {
@@ -335,14 +337,14 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
-      "checked": false,
+      "checked": true,
       "id": 3
     }
   ],
   "CartSummary": [
     {
-      "sumAmmount": 0,
-      "sumPrice": 0,
+      "sumAmmount": 10,
+      "sumPrice": 2700000,
       "id": 1
     }
   ],
