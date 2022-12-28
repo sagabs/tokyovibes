@@ -8,9 +8,11 @@ import Gundambg from "../../assets/gundambg.png";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -39,7 +41,6 @@ const Register = () => {
     setValidated(true);
 
     const data = {
-      id: uuidv4(),
       firstName: userDetails.firstName,
       lastName: userDetails.lastName,
       address: userDetails.address,
@@ -54,7 +55,17 @@ const Register = () => {
       axios
         .post(API_URL + "users", data)
         .then((res) => {
+          const cartSummary = {
+            userid: res.data.id,
+            sumAmount: 0,
+            sumPrice: 0,
+          };
+          axios.post(API_URL + "CartSummary", cartSummary).catch((error) => {
+            console.log("Error gk bisa ", error);
+          });
+
           alert("Sukses Daftar Akun");
+          navigate("/login");
         })
         .catch((error) => {
           console.log("Error yaa", error);

@@ -5,32 +5,32 @@ import { Cart3 } from "react-bootstrap-icons";
 import "./navbar.css";
 import "../styles/Modal.css";
 
-const Navbars = ({ searchParams }) => {
+const Navbars = ({searchParams}) => {
   //const Profile = "C Ronaldo";
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [isLoggedin, setIsLoggedin] = useState();
-  const [userName, setUserName] = useState();
+  const [isLoggedin, setIsLoggedin] = useState()
+  const [userName, setUserName] = useState()
 
   useEffect(() => {
-    const isLoggedinLS = localStorage.getItem("isLoggedin");
+    const isLoggedinLS = localStorage.getItem('isLoggedin');
     isLoggedinLS ? setIsLoggedin(true) : setIsLoggedin(false);
 
-    if (isLoggedinLS) setUserName(localStorage.getItem("userName"));
+    if(isLoggedinLS) setUserName(localStorage.getItem('userName'))
   }, [isLoggedin]);
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedin");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("userName");
+    localStorage.removeItem("isLoggedin")
+    localStorage.removeItem("userId")
+    localStorage.removeItem("userName")
 
-    setIsLoggedin(false);
-  };
+    setIsLoggedin(false)
+  }
 
   const showContent = () => {
-    if (isLoggedin) {
+    if(isLoggedin) {
       return (
         <Nav className="justify-content-end " style={{ width: "100%" }}>
           <Nav.Link>
@@ -51,7 +51,7 @@ const Navbars = ({ searchParams }) => {
             <span className="name-nav">{userName}</span>
           </Nav.Link>
         </Nav>
-      );
+      )
     } else {
       return (
         <Nav className="justify-content-end " style={{ width: "100%" }}>
@@ -65,24 +65,26 @@ const Navbars = ({ searchParams }) => {
             Masuk
           </Nav.Link>
         </Nav>
-      );
+      )
     }
-  };
+  }
 
   const showCart = () => {
-    if (isLoggedin) {
+    if(isLoggedin) {
       return (
         <Link to="/carts">
           <Cart3 className="Cart" color={"#8b0500"} />
         </Link>
-      );
+      )
     }
-  };
+  }
 
   return (
     <>
       <Navbar collapseOnSelect expands="sm" className="navbars ">
-        <Container className="ml-auto navlinks">{showContent()}</Container>
+        <Container className="ml-auto navlinks">
+          {showContent()}
+        </Container>
         <Modal centered className="modals" show={show} onHide={handleClose}>
           <Modal.Body>
             <div className="d-grid text-center modal-body">
@@ -110,15 +112,13 @@ const Navbars = ({ searchParams }) => {
               </Navbar.Brand>
             </Link>
             <Form className="mx-4 search">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="search"
+              <Form.Control 
+                type="search" 
+                placeholder="Search" 
+                className="search" 
                 aria-label="Search"
-                onChange={(event) => searchParams(event.target.value)}
-                onKeyPress={(e) => {
-                  e.key === "Enter" && e.preventDefault();
-                }}
+                onChange={event => searchParams(event.target.value)}
+                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
               />
             </Form>
             {showCart()}
