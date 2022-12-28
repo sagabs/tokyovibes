@@ -193,6 +193,54 @@
       },
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
       "categorysell": "promo"
+    },
+    {
+      "id": 11,
+      "name": "Sasukeh",
+      "price": 400000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk3.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
+    },
+    {
+      "id": 12,
+      "name": "Sasukeh",
+      "price": 400000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk3.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
+    },
+    {
+      "id": 13,
+      "name": "Sasukeh",
+      "price": 400000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk3.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
     }
   ],
   "carts": [
@@ -237,6 +285,48 @@
       },
       "checked": true,
       "id": 2
+    },
+    {
+      "id": "c4f8de94-426c-473e-900e-a8dad5e52fab",
+      "amount": 1,
+      "totalPrice": 100000,
+      "product": {
+        "id": 5,
+        "name": "Mata Langit",
+        "price": 100000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk5.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
+      }
+    },
+    {
+      "id": "a2bb0522-88a8-4ab9-9b64-1b056d927f07",
+      "amount": 1,
+      "totalPrice": 350000,
+      "product": {
+        "id": 4,
+        "name": "Naruto",
+        "price": 350000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk4.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
+      }
     }
   ],
   "CartSummary": [
