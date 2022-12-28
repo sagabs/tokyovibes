@@ -5,10 +5,9 @@
 }
 .main {
   display: flex;
-  width: 00%;
   height: 100vh;
   background-image: url("../../assets/img/bg.png");
-  background-size: 120%;
+  background-size: 110%;
 }
 
 .Col1 {

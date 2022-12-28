@@ -49,11 +49,29 @@
   background-color: var(--red);
   border-radius: 5rem;
   width: 100%;
+  font-weight: 700;
+  color: #fff;
 }
 
 .buttonPay:hover {
   opacity: 0.88;
   background-color: var(--red);
+}
+
+.Pay {
+  border: 0px none;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  background-color: #439a97;
+  border-radius: 5rem;
+  width: 100%;
+  color: #379237;
+  font-weight: 700;
+}
+.Pay:hover {
+  opacity: 0.88;
+  background: #99cc55;
 }
 
 .expired-notice {
