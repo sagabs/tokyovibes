@@ -348,7 +348,7 @@ const Keranjang = () => {
                             <Col xs={11}>
                               <Card.Title style={{ margin: "0" }}>{item.product.name}</Card.Title>
                             </Col>
-                            <Col>
+                            <Col style={{ cursor: "pointer" }}>
                               <Form.Check aria-label="option 1" id={index} name="barang" checked={item.checked ? item.checked : false} value={[item.id, item.amount, item.product.price]} onChange={handleChange} />
                             </Col>
                           </Row>
@@ -364,14 +364,14 @@ const Keranjang = () => {
                                   <span style={{ margin: "0" }}>Rp. {item.product.price * (1 - item.product.promo / 100)}</span>
                                 </div>
                               ) : (
-                                <span style={{ margin: "0" }}>Rp. {item.product.price}</span>
+                                <span style={{ margin: "0" }}>Rp{item.product.price.toLocaleString("id-ID")}</span>
                               )}
                             </Col>
                             <Col xs={4} className="d-flex justify-content-between">
-                              <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)} />
-                              <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)} />
+                              <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)} style={{ cursor: "pointer" }} />
+                              <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)} style={{ cursor: "pointer" }} />
                               <span>{item.amount}</span>
-                              <PlusCircle size={20} color={"green"} onClick={() => addAmount(item.id, item.product.price)} />
+                              <PlusCircle size={20} color={"green"} onClick={() => addAmount(item.id, item.product.price)} style={{ cursor: "pointer" }} />
                             </Col>
                           </Row>
                         </Card.Body>
@@ -383,7 +383,7 @@ const Keranjang = () => {
             ) : (
               <Container className="d-flex flex-column align-items-center justify-content-center" style={{ paddingTop: "40px" }}>
                 <span>Keranjang Masih Kosong !</span>
-                <img src={require("../../assets/img/cartkosong.jpg")} style={{ width: "50%", borderRadius: "100px" }}></img>
+                <img src={require("../../assets/img/cartkosong.jpg")} style={{ width: "50%", borderRadius: "100px" }} alt="cart kosong"></img>
               </Container>
             )}
           </Col>
@@ -407,7 +407,7 @@ const Keranjang = () => {
                     <span className={Styles.font}>Total Harga</span>
                   </Col>
                   <Col>
-                    <span className={Styles.font}>Rp. {RangkumBelanja.sumPrice}</span>
+                    <span className={Styles.font}>Rp{RangkumBelanja.sumPrice.toLocaleString("id-ID")}</span>
                   </Col>
                 </Row>
                 <Row>

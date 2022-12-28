@@ -132,8 +132,8 @@ const ProductDetails = () => {
         <div className={Styles.col1}>{product.img ? <img className={Styles.productex} src={require(`../../assets/img/${product.img}`)} alt="background gundam"></img> : <span>Loading....</span>}</div>
         <div className={Styles.col2}>
           <div className={Styles.col2row1}>
-            <div className={Styles.col2name}>{product.name}</div>
-            <div className={Styles.col2price}>Rp. {product.price}</div>
+            <div className={Styles.col2names}>{product.name}</div>
+            <div className={Styles.col2price}>Rp{product.price.toLocaleString("id-ID")}</div>
           </div>
           <div className={Styles.col2row1}>
             <div className={Styles.col2name}>Detail Barang :</div>
@@ -151,6 +151,17 @@ const ProductDetails = () => {
           <div className={Styles.col2row1}>
             <div className={Styles.col2name}>Keterangan :</div>
             <div className={Styles.col2ket}>{product.description}</div>
+          </div>
+          <div>
+            <div className={Styles.reviewTitle}>Ulasan dari Pembeli</div>
+            <div className={Styles.userBuyer}>
+              <img src={require("../../assets/img/lionelmessi.jpg")} alt="Lionel Messi"></img>
+              <span>Cristiano Ronaldo, S.Pd</span>
+            </div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida purus metus, consequat volutpat diam consequat vitae. Integer convallis lobortis urna et pharetra. Quisque eu posuere lorem. Suspendisse congue eleifend
+              urna et tincidunt. Aliquam aliquam placerat mollis. Praesent eu venenatis velit. Proin ullamcorper feugiat erat, vitae ultricies orci molestie in. Pellentesque est diam, vestibulum quis dignissim sed, sodales quis ex.{" "}
+            </div>
           </div>
         </div>
         <div className={Styles.col3}>

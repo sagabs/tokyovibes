@@ -346,33 +346,10 @@
     },
     {
       "userid": 8,
-      "amount": 15,
-      "totalPrice": 1200000,
+      "amount": 6,
+      "totalPrice": 2000000,
       "product": {
-        "id": 5,
-        "name": "Mata Langit",
-        "price": 100000,
-        "stock": 1234,
-        "promo": 20,
-        "img": "produk5.jpg",
-        "category": "Hololive ID",
-        "spesification": {
-          "condition": "Baru",
-          "color": "Biru",
-          "weight": 250
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "promo"
-      },
-      "checked": false,
-      "id": 3
-    },
-    {
-      "userid": 8,
-      "amount": 2,
-      "totalPrice": 640000,
-      "product": {
-        "id": 13,
+        "id": 3,
         "name": "Sasukeh",
         "price": 400000,
         "stock": 1234,
@@ -387,7 +364,31 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "specialsell"
       },
-      "id": 4
+      "checked": false,
+      "id": 5
+    },
+    {
+      "userid": 8,
+      "amount": 1,
+      "totalPrice": 320000,
+      "product": {
+        "id": 11,
+        "name": "Sasukeh",
+        "price": 400000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk3.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "specialsell"
+      },
+      "checked": false,
+      "id": 7
     }
   ],
   "CartSummary": [
@@ -399,8 +400,8 @@
     },
     {
       "userid": 8,
-      "sumAmount": 0,
-      "sumPrice": 0,
+      "sumAmount": 4,
+      "sumPrice": 800000,
       "id": 2
     },
     {
@@ -692,6 +693,212 @@
       "namaTerima": "Angin",
       "noResi": "KGP665676498",
       "id": 5
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "amount": 1,
+          "totalPrice": 350000,
+          "product": {
+            "id": 4,
+            "name": "Naruto",
+            "price": 350000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk4.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 1,
+        "sumPrice": 350000,
+        "sumPromo": 280000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 296000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP458747266",
+      "id": 6
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "amount": 1,
+          "totalPrice": 400000,
+          "product": {
+            "id": 3,
+            "name": "Sasukeh",
+            "price": 400000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk3.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "specialsell"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 1,
+        "sumPrice": 400000,
+        "sumPromo": 320000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 336000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP594044057",
+      "id": 7
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "userid": 8,
+          "amount": 2,
+          "totalPrice": 640000,
+          "product": {
+            "id": 13,
+            "name": "Sasukeh",
+            "price": 400000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk3.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "specialsell"
+          },
+          "checked": true,
+          "id": 4
+        }
+      ],
+      "totalsummary": {
+        "id": 2,
+        "sumAmount": 2,
+        "sumPrice": 800000,
+        "sumPromo": 640000
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 656000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP617499039",
+      "id": 8
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "amount": 1,
+          "totalPrice": 250000,
+          "product": {
+            "id": 6,
+            "name": "Gawr Gawr",
+            "price": 250000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk6.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 1,
+        "sumPrice": 250000,
+        "sumPromo": 200000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 216000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP434618324",
+      "id": 9
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "userid": 8,
+          "amount": 2,
+          "totalPrice": 160000,
+          "product": {
+            "id": 5,
+            "name": "Mata Langit",
+            "price": 100000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk5.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 6
+        }
+      ],
+      "totalsummary": {
+        "id": 2,
+        "sumAmount": 4,
+        "sumPrice": 200000,
+        "sumPromo": 800000
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 816000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP727739014",
+      "id": 10
     }
   ]
 }

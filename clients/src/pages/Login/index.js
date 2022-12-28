@@ -86,7 +86,9 @@ export const Login = () => {
               <Button className="loginbutton w-100" type="submit">
                 MASUK
               </Button>
-              <p className="mb-4 daftar">Belum punya akun? Daftar</p>
+              <Link to="/register">
+                <p className="mb-4 daftar">Belum punya akun? Daftar</p>
+              </Link>
             </Form>
           </div>
         </Col>
