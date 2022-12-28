@@ -11,6 +11,7 @@ import { DashCircle, Trash, PlusCircle } from 'react-bootstrap-icons';
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const ProductDetails = () => {
   const navigate = useNavigate()
@@ -42,47 +43,50 @@ const ProductDetails = () => {
   }, []);
 
   const addCart = () => {
-    if(isLoggedin === true) {
+    if (isLoggedin === true) {
+      const userId = parseInt(localStorage.getItem('userId'));
       axios
-      .get(API_URL + "carts?product.id=" + product.id)
-      .then((res) => {
-        if (res.data.length === 0) {
-          const cart = {
-            amount: amount,
-            totalPrice: product.price,
-            product: product,
-          };
+        .get(API_URL + `carts?product.id=${product.id}&userid=${userId}`)
+        .then((res) => {
+          if (res.data.length === 0) {
+            const cart = {
+              userid: userId,
+              amount: amount,
+              totalPrice: product.price * (1 - (product.promo / 100)) * amount,
+              product: product,
+            };
 
-          axios
-            .post(API_URL + "carts", cart)
-            .then((res) => {
-              alert("Sukses Masuk Keranjang " + product.name);
-              navigate("/carts")
-            })
-            .catch((error) => {
-              console.log("Error yaa ", error);
-            });
-        } else {
-          const cart = {
-            amount: res.data[0].amount + amount,
-            totalPrice: res.data[0].totalPrice + product.price,
-            product: product,
-          };
+            axios
+              .post(API_URL + "carts", cart)
+              .then((res) => {
+                alert("Sukses Masuk Keranjang " + product.name);
+                navigate("/carts")
+              })
+              .catch((error) => {
+                console.log("Error yaa ", error);
+              });
+          } else {
+            const cart = {
+              userid: userId,
+              amount: res.data[0].amount + amount,
+              totalPrice: res.data[0].totalPrice + product.price,
+              product: product,
+            };
 
-          axios
-            .put(API_URL + "carts/" + res.data[0].id, cart)
-            .then((res) => {
-              alert("Sukses Masuk Keranjang " + product.name);
-              navigate("/carts")
-            })
-            .catch((error) => {
-              console.log("Error yaa ", error);
-            });
-        }
-      })
-      .catch((error) => {
-        console.log("Error yaa ", error);
-      });
+            axios
+              .put(API_URL + "carts/" + res.data[0].id, cart)
+              .then((res) => {
+                alert("Sukses Masuk Keranjang " + product.name);
+                navigate("/carts")
+              })
+              .catch((error) => {
+                console.log("Error yaa ", error);
+              });
+          }
+        })
+        .catch((error) => {
+          console.log("Error yaa ", error);
+        });
     } else {
       localStorage.setItem('historyLink', `/details/${product.id}`);
       alert("Silahkan login terlebih dahulu untuk lanjut belanja")
@@ -91,9 +95,9 @@ const ProductDetails = () => {
   };
 
   const buyNow = () => {
-    if(isLoggedin === true) {
+    if (isLoggedin === true) {
       const totalPrice = product.price * amount;
-      const totalPromo = totalPrice * (1 - (product.promo/100))
+      const totalPromo = totalPrice * (1 - (product.promo / 100))
 
       const data = {
         carts: [
@@ -103,14 +107,14 @@ const ProductDetails = () => {
             product: product
           }
         ],
-        totalSummary: {
+        totalsummary: {
           sumAmount: amount,
           sumPrice: totalPrice,
           sumPromo: totalPromo,
           asal: "now"
         }
       }
-  
+
       navigate("/checkout", { state: { dataProps: data } })
     } else {
       localStorage.setItem('historyLink', `/details/${product.id}`);
@@ -161,7 +165,7 @@ const ProductDetails = () => {
                 <div className={Styles.col3datakey}>Total stok</div>
                 <div className={Styles.col3datavalue}>: {product.stock}</div>
               </div>
-              <Row style={{ height: "100%", marginTop: "20px"}}>
+              <Row style={{ height: "100%", marginTop: "20px" }}>
                 <Col xs={20} className='d-flex justify-content-between'>
                   <DashCircle size={20} color={"red"} onClick={() => amount === 1 ? setAmount(1) : setAmount(amount - 1)} />
                   <span>{amount}</span>
@@ -169,7 +173,7 @@ const ProductDetails = () => {
                 </Col>
               </Row>
               <Button className={Styles.buynow} onClick={buyNow}>
-                  Beli Sekarang
+                Beli Sekarang
               </Button>
               <Button className={Styles.addcart} onClick={addCart}>
                 Tambah Keranjang

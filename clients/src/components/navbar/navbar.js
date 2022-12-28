@@ -118,6 +118,7 @@ const Navbars = ({searchParams}) => {
                 className="search" 
                 aria-label="Search"
                 onChange={event => searchParams(event.target.value)}
+                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
               />
             </Form>
             {showCart()}

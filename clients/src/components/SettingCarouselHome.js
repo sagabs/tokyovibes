@@ -16,14 +16,12 @@ const PrevArrowPromo = ({ currentSlide, slideCount, ...props }) => (
 
 const SettingsPromo = {
     dots: true,
-    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
-    infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     dotsClass: "slick-dots slick-thumb",
     responsive: [
@@ -32,7 +30,6 @@ const SettingsPromo = {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                infinite: true,
                 dots: true
             }
         },
