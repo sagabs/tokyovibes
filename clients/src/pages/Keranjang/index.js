@@ -12,26 +12,26 @@ import { DashCircle, Trash, PlusCircle } from 'react-bootstrap-icons';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from '../../utils/constants';
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 
 const Keranjang = () => {
   const [total, setTotal] = useState({});
   const [DataKeranjang, setDataKeranjang] = useState([])
   const [RangkumBelanja, setRangkumBelanja] = useState({})
   const [count, setCount] = useState(0);
-  const [userId, setUserId] = useState()
-  const [TempCartSum, setTempCartSum] = useState({ totalBarang: 0, totalHarga: 0 })
 
+  const navigate = useNavigate()
 
   useEffect(() => {
-    setUserId(localStorage.getItem('userId'))
     const fetchData = async () => {
-      const res = await axios.get(API_URL + "carts?userid=1")
+      const res = await axios.get(API_URL + "carts")
       setDataKeranjang(res.data)
 
-      const res2 = await axios.get(API_URL + "CartSummary?userid=1")
+      const res2 = await axios.get(API_URL + "CartSummary")
       setRangkumBelanja(res2.data[0])
-    }
 
+    }
     fetchData();
   }, [total, count])
 
@@ -54,17 +54,15 @@ const Keranjang = () => {
         const cart = result[0];
         const cartsummary = result[1];
 
-
         if (checked) {
           const data = {
-            userid: userId,
             amount: cart.data[0].amount,
             totalPrice: cart.data[0].totalPrice,
             product: cart.data[0].product,
             checked: true
           }
           const data2 = {
-            sumAmmount: cartsummary.data.sumAmmount + cart.data[0].amount,
+            sumAmount: cartsummary.data.sumAmount + cart.data[0].amount,
             sumPrice: cartsummary.data.sumPrice + cart.data[0].totalPrice
           }
           axios
@@ -73,22 +71,21 @@ const Keranjang = () => {
           axios
             .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
             .then((response) => {
-              alert("Berhasil menambahkan ke rangkuman belanja")
+              swal("Sukses!", "Berhasil menambahkan ke total belanja!", "success");
             })
             .catch((error) => {
               console.log("Error yaa ", error);
             })
-          setTotal(data2.sumAmmount)
+          setTotal(data2.sumAmount)
         } else {
           const data = {
-            userid: userId,
             amount: cart.data[0].amount,
             totalPrice: cart.data[0].totalPrice,
             product: cart.data[0].product,
             checked: false
           }
           const data2 = {
-            sumAmmount: cartsummary.data.sumAmmount - cart.data[0].amount,
+            sumAmount: cartsummary.data.sumAmount - cart.data[0].amount,
             sumPrice: cartsummary.data.sumPrice - cart.data[0].totalPrice
           }
           axios
@@ -97,12 +94,12 @@ const Keranjang = () => {
           axios
             .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
             .then((response) => {
-              alert("Berhasil mengurangi ke rangkuman belanja")
+              swal("Sukses!", "Berhasil menghapus dari total belanja!", "success");
             })
             .catch((error) => {
               console.log("Error yaa ", error);
             })
-          setTotal(data2.sumAmmount)
+          setTotal(data2.sumAmount)
         }
       })
   }
@@ -122,20 +119,19 @@ const Keranjang = () => {
       .then((result) => {
         const cart = result[0];
         const cartsummary = result[1];
-
-        if (cart.data[0].amount == 1) {
+        const afterDiskon = cart.data[0].product.price * (1 - (cart.data[0].product.promo / 100))
+        if (cart.data[0].amount === 1) {
           deleteCart(id, cart.data[0].totalPrice, cart.data[0].amount, cart.data[0].checked)
         } else {
           const data = {
-            userid: userId,
             amount: cart.data[0].amount - 1,
-            totalPrice: cart.data[0].totalPrice - cart.data[0].product.price,
+            totalPrice: cart.data[0].totalPrice - afterDiskon,
             product: cart.data[0].product,
             checked: cart.data[0].checked
           }
           const data2 = {
-            sumAmmount: cartsummary.data.sumAmmount - 1,
-            sumPrice: cartsummary.data.sumPrice - cart.data[0].product.price
+            sumAmount: cartsummary.data.sumAmount - 1,
+            sumPrice: cartsummary.data.sumPrice - afterDiskon
           }
           axios
             .put(API_URL + "carts/" + id, data)
@@ -171,17 +167,16 @@ const Keranjang = () => {
       .then((result) => {
         const cart = result[0];
         const cartsummary = result[1];
-
+        const afterDiskon = cart.data[0].product.price * (1 - (cart.data[0].product.promo / 100))
         const data = {
-          userid: userId,
           amount: cart.data[0].amount + 1,
-          totalPrice: cart.data[0].totalPrice + cart.data[0].product.price,
+          totalPrice: cart.data[0].totalPrice + afterDiskon,
           product: cart.data[0].product,
           checked: cart.data[0].checked
         }
         const data2 = {
-          sumAmmount: cartsummary.data.sumAmmount + 1,
-          sumPrice: cartsummary.data.sumPrice + cart.data[0].product.price
+          sumAmount: cartsummary.data.sumAmount + 1,
+          sumPrice: cartsummary.data.sumPrice + afterDiskon
         }
         axios
           .put(API_URL + "carts/" + id, data)
@@ -210,7 +205,7 @@ const Keranjang = () => {
             .get(API_URL + "cartsummary/" + RangkumBelanja.id)
             .then((res) => {
               const data = {
-                sumAmmount: res.data.sumAmmount - amount,
+                sumAmount: res.data.sumAmount - amount,
                 sumPrice: res.data.sumPrice - totalPrice
               }
               axios
@@ -220,8 +215,8 @@ const Keranjang = () => {
                 })
             })
         }
-        setCount(count + 1)
-        alert("Berhasil menghapus barang dari keranjang")
+        setCount(count + 2)
+        swal("Sukses", "Berhasil menghapus barang dari keranjang", "success")
       })
       .catch((error) => {
         console.log("Error yaa ", error);
@@ -236,13 +231,13 @@ const Keranjang = () => {
           axios
             .delete(API_URL + "carts/" + data.id)
           const data2 = {
-            sumAmmount: 0,
+            sumAmount: 0,
             sumPrice: 0
           }
           axios
             .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
         });
-        alert("Berhasil mengosongkan keranjang")
+        swal("Sukses", "Berhasil mengosongkan keranjang", "success")
         setCount(count + 1)
       })
       .catch((error) => {
@@ -278,13 +273,13 @@ const Keranjang = () => {
           }
         })
         const data2 = {
-          sumAmmount: total_barang,
+          sumAmount: total_barang,
           sumPrice: total_price
         }
         axios
           .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
           .then(response => {
-            alert("Berhasil memilih semua di keranjang")
+            swal("Sukses", "Berhasil memilih semua di keranjang", "success")
           })
           .catch((error) => {
             console.log("Error yaa ", error)
@@ -295,6 +290,40 @@ const Keranjang = () => {
         console.log("Error yaa ", error);
       })
     setCount(count + 1)
+  }
+
+  const bayar = () => {
+    const simpanPass = {
+      totalsummary: {
+        id: "",
+        sumAmount: 0,
+        sumPrice: 0,
+        sumPromo: 0
+      },
+      carts: [],
+      asal: "carts"
+    }
+    axios
+      .get("http://localhost:3000/carts?checked=true")
+      .then(result => {
+        if (result.data.length === 0) {
+          swal("Gagal!", "Anda belum memilih dari keranjang atau keranjang kosong!", "warning")
+        } else {
+          const beforePromo = result.data.reduce(
+            (total_harga, data) => total_harga + (data.amount * data.product.price), 0
+          )
+          simpanPass.totalsummary = {
+            id: RangkumBelanja.id,
+            sumAmount: RangkumBelanja.sumAmount,
+            sumPrice: beforePromo,
+            sumPromo: RangkumBelanja.sumPrice
+          }
+          result.data.forEach(temp => {
+            simpanPass.carts.push(temp)
+          });
+          navigate("/checkout", { state: { dataProps: simpanPass } })
+        }
+      })
   }
 
   return (
@@ -334,7 +363,17 @@ const Keranjang = () => {
                           <Card.Text styles={{ margin: "0" }}>{item.product.category}</Card.Text>
                         </Row>
                         <Row style={{ height: "100%" }}>
-                          <Col><span style={{ margin: "0" }}>Rp. {item.product.price}</span></Col>
+                          <Col>
+                            {item.product.promo ?
+                              (
+                                <div>
+                                  <span style={{ margin: "0", textAlign: "center", textDecoration: "line-through", color: "red" }}>Rp. {item.product.price}</span>
+                                  <span style={{ marginRight: "10px" }}></span>
+                                  <span style={{ margin: "0" }}>Rp. {item.product.price * (1 - (item.product.promo / 100))}</span>
+                                </div>
+                              )
+                              : (<span style={{ margin: "0" }}>Rp. {item.product.price}</span>)}
+                          </Col>
                           <Col xs={4} className='d-flex justify-content-between'>
                             <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)} />
                             <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)} />
@@ -358,7 +397,7 @@ const Keranjang = () => {
               <Container>
                 <Row style={{ paddingBottom: "15px" }}>
                   <Col><span className={Styles.font}>Total Barang</span></Col>
-                  <Col><span className={Styles.font}>{RangkumBelanja.sumAmmount}</span></Col>
+                  <Col><span className={Styles.font}>{RangkumBelanja.sumAmount}</span></Col>
                 </Row>
                 <Row>
                   <Col><span className={Styles.font}>Total Harga</span></Col>
@@ -366,7 +405,7 @@ const Keranjang = () => {
                 </Row>
                 <hr style={{ margin: "15px 0px" }}></hr>
                 <Row>
-                  <Button variant="success" style={{ borderRadius: "20px" }}>
+                  <Button variant="success" style={{ borderRadius: "20px" }} onClick={bayar}>
                     Bayar
                   </Button>
                 </Row>

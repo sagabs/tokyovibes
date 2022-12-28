@@ -130,8 +130,6 @@ const Tracking = () => {
                                         <hr />
                                     </>
                                     ))}
-
-
                                 </div>
                             </Row>
                         </Container>
