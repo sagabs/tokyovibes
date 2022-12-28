@@ -1,12 +1,22 @@
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate()
+
+  const [link, setLink] = useState();
+
+  useEffect(() => {
+    const linkLS = localStorage.getItem('historyLink');
+    linkLS ? setLink(linkLS) : setLink("/");
+  }, []);
+
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: ""
@@ -19,19 +29,26 @@ export const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // axios
-    //   .get(API_URL + "users?email=" + userDetails.email)
-    //   .then((res) => {
-    //     console.log(res);
-    //     if (res.data.length === 0) {
-    //       alert("Akun belum terdaftar")
-    //     } else {
-    //       alert("Berhasil masuk")
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error yaa ", error);
-    //   });
+    axios
+      .get(API_URL + "users?email=" + userDetails.email)
+      .then((res) => {
+        if (res.data.length === 0) {
+          alert("Akun belum terdaftar")
+        } else {
+          if(res.data[0].password !== userDetails.password) {
+            alert("Email atau password salah")
+          } else {
+            localStorage.removeItem("historyLink")
+            localStorage.setItem('isLoggedin', true);
+            localStorage.setItem('userId', res.data[0].id);
+            alert("Berhasil masuk")
+            navigate(link)
+          }
+        }
+      })
+      .catch((error) => {
+        console.log("Error yaa ", error);
+      });
 
   };
 
@@ -56,31 +73,31 @@ export const Login = () => {
                 <img src={require("../../assets/img/TokyoVibesLogo.png")} alt={"Tokyo Vibes Logo"}></img>
               </div>
               <h3 className="masuk">Masuk</h3>
-              <Form>
-                <Form.Group className="formgroup" controlId="formBasicEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control 
-                    className="form-input" 
-                    type="email"
-                    required
-                    onChange={handleChange}
-                  />
-                </Form.Group>
+              <Form.Group className="formgroup">
+                <Form.Label>Email</Form.Label>
+                <Form.Control 
+                  id="email"
+                  className="form-input" 
+                  type="email"
+                  required
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-                <Form.Group className="formgroup" controlId="formBasicPassword">
-                  <Form.Label>Kata Sandi</Form.Label>
-                  <Form.Control 
-                    type="password"
-                    required
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-                <p className="lupa-sandi">Lupa Kata Sandi?</p>
-                <Button className="loginbutton w-100" type="submit">
-                  MASUK
-                </Button>
-                <p className="mb-4 daftar">Belum punya akun? Daftar</p>
-              </Form>
+              <Form.Group className="formgroup">
+                <Form.Label>Kata Sandi</Form.Label>
+                <Form.Control 
+                  id="password"
+                  type="password"
+                  required
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <p className="lupa-sandi">Lupa Kata Sandi?</p>
+              <Button className="loginbutton w-100" type="submit">
+                MASUK
+              </Button>
+              <p className="mb-4 daftar">Belum punya akun? Daftar</p>
             </Form>
           </div>
         </Col>

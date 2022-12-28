@@ -6,7 +6,8 @@
       "lastName": "dev",
       "mobilePhone": "082134567890",
       "email": "userdev@tokyovibes.com",
-      "password": "userdev"
+      "password": "userdev",
+      "alamat": "jl kali urang 123"
     },
     {
       "id": 2,
@@ -14,23 +15,69 @@
       "lastName": "dev2",
       "mobilePhone": "082134567890",
       "email": "userdev2@tokyovibes.com",
-      "password": "userdev2"
+      "password": "userdev2",
+      "alamat": "jl kali mandarin 7512q ad"
     },
     {
-      "id": "c024f2b3-d245-4b6c-9d27-01462f524d18",
+      "id": 3,
       "firstName": "fikri",
       "lastName": "dev",
       "mobilePhone": "082134567890",
       "email": "fikri@tokyovibes.com",
-      "password": "fikri"
+      "password": "fikri",
+      "alamat": "jl padang 512"
     },
     {
-      "id": "ac8a10cc-82ec-4bde-a369-f76d631b778c",
+      "id": 4,
       "firstName": "fikri",
       "lastName": "dev2",
       "mobilePhone": "082134567890",
       "email": "fikridev2@tokyovibes.com",
       "password": "fikridev2"
+    },
+    {
+      "id": 5,
+      "firstName": "test",
+      "lastName": "navigate",
+      "address": "jl. test",
+      "mobilePhone": "082134567890",
+      "email": "test@gmail.com",
+      "password": "test"
+    },
+    {
+      "firstName": "user",
+      "lastName": "dev2",
+      "mobilePhone": "082134567890",
+      "email": "userdev2@tokyovibes.com",
+      "password": "userdev2",
+      "id": 6
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "address": "test",
+      "mobilePhone": "082134567890",
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 7
+    },
+    {
+      "firstName": "khalil",
+      "lastName": "atta",
+      "address": "khalil mantigulang",
+      "mobilePhone": "08465132",
+      "email": "khalil@gm",
+      "password": "khalil",
+      "id": 8
+    },
+    {
+      "firstName": "khalil2",
+      "lastName": "atta",
+      "address": "jl bakti",
+      "mobilePhone": "08310856",
+      "email": "khali@g",
+      "password": "khalil",
+      "id": 9
     }
   ],
   "products": [
@@ -245,51 +292,54 @@
   ],
   "carts": [
     {
-      "amount": 6,
-      "totalPrice": 600000,
+      "userid": 9,
+      "amount": 3,
+      "totalPrice": 240000,
       "product": {
-        "id": 1,
-        "name": "Broskuy",
-        "price": 30000,
+        "id": 9,
+        "name": "Action Figure Anime 9",
+        "price": 100000,
         "stock": 1234,
         "promo": 20,
-        "img": "produk1.jpg",
-        "category": "Hololive EN",
+        "img": "produk7.jpg",
+        "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
           "color": "Biru",
           "weight": 250
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
       },
       "checked": true,
       "id": 1
     },
     {
-      "amount": 2,
-      "totalPrice": 1000000,
+      "userid": 9,
+      "amount": 1,
+      "totalPrice": 80000,
       "product": {
-        "id": 2,
-        "name": "Shinobi Uchiha madara",
-        "price": 1000000,
-        "stock": 2234,
+        "id": 10,
+        "name": "Action Figure Anime 10",
+        "price": 100000,
+        "stock": 1234,
         "promo": 20,
-        "img": "produk2.jpg",
+        "img": "produk7.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
-          "color": "Pink",
+          "color": "Biru",
           "weight": 250
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
       },
-      "checked": true,
       "id": 2
     },
     {
-      "id": "c4f8de94-426c-473e-900e-a8dad5e52fab",
-      "amount": 1,
-      "totalPrice": 100000,
+      "userid": 8,
+      "amount": 15,
+      "totalPrice": 1200000,
       "product": {
         "id": 5,
         "name": "Mata Langit",
@@ -305,19 +355,21 @@
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
-      }
+      },
+      "checked": true,
+      "id": 3
     },
     {
-      "id": "a2bb0522-88a8-4ab9-9b64-1b056d927f07",
-      "amount": 1,
-      "totalPrice": 350000,
+      "userid": 8,
+      "amount": 2,
+      "totalPrice": 640000,
       "product": {
-        "id": 4,
-        "name": "Naruto",
-        "price": 350000,
+        "id": 13,
+        "name": "Sasukeh",
+        "price": 400000,
         "stock": 1234,
         "promo": 20,
-        "img": "produk4.jpg",
+        "img": "produk3.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
@@ -325,16 +377,29 @@
           "weight": 250
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "promo"
-      }
+        "categorysell": "specialsell"
+      },
+      "id": 4
     }
   ],
   "CartSummary": [
     {
-      "sumAmmount": 9,
-      "sumPrice": 1500000,
-      "sumPromo": 50000,
+      "userid": 1,
+      "sumAmount": 4,
+      "sumPrice": 4,
       "id": 1
+    },
+    {
+      "userid": 8,
+      "sumAmount": 15,
+      "sumPrice": 1200000,
+      "id": 2
+    },
+    {
+      "userid": 9,
+      "sumAmount": 3,
+      "sumPrice": 240000,
+      "id": 3
     }
   ],
   "transactions": [
@@ -342,8 +407,8 @@
       "id": 1,
       "carts": [
         {
-          "amount": 6,
-          "totalPrice": 600000,
+          "amount": 3,
+          "totalPrice": 72000,
           "product": {
             "id": 1,
             "name": "Broskuy",
@@ -359,17 +424,18 @@
             },
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
           },
-          "checked": true
+          "checked": true,
+          "id": 1
         },
         {
-          "amount": 2,
+          "amount": 1,
           "totalPrice": 1000000,
           "product": {
             "id": 2,
             "name": "Shinobi Uchiha madara",
             "price": 1000000,
             "stock": 2234,
-            "promo": 20,
+            "promo": 0,
             "img": "produk2.jpg",
             "category": "Hololive ID",
             "spesification": {
@@ -379,11 +445,144 @@
             },
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
           },
-          "checked": true
+          "checked": true,
+          "id": 2
         }
       ],
-      "total": 800000,
-      "status": "Belum dibayar"
+      "totalsummary": {
+        "sumAmount": 4,
+        "sumPrice": 1072000,
+        "id": 1
+      },
+      "status": "belum bayar",
+      "ongkir": 10000,
+      "total": 10000,
+      "metodeBayar": "sinarmas",
+      "alamat": "jln kemangi",
+      "kurir": "JNE",
+      "namaTerima": "Angin",
+      "noResi": "tes"
+    },
+    {
+      "id": 2,
+      "carts": [
+        {
+          "amount": 3,
+          "totalPrice": 72000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive EN",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 1
+        },
+        {
+          "amount": 1,
+          "totalPrice": 1000000,
+          "product": {
+            "id": 2,
+            "name": "Shinobi Uchiha madara",
+            "price": 1000000,
+            "stock": 2234,
+            "promo": 0,
+            "img": "produk2.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Pink",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 2
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 4,
+        "sumPrice": 1072000,
+        "id": 1
+      },
+      "status": "belum bayar",
+      "ongkir": 10000,
+      "total": 10000,
+      "metodeBayar": "sinarmas",
+      "alamat": "jln kemangi",
+      "kurir": "JNE",
+      "namaTerima": "Angin",
+      "noResi": "tes"
+    },
+    {
+      "carts": [
+        {
+          "amount": 3,
+          "totalPrice": 72000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive EN",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 1
+        },
+        {
+          "amount": 1,
+          "totalPrice": 1000000,
+          "product": {
+            "id": 2,
+            "name": "Shinobi Uchiha madara",
+            "price": 1000000,
+            "stock": 2234,
+            "promo": 0,
+            "img": "produk2.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Pink",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 2
+        }
+      ],
+      "totalsummary": {
+        "id": 1,
+        "sumAmount": 4,
+        "sumPrice": 1090000,
+        "sumPromo": 1072000
+      },
+      "status": "belum bayar",
+      "ongkir": 15000,
+      "total": 1088000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Kuningan",
+      "kurir": "Ninja",
+      "namaTerima": "Angin",
+      "noResi": "KGP596904296",
+      "id": 3
     }
   ]
 }

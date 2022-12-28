@@ -74,13 +74,10 @@ const Tracking = () => {
                             <div className='text-center'>
                                 <img src={require('../../assets/img/produk1.jpg')} height={100} width={100} className='rounded-circle center-block' /> <br />
                                 <div className='mt-3'>
-                                    <a href='#' >Home</a> <br />
-                                </div>
-                                <div className='mt-3'>
                                     <a href='#'>Profil Saya</a> <br />
                                 </div>
                                 <div className='mt-3'>
-                                    <a href='#'>Pengaturan</a><br />
+                                    <a href='#'>Transaksi</a><br />
                                 </div>
                             </div>
 
@@ -133,8 +130,6 @@ const Tracking = () => {
                                         <hr />
                                     </>
                                     ))}
-
-
                                 </div>
                             </Row>
                         </Container>
