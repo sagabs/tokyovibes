@@ -195,11 +195,33 @@
       "categorysell": "promo"
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "amount": 3,
+      "totalPrice": 72000,
+      "product": {
+        "id": 1,
+        "name": "Broskuy",
+        "price": 30000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk1.jpg",
+        "category": "Hololive EN",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+      },
+      "checked": true,
+      "id": 1
+    }
+  ],
   "CartSummary": [
     {
-      "sumAmount": 4,
-      "sumPrice": 1072000,
+      "sumAmount": 3,
+      "sumPrice": 72000,
       "id": 1
     }
   ],
@@ -384,6 +406,67 @@
       "namaTerima": "Angin",
       "noResi": "KGP596904296",
       "id": 3
+    },
+    {
+      "carts": [
+        {
+          "amount": 3,
+          "totalPrice": 72000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive EN",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 1
+        },
+        {
+          "amount": 1,
+          "totalPrice": 1000000,
+          "product": {
+            "id": 2,
+            "name": "Shinobi Uchiha madara",
+            "price": 1000000,
+            "stock": 2234,
+            "promo": 0,
+            "img": "produk2.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Pink",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+          },
+          "checked": true,
+          "id": 2
+        }
+      ],
+      "totalsummary": {
+        "id": 1,
+        "sumAmount": 4,
+        "sumPrice": 1090000,
+        "sumPromo": 1072000
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 20000,
+      "total": 1093000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Jln percobaan",
+      "kurir": "JNT",
+      "namaTerima": "Angin",
+      "noResi": "KGP938705961",
+      "id": 4
     }
   ]
 }

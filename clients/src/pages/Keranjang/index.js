@@ -32,6 +32,7 @@ const Keranjang = () => {
       setRangkumBelanja(res2.data[0])
 
     }
+    console.log(DataKeranjang)
     fetchData();
   }, [total, count])
   
@@ -330,6 +331,7 @@ const Keranjang = () => {
     <>
     <Navbar />
     <Container fluid>
+      
       <Row>
         <Col className={Styles.child1} xs={7}>
           <Container>
@@ -340,8 +342,9 @@ const Keranjang = () => {
             </Container>
             <hr style={{margin:"0"}}/>
           </Container>
+         {DataKeranjang[0]?  
           <Container className='mt-2'>
-            {DataKeranjang?.map((item, index) => (
+            {DataKeranjang.map((item, index) => (
               <Card key={index} className={Styles.card}>
               <Row>
                 <Col className="py-2 ps-4" xs={3}>
@@ -354,7 +357,7 @@ const Keranjang = () => {
                       <Col>
                         <Form.Check aria-label="option 1" 
                         id={index} name="barang" 
-                        defaultChecked={item.checked}
+                        checked={item.checked? item.checked: false}
                         value={[item.id ,item.amount, item.product.price]}
                         onChange={handleChange}/>
                       </Col>   
@@ -386,7 +389,12 @@ const Keranjang = () => {
               </Row>
             </Card>
             ))}
-          </Container>
+          </Container>: 
+          <Container className="d-flex flex-column align-items-center justify-content-center" style={{paddingTop:"40px"}}>
+            <span>Keranjang Masih Kosong !</span>
+            <img src={require("../../assets/img/cartkosong.jpg")} style={{width:"50%", borderRadius:"100px"}} ></img>
+          </Container>  
+          }
         </Col>
         <Col className={Styles.rangkumanBelanjaMain}>
           <Card body className={Styles.rangkumanBelanja}>

@@ -88,17 +88,15 @@ const Checkout = () => {
         if(DetailLainnya.kurir===""||DetailLainnya.metodeBayar===""){
             swal("Eror!","Pilih kurir atau metode pembayaran terlebih dahulu!", "error")
         }else{
-            const randNumber = Math.floor(Math.random() * 900000000) + 100000000
-            const tempResi = "KGP".concat("",randNumber)
-            // if (checkoutData.asal === "carts") {
-            //     checkoutData.carts.forEach(data => {
-            //         axios
-            //         .delete(API_URL+"carts/"+data.id)
-            //         .catch(error =>{
-            //             console.log("error ya"+ error)
-            //         })
-            //     });
-            // }
+            if (checkoutData.asal === "carts") {
+                checkoutData.carts.forEach(data => {
+                    axios
+                    .delete(API_URL+"carts/"+data.id)
+                    .catch(error =>{
+                        console.log("error ya"+ error)
+                    })
+                }) 
+            }
             const data = {
                 carts : checkoutData.carts,
                 totalsummary : checkoutData.totalsummary,
@@ -109,19 +107,18 @@ const Checkout = () => {
                 alamat : DetailLainnya.alamat,
                 kurir : DetailLainnya.kurir,
                 namaTerima : "Angin",
-                noResi : tempResi
+                noResi : ""
             }
-            // console.log(data)
-            // axios
-            // .post(API_URL + "transactions", data)
-            // .then(res => {
-            //     swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
-            // })
-            // .catch(error =>{
-            //     console.log("error" + error)
-            // })
-            swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
-            navigate("/payment", { state: { dataProps: data } })
+            axios
+            .post(API_URL + "transactions", data)
+            .then(res => {
+                const id = res.data.id
+                swal("Sukses!", "Silahkan melakukan pembayaran!", "success");
+                navigate("/payment", { state: { dataProps: data, idTrx: id } })
+            })
+            .catch(error =>{
+                console.log("error" + error)
+            })
         }
     }
 
