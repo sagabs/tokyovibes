@@ -100,6 +100,7 @@ const Home = () => {
                 {/* //Carousel 1 */}
                 <Carousel responsive={responsive} showDots={true} keyBoardControl={true} arrows={true} autoPlay={true} infinite={true}>
                     {productpromo.map((item, index) => (
+                    <Link to={`/details/${item.id}`}>
                         <div style={{ margin: 20 }} className="d-flex justify-content-center">
                             <Card style={{ width: '35rem', height: '15rem', borderRadius: 20, filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))" }}>
                                 <Row>
@@ -125,6 +126,7 @@ const Home = () => {
                                 </Row>
                             </Card>
                         </div>
+                    </Link>
                     ))}
                 </Carousel>
 
@@ -134,6 +136,7 @@ const Home = () => {
                         <Carousel responsive={responsive2} >
                             {productspecialsell.map((item, index) => (
                                 <Col style={{ padding: 0 }}>
+                                 <Link to={`/details/${item.id}`}>
                                     <div className="d-flex justify-content-center mb-4"  >
                                         <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
                                             <Card.Img variant="top" height={"260"} src={item?.img ? require(`../../assets/img/${item?.img}`) : require('../../assets/img/produk1.jpg')} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
@@ -145,6 +148,7 @@ const Home = () => {
                                             </div>
                                         </Card>
                                     </div>
+                                </Link>   
                                 </Col>
                             ))}
                         </Carousel>
@@ -155,6 +159,7 @@ const Home = () => {
                     <h2 className="mb-5 mt-2" style={{ marginLeft: 10 }}>List Action Figure</h2>
                     <div className='d-flex flex-wrap justify-content-center '>
                         {product.map((item, index) => (
+                        <Link to={`/details/${item.id}`}>
                             <div className="mb-4 cardProductAll"  >
                                 <Card className="item1" style={{ width: '17rem', border: "none", borderRadius: 20, background: "#3E3E3E", }}>
                                     <Card.Img variant="top" height={"260"} src={item?.img ? require(`../../assets/img/${item?.img}`) : require('../../assets/img/produk1.jpg')} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} />
@@ -166,6 +171,7 @@ const Home = () => {
                                     </div>
                                 </Card>
                             </div>
+                        </Link>
                         ))}
                     </div>
                 </div>
