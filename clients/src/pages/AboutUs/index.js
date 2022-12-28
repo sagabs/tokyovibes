@@ -46,22 +46,15 @@ const AboutUs = () => {
                 </div>
               </Col>
             </Row>
+
             <div className="member justify-content-center my-3">
               <div className="member-content">
                 <div className="member-title">Meet Our Power Rangers</div>
                 <div className="member-pic">
-                  <img src={require("../../assets/img/aboutussimas.jpg")} alt={"Member"}></img>
-                </div>
-                <div className="team-member">Afif Fatur Rahman - Bagas Alim Santoso - Fikri Aulia Parlindungan Lubis - Khalil Attalla Firdia</div>
-              </div>
-            </div>
-            <div className="member justify-content-center my-3">
-              <div className="member-content">
-                <div className="member-title">Meet Our Megazord</div>
-                <div className="member-pic">
                   <img src={require("../../assets/img/megazord.png")} alt={"Megazord"}></img>
                 </div>
-                <div className="team-member">Gerhana Abi - Reynaldi Irfan</div>
+                <div className="team-member">Afif Fatur Rahman - Bagas Alim Santoso - Fikri Aulia Parlindungan Lubis - Khalil Attalla Firdia</div>
+                <div className="team-member"> Gerhana Abi - Reynaldi Irfan</div>
               </div>
             </div>
             <div className="footer text-center">

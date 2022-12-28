@@ -2,15 +2,15 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import React, { useState } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { Link } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 
 export const Login = () => {
   const [userDetails, setUserDetails] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const handleChange = (event) => {
     setUserDetails({ ...userDetails, [event.target.id]: event.target.value });
@@ -32,7 +32,6 @@ export const Login = () => {
     //   .catch((error) => {
     //     console.log("Error yaa ", error);
     //   });
-
   };
 
   return (
@@ -59,27 +58,20 @@ export const Login = () => {
               <Form>
                 <Form.Group className="formgroup" controlId="formBasicEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control 
-                    className="form-input" 
-                    type="email"
-                    required
-                    onChange={handleChange}
-                  />
+                  <Form.Control className="form-input" type="email" required onChange={handleChange} />
                 </Form.Group>
 
                 <Form.Group className="formgroup" controlId="formBasicPassword">
                   <Form.Label>Kata Sandi</Form.Label>
-                  <Form.Control 
-                    type="password"
-                    required
-                    onChange={handleChange}
-                  />
+                  <Form.Control type="password" required onChange={handleChange} />
                 </Form.Group>
                 <p className="lupa-sandi">Lupa Kata Sandi?</p>
                 <Button className="loginbutton w-100" type="submit">
                   MASUK
                 </Button>
-                <p className="mb-4 daftar">Belum punya akun? Daftar</p>
+                <Link to="/register">
+                  <p className="mb-4 daftar">Belum punya akun? Daftar</p>
+                </Link>
               </Form>
             </Form>
           </div>
