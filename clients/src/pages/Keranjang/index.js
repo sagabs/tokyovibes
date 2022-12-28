@@ -20,15 +20,15 @@ const Keranjang = () => {
   const [DataKeranjang, setDataKeranjang] = useState([])
   const [RangkumBelanja, setRangkumBelanja] = useState({})
   const [count, setCount] = useState(0);
-
+  const [userId, setuserId] = useState(parseInt(localStorage.getItem('userId')));
   const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(API_URL + "carts")
+      const res = await axios.get(API_URL + `carts?userid=${userId}`)
       setDataKeranjang(res.data)
 
-      const res2 = await axios.get(API_URL + "CartSummary")
+      const res2 = await axios.get(API_URL + `CartSummary?userid=${userId}`)
       setRangkumBelanja(res2.data[0])
 
     }
@@ -53,15 +53,18 @@ const Keranjang = () => {
       .then((result) => {
         const cart = result[0];
         const cartsummary = result[1];
-
+        console.log(typeof (cartsummary.data.sumAmount));
+        console.log(cart)
         if (checked) {
           const data = {
+            userid: userId,
             amount: cart.data[0].amount,
             totalPrice: cart.data[0].totalPrice,
             product: cart.data[0].product,
             checked: true
           }
           const data2 = {
+            userid: userId,
             sumAmount: cartsummary.data.sumAmount + cart.data[0].amount,
             sumPrice: cartsummary.data.sumPrice + cart.data[0].totalPrice
           }
@@ -79,12 +82,14 @@ const Keranjang = () => {
           setTotal(data2.sumAmount)
         } else {
           const data = {
+            userid: userId,
             amount: cart.data[0].amount,
             totalPrice: cart.data[0].totalPrice,
             product: cart.data[0].product,
             checked: false
           }
           const data2 = {
+            userid: userId,
             sumAmount: cartsummary.data.sumAmount - cart.data[0].amount,
             sumPrice: cartsummary.data.sumPrice - cart.data[0].totalPrice
           }
@@ -124,28 +129,35 @@ const Keranjang = () => {
           deleteCart(id, cart.data[0].totalPrice, cart.data[0].amount, cart.data[0].checked)
         } else {
           const data = {
+            userid: userId,
             amount: cart.data[0].amount - 1,
             totalPrice: cart.data[0].totalPrice - afterDiskon,
             product: cart.data[0].product,
             checked: cart.data[0].checked
           }
           const data2 = {
+            userid: userId,
             sumAmount: cartsummary.data.sumAmount - 1,
             sumPrice: cartsummary.data.sumPrice - afterDiskon
           }
-          axios
-            .put(API_URL + "carts/" + id, data)
-            .catch((error) => {
-              console.log("Error yaa ", error);
-            })
 
-          if (cart.data[0].checked) {
-            axios
-              .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
+          const masuk = async () => {
+            await axios
+              .put(API_URL + "carts/" + id, data)
               .catch((error) => {
                 console.log("Error yaa ", error);
               })
+
+            if (cart.data[0].checked) {
+              await axios
+                .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
+                .catch((error) => {
+                  console.log("Error yaa ", error);
+                })
+            }
           }
+
+          masuk()
         }
         setCount(count + 1)
       }
@@ -163,34 +175,42 @@ const Keranjang = () => {
     const getRangkuman = () => {
       return axios.get(API_URL + "cartsummary/" + RangkumBelanja.id);
     }
+
     Promise.all([getCart(), getRangkuman()])
       .then((result) => {
         const cart = result[0];
         const cartsummary = result[1];
         const afterDiskon = cart.data[0].product.price * (1 - (cart.data[0].product.promo / 100))
         const data = {
+          userid: userId,
           amount: cart.data[0].amount + 1,
           totalPrice: cart.data[0].totalPrice + afterDiskon,
           product: cart.data[0].product,
           checked: cart.data[0].checked
         }
         const data2 = {
+          userid: userId,
           sumAmount: cartsummary.data.sumAmount + 1,
           sumPrice: cartsummary.data.sumPrice + afterDiskon
         }
-        axios
-          .put(API_URL + "carts/" + id, data)
-          .catch((error) => {
-            console.log("Error yaa ", error);
-          })
 
-        if (cart.data[0].checked) {
-          axios
-            .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
+        const masuk = async () => {
+          await axios
+            .put(API_URL + "carts/" + id, data)
             .catch((error) => {
               console.log("Error yaa ", error);
             })
+
+          if (cart.data[0].checked) {
+            await axios
+              .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
+              .catch((error) => {
+                console.log("Error yaa ", error);
+              })
+          }
         }
+
+        masuk()
         setCount(count + 1)
       }
       )
@@ -205,6 +225,7 @@ const Keranjang = () => {
             .get(API_URL + "cartsummary/" + RangkumBelanja.id)
             .then((res) => {
               const data = {
+                userid: userId,
                 sumAmount: res.data.sumAmount - amount,
                 sumPrice: res.data.sumPrice - totalPrice
               }
@@ -225,12 +246,13 @@ const Keranjang = () => {
 
   const deleteAll = () => {
     axios
-      .get(API_URL + "carts/")
+      .get(API_URL + `carts?userid=${userId}`)
       .then((res) => {
         res.data.forEach(data => {
           axios
             .delete(API_URL + "carts/" + data.id)
           const data2 = {
+            userid: userId,
             sumAmount: 0,
             sumPrice: 0
           }
@@ -249,7 +271,7 @@ const Keranjang = () => {
     let total_barang = 0
     let total_price = 0
     axios
-      .get(API_URL + "carts/")
+      .get(API_URL + `carts?userid=${userId}`)
       .then((result) => {
         total_barang = result.data.reduce(
           (total_harga, data) => total_harga + data.amount, 0
@@ -260,6 +282,7 @@ const Keranjang = () => {
         result.data.forEach(res => {
           if (!res.checked) {
             const data = {
+              userid: userId,
               amount: res.amount,
               totalPrice: res.totalPrice,
               product: res.product,
@@ -273,6 +296,7 @@ const Keranjang = () => {
           }
         })
         const data2 = {
+          userid: userId,
           sumAmount: total_barang,
           sumPrice: total_price
         }

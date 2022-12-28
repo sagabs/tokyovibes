@@ -56,6 +56,17 @@ const Register = () => {
       axios
         .post(API_URL + "users", data)
         .then((res) => {
+          const cartSummary = {
+            userid: res.data.id,
+            sumAmount: 0,
+            sumPrice: 0,
+          };
+          axios
+            .post(API_URL + "CartSummary", cartSummary)
+            .catch((error) => {
+              console.log("Error gk bisa ", error);
+            });
+
           alert("Sukses Daftar Akun")
           navigate("/login")
         })
@@ -79,9 +90,9 @@ const Register = () => {
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className={Styles.inputform}>
               <Form.Label>Nama Depan</Form.Label>
-              <Form.Control 
+              <Form.Control
                 id="firstName"
-                type="text" 
+                type="text"
                 placeholder="Masukkan Nama Depan"
                 required
                 onChange={handleChange}
@@ -93,8 +104,8 @@ const Register = () => {
             <Form.Group className={Styles.inputform}>
               <Form.Label>Nama Belakang</Form.Label>
               <Form.Control
-                id="lastName" 
-                type="text" 
+                id="lastName"
+                type="text"
                 placeholder="Masukkan Nama Belakang"
                 onChange={handleChange}
               />
@@ -102,8 +113,8 @@ const Register = () => {
             <Form.Group className={Styles.inputform}>
               <Form.Label>Alamat</Form.Label>
               <Form.Control
-                id="address" 
-                type="text" 
+                id="address"
+                type="text"
                 placeholder="Masukkan Alamat"
                 required
                 onChange={handleChange}
@@ -115,11 +126,11 @@ const Register = () => {
             <Form.Group className={Styles.inputform}>
               <Form.Label>Nomor Handphone</Form.Label>
               <Form.Control
-                id="mobilePhone" 
-                type="text" 
+                id="mobilePhone"
+                type="text"
                 placeholder="Masukkan nomor telepon"
                 required
-                onChange={handleChange} 
+                onChange={handleChange}
               />
               <Form.Control.Feedback type="invalid">
                 Nomor handphone tidak boleh kosong.
@@ -127,12 +138,12 @@ const Register = () => {
             </Form.Group>
             <Form.Group className={Styles.inputform}>
               <Form.Label>Email</Form.Label>
-              <Form.Control 
+              <Form.Control
                 id="email"
-                type="email" 
+                type="email"
                 placeholder="Masukkan email"
                 required
-                onChange={handleChange} 
+                onChange={handleChange}
               />
               <Form.Control.Feedback type="invalid">
                 Email tidak boleh kosong.
@@ -141,8 +152,8 @@ const Register = () => {
             <Form.Group className={Styles.inputform}>
               <Form.Label>Kata Sandi</Form.Label>
               <Form.Control
-                id="password" 
-                type="password" 
+                id="password"
+                type="password"
                 placeholder="Enter password"
                 required
                 onChange={handleChange}
@@ -154,8 +165,8 @@ const Register = () => {
             <Form.Group className={Styles.inputform}>
               <Form.Label>Konfirmasi Kata Sandi</Form.Label>
               <Form.Control
-                id="c_password" 
-                type="password" 
+                id="c_password"
+                type="password"
                 placeholder="Enter password"
                 required
                 onChange={handleChange}

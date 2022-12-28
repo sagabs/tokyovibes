@@ -60,6 +60,24 @@
       "email": "test@gmail.com",
       "password": "test",
       "id": 7
+    },
+    {
+      "firstName": "khalil",
+      "lastName": "atta",
+      "address": "khalil mantigulang",
+      "mobilePhone": "08465132",
+      "email": "khalil@gm",
+      "password": "khalil",
+      "id": 8
+    },
+    {
+      "firstName": "khalil2",
+      "lastName": "atta",
+      "address": "jl bakti",
+      "mobilePhone": "08310856",
+      "email": "khali@g",
+      "password": "khalil",
+      "id": 9
     }
   ],
   "products": [
@@ -274,53 +292,54 @@
   ],
   "carts": [
     {
-      "amount": 6,
-      "totalPrice": 600000,
+      "userid": 9,
+      "amount": 3,
+      "totalPrice": 240000,
       "product": {
-        "id": 1,
-        "name": "Broskuy",
-        "price": 30000,
+        "id": 9,
+        "name": "Action Figure Anime 9",
+        "price": 100000,
         "stock": 1234,
         "promo": 20,
-        "img": "produk1.jpg",
-        "category": "Hololive EN",
+        "img": "produk7.jpg",
+        "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
           "color": "Biru",
           "weight": 250
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
       },
       "checked": true,
       "id": 1
     },
     {
-      "userid": "1",
-      "amount": 3,
-      "totalPrice": 2000000,
+      "userid": 9,
+      "amount": 1,
+      "totalPrice": 80000,
       "product": {
-        "id": 2,
-        "name": "Shinobi Uchiha madara",
-        "price": 1000000,
-        "stock": 2234,
+        "id": 10,
+        "name": "Action Figure Anime 10",
+        "price": 100000,
+        "stock": 1234,
         "promo": 20,
-        "img": "produk2.jpg",
+        "img": "produk7.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
-          "color": "Pink",
+          "color": "Biru",
           "weight": 250
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "specialsell"
+        "categorysell": "promo"
       },
-      "checked": true,
       "id": 2
     },
     {
-      "userid": 2,
-      "amount": 1,
-      "totalPrice": 100000,
+      "userid": 8,
+      "amount": 15,
+      "totalPrice": 1200000,
       "product": {
         "id": 5,
         "name": "Mata Langit",
@@ -343,9 +362,22 @@
   ],
   "CartSummary": [
     {
-      "sumAmmount": 10,
-      "sumPrice": 2700000,
+      "userid": 1,
+      "sumAmount": 4,
+      "sumPrice": 4,
       "id": 1
+    },
+    {
+      "userid": 8,
+      "sumAmount": 15,
+      "sumPrice": 1200000,
+      "id": 2
+    },
+    {
+      "userid": 9,
+      "sumAmount": 3,
+      "sumPrice": 240000,
+      "id": 3
     }
   ],
   "transactions": [

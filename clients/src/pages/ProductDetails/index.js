@@ -12,7 +12,6 @@ import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const navigate = useNavigate()
@@ -45,13 +44,15 @@ const ProductDetails = () => {
 
   const addCart = () => {
     if (isLoggedin === true) {
+      const userId = parseInt(localStorage.getItem('userId'));
       axios
-        .get(API_URL + "carts?product.id=" + product.id)
+        .get(API_URL + `carts?product.id=${product.id}&userid=${userId}`)
         .then((res) => {
           if (res.data.length === 0) {
             const cart = {
+              userid: userId,
               amount: amount,
-              totalPrice: product.price,
+              totalPrice: product.price * (1 - (product.promo / 100)) * amount,
               product: product,
             };
 
@@ -66,6 +67,7 @@ const ProductDetails = () => {
               });
           } else {
             const cart = {
+              userid: userId,
               amount: res.data[0].amount + amount,
               totalPrice: res.data[0].totalPrice + product.price,
               product: product,
