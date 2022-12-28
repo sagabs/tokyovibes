@@ -40,6 +40,7 @@ export const Login = () => {
           } else {
             localStorage.removeItem("historyLink")
             localStorage.setItem('isLoggedin', true);
+            localStorage.setItem('userId', res.data[0].id);
             alert("Berhasil masuk")
             navigate(link)
           }

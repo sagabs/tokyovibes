@@ -10,11 +10,11 @@ import { DashCircle, Trash, PlusCircle } from 'react-bootstrap-icons';
 
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const navigate = useNavigate()
+  const params = useParams()
 
   const [product, setProduct] = useState({
     id: "",
@@ -34,20 +34,12 @@ const ProductDetails = () => {
     isLoggedinLS ? setIsLoggedin(true) : setIsLoggedin(false);
 
     const fetchData = async () => {
-      const result = await axios.get(API_URL + "products/2");
+      const result = await axios.get(API_URL + "products/" + params.id);
       setProduct(result.data);
     };
 
     fetchData();
   }, []);
-
-  const reduceAmount = () => {
-    if(amount === 1) {
-      setAmount(1)
-    } else {
-      setAmount(amount - 1)
-    }
-  }
 
   const addCart = () => {
     if(isLoggedin === true) {
@@ -56,7 +48,6 @@ const ProductDetails = () => {
       .then((res) => {
         if (res.data.length === 0) {
           const cart = {
-            id: uuidv4(),
             amount: amount,
             totalPrice: product.price,
             product: product,
@@ -93,7 +84,7 @@ const ProductDetails = () => {
         console.log("Error yaa ", error);
       });
     } else {
-      localStorage.setItem('historyLink', "/details");
+      localStorage.setItem('historyLink', `/details/${product.id}`);
       alert("Silahkan login terlebih dahulu untuk lanjut belanja")
       navigate("/login")
     }
@@ -101,44 +92,31 @@ const ProductDetails = () => {
 
   const buyNow = () => {
     if(isLoggedin === true) {
+      const totalPrice = product.price * amount;
+      const totalPromo = totalPrice * (1 - (product.promo/100))
+
       const data = {
         carts: [
           {
             amount: amount,
-            totalPrice: product.price * amount,
+            totalPrice: totalPrice,
             product: product
           }
         ],
         totalSummary: {
           sumAmount: amount,
-          sumPrice: product.price * amount,
+          sumPrice: totalPrice,
+          sumPromo: totalPromo,
           asal: "now"
         }
       }
   
       navigate("/checkout", { state: { dataProps: data } })
     } else {
-      localStorage.setItem('historyLink', "/details");
+      localStorage.setItem('historyLink', `/details/${product.id}`);
       alert("Silahkan login terlebih dahulu untuk lanjut belanja")
       navigate("/login")
     }
-
-    // const data = {
-    //   carts: [
-    //     {
-    //       amount: amount,
-    //       totalPrice: product.price * amount,
-    //       product: product
-    //     }
-    //   ],
-    //   totalSummary: {
-    //     sumAmount: amount,
-    //     sumPrice: product.price * amount,
-    //     asal: "now"
-    //   }
-    // }
-
-    // navigate("/checkout", { state: { dataProps: data } })
   }
 
 
@@ -147,7 +125,7 @@ const ProductDetails = () => {
       <Navbar />
       <div className={Styles.main}>
         <div className={Styles.col1}>
-          <img className={Styles.productex} src={Productex} alt="background gundam"></img>
+          {product.img ? <img className={Styles.productex} src={require(`../../assets/img/${product.img}`)} alt="background gundam"></img> : <span>Loading....</span>}
         </div>
         <div className={Styles.col2}>
           <div className={Styles.col2row1}>
@@ -185,7 +163,7 @@ const ProductDetails = () => {
               </div>
               <Row style={{ height: "100%", marginTop: "20px"}}>
                 <Col xs={20} className='d-flex justify-content-between'>
-                  <DashCircle size={20} color={"red"} onClick={() => reduceAmount()} />
+                  <DashCircle size={20} color={"red"} onClick={() => amount === 1 ? setAmount(1) : setAmount(amount - 1)} />
                   <span>{amount}</span>
                   <PlusCircle size={20} color={"green"} onClick={() => setAmount(amount + 1)} />
                 </Col>

@@ -8,7 +8,6 @@ import Gundambg from "../../assets/gundambg.png";
 
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
-import {v4 as uuidv4} from 'uuid';
 import { useNavigate } from "react-router-dom";
 
 
@@ -43,7 +42,6 @@ const Register = () => {
     setValidated(true);
 
     const data = {
-      id: uuidv4(),
       firstName: userDetails.firstName,
       lastName: userDetails.lastName,
       address: userDetails.address,

@@ -37,9 +37,9 @@ const Navigat = () => {
           <Row className={Styles.rownav}>
             <Col xs={1}>
               <div className="text-center">
-                <Navbar.Brand href="#home">
+                <Link to="/">
                   <img src={Logo} height={"75"} width={"75"} ></img>
-                </Navbar.Brand>
+                </Link>
               </div>
             </Col>
             <Col className="align-self-center" xs={8}>
