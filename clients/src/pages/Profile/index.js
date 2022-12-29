@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Navbars from "../../components/navbar/navbar";
+import axios from "axios";
+import { API_URL } from "../../utils/constants";
 import "./style.css";
 const Profile = () => {
   const point = 321;
   const nominal = 1392346;
   const saldo = nominal.toLocaleString("id-ID");
   const profileName = "Mbappe Al-Kadzab";
+
+  const [userDetails, setUserDetails] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    mobilePhone: "",
+    email: "",
+  });
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    const fetchData = async () => {
+      const userDetails = await axios.get(API_URL + `users?id=${userId}`);
+      setUserDetails(userDetails.data[0]);
+      console.log(userDetails);
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <Navbars />
@@ -92,7 +112,9 @@ const Profile = () => {
                 <table className="bio-table">
                   <tr className=" ">
                     <td className=" text-r ">Nama</td>
-                    <td className="">Mbappe Al-Kadzab</td>
+                    <td className="">
+                      {userDetails.firstName} {userDetails.lastName}
+                    </td>
                     <td className="">
                       <button className="change-button">
                         <img src={require("../../assets/img/ubah.png")} alt="ubah" className="mx-2"></img>Ubah
@@ -119,7 +141,7 @@ const Profile = () => {
                   </tr>
                   <tr className="">
                     <td className="  text-r">Email</td>
-                    <td className=" ">messi@gmail.com</td>
+                    <td className=" ">{userDetails.email}</td>
                     <td className="  ">
                       <button className="change-button">
                         <img src={require("../../assets/img/ubah.png")} alt="ubah" className="mx-2"></img>Ubah
@@ -128,7 +150,7 @@ const Profile = () => {
                   </tr>
                   <tr className="">
                     <td className=" text-r">Nomor Handphone</td>
-                    <td className=" ">+6281234567890</td>
+                    <td className=" ">{userDetails.mobilePhone}</td>
                     <td className=" ">
                       <button className="change-button">
                         <img src={require("../../assets/img/ubah.png")} alt="ubah" className="mx-2"></img>Ubah
@@ -137,7 +159,7 @@ const Profile = () => {
                   </tr>
                   <tr className="">
                     <td className=" text-r">Alamat</td>
-                    <td className=" ">Jalan Petamburan, Tanah Abang</td>
+                    <td className=" ">{userDetails.address}</td>
                     <td className=" ">
                       <button className="change-button">
                         <img src={require("../../assets/img/ubah.png")} alt="ubah" className="mx-2"></img>Ubah
