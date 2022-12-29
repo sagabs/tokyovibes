@@ -207,13 +207,15 @@ const Home = () => {
                         <Row className=" h-100">
                           <Col xs={7} className="align-self-center p-3">
                             <Card.Body style={{ maxWidth: "100%", maxHeight: "100%", padding: "0px 0px 0px 0px" }}>
-                              <Card.Title style={{ textAlign: "center" }}>{item.name}</Card.Title>
-                              <Card.Text style={{ textAlign: "center" }}>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
+                              <div className="text">
+                                <Card.Title style={{ textAlign: "center" }}>{item.name}</Card.Title>
+                              </div>
+                              <Card.Text className="textPromo" style={{ textAlign: "center" }}>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
                               <Card.Text style={{ textAlign: "center", textDecoration: "line-through", color: "red" }}>
-                                <b>Rp{rupiahLocale(item.price)}</b>
+                                <b>Rp. {rupiahLocale(item.price)}</b>
                               </Card.Text>
                               <Card.Text style={{ textAlign: "center" }}>
-                                <b>Rp{rupiahLocale(item.price * (1 - item.promo / 100))}</b>
+                                <b>Rp. {rupiahLocale(item.price * (1 - item.promo / 100))}</b>
                               </Card.Text>
                             </Card.Body>
                           </Col>
@@ -238,10 +240,10 @@ const Home = () => {
                           <Card className="item1" style={{ width: "17rem", border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
                             {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, paddingRight: 0, paddingLeft: 0 }} /> : <span>Loading ...</span>}
                             <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                              <div className="items-name">{item.name}</div>
+                              <div className="items-name text">{item.name}</div>
                               <div className="mt-1">Hololive</div>
                               <div className="mt-1" style={{ fontWeight: "700" }}>
-                                Rp{item.price.toLocaleString("id-ID")}
+                                Rp{rupiahLocale(item.price)}
                               </div>
                               <div className="mt-1 mb-1">Terjual 500++</div>
                             </div>
@@ -262,13 +264,13 @@ const Home = () => {
                 {product.map((item, index) => (
                   <div className="mb-4 cardProductAll">
                     <Link to={`/details/${item.id}`} className="linkCard" draggable={false}>
-                      <Card className="item1" style={{ width: "17rem", border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
+                      <Card className="item1" style={{ width: "17rem", border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0, margin: "0px 5px" }}>
                         {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, padding: 0 }} /> : <span>Loading...</span>}{" "}
                         <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                          <div className="items-name">{item.name}</div>
+                          <div className="items-name text">{item.name}</div>
                           <div className="mt-1">Hololive</div>
                           <div className="mt-1" style={{ fontWeight: "700" }}>
-                            {item.price}
+                            {rupiahLocale(item.price)}
                           </div>
                           <div className="mt-1 mb-1">Terjual 500++</div>
                         </div>
@@ -300,11 +302,11 @@ const Home = () => {
           </div>
         )
       ) : (
-        <div className="vh-100" style={{ marginTop: -120, paddingTop: 400 }}>
-          <div className="d-flex justify-content-center">
-            <ReactLoading type="spin" color="#0000FF" height={"5%"} width={"5%"} />
+          <div className="vh-100" style={{ marginTop: -120, paddingTop: 400 }}>
+            <div className="d-flex justify-content-center">
+              <ReactLoading type="spin" color="#0000FF" height={"5%"} width={"5%"} />
+            </div>
           </div>
-        </div>
       )}
     </>
   );

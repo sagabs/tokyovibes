@@ -6,6 +6,10 @@
   max-height: 280px;
 }
 
+Link:hover {
+  text-decoration: none;
+}
+
 .right-row {
   border: 0 solid;
   margin: 0 1rem;
@@ -33,6 +37,7 @@
   width: 1.95rem;
   justify-content: center;
 }
+
 .dana-icons {
   width: 2.5rem;
 }
@@ -42,9 +47,11 @@
 .logout {
   width: 1.85rem;
 }
+
 .menu-profile {
   margin: 0.7rem 0.3rem;
 }
+
 .menu-profile span {
   margin-left: 1rem;
   font-size: 1.105rem;
