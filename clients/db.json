@@ -191,7 +191,7 @@
         "weight": 250
       },
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-      "categorysell": ""
+      "categorysell": "specialsell"
     },
     {
       "id": 8,
@@ -243,11 +243,11 @@
     },
     {
       "id": 11,
-      "name": "Sasukeh",
-      "price": 400000,
+      "name": "Action Figure Anime 11",
+      "price": 500000,
       "stock": 1234,
-      "promo": 20,
-      "img": "produk3.jpg",
+      "promo": 10,
+      "img": "produk1.jpg",
       "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
@@ -259,11 +259,11 @@
     },
     {
       "id": 12,
-      "name": "Sasukeh",
-      "price": 400000,
+      "name": "Action Figure Anime 12",
+      "price": 560000,
       "stock": 1234,
       "promo": 20,
-      "img": "produk3.jpg",
+      "img": "produk2.jpg",
       "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
@@ -275,11 +275,11 @@
     },
     {
       "id": 13,
-      "name": "Sasukeh",
-      "price": 400000,
+      "name": "Action Figure Anime 13",
+      "price": 7100000,
       "stock": 1234,
       "promo": 20,
-      "img": "produk3.jpg",
+      "img": "produk7.jpg",
       "category": "Hololive ID",
       "spesification": {
         "condition": "Baru",
@@ -290,12 +290,20 @@
       "categorysell": "specialsell"
     },
     {
-      "firstName": "user",
-      "lastName": "dev2",
-      "mobilePhone": "082134567890",
-      "email": "userdev2@tokyovibes.com",
-      "password": "userdev2",
-      "id": 14
+      "id": 14,
+      "name": "Action Figure Anime 14",
+      "price": 800000,
+      "stock": 1234,
+      "promo": 20,
+      "img": "produk7.jpg",
+      "category": "Hololive ID",
+      "spesification": {
+        "condition": "Baru",
+        "color": "Biru",
+        "weight": 250
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+      "categorysell": "specialsell"
     }
   ],
   "carts": [
@@ -347,38 +355,15 @@
     },
     {
       "userid": 8,
-      "amount": 6,
-      "totalPrice": 2000000,
-      "product": {
-        "id": 3,
-        "name": "Sasukeh",
-        "price": 400000,
-        "stock": 1234,
-        "promo": 20,
-        "img": "produk3.jpg",
-        "category": "Hololive ID",
-        "spesification": {
-          "condition": "Baru",
-          "color": "Biru",
-          "weight": 250
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "specialsell"
-      },
-      "checked": false,
-      "id": 5
-    },
-    {
-      "userid": 8,
       "amount": 1,
-      "totalPrice": 320000,
+      "totalPrice": 80000,
       "product": {
-        "id": 11,
-        "name": "Sasukeh",
-        "price": 400000,
+        "id": 5,
+        "name": "Mata Langit",
+        "price": 100000,
         "stock": 1234,
         "promo": 20,
-        "img": "produk3.jpg",
+        "img": "produk5.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
@@ -386,10 +371,10 @@
           "weight": 250
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
-        "categorysell": "specialsell"
+        "categorysell": "promo"
       },
       "checked": false,
-      "id": 7
+      "id": 9
     }
   ],
   "CartSummary": [
@@ -401,8 +386,8 @@
     },
     {
       "userid": 8,
-      "sumAmount": 4,
-      "sumPrice": 800000,
+      "sumAmount": 1,
+      "sumPrice": 24000,
       "id": 2
     },
     {
@@ -971,7 +956,7 @@
         "sumPromo": 80000,
         "asal": "now"
       },
-      "status": "belum bayar",
+      "status": "Belum Bayar",
       "ongkir": 25000,
       "total": 106000,
       "metodeBayar": "Sinarmas",
@@ -980,6 +965,49 @@
       "namaTerima": null,
       "noResi": "",
       "id": 12
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "userid": 8,
+          "amount": 1,
+          "totalPrice": 24000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 8
+        }
+      ],
+      "totalsummary": {
+        "id": 2,
+        "sumAmount": 1,
+        "sumPrice": 30000,
+        "sumPromo": 24000
+      },
+      "status": "Belum Bayar",
+      "ongkir": 25000,
+      "total": 50000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Jln percobaan",
+      "kurir": "JNE",
+      "namaTerima": null,
+      "noResi": "",
+      "id": 13
     }
   ]
 }
