@@ -7,9 +7,10 @@ import ProductDetails from "./pages/ProductDetails";
 import Keranjang from "./pages/Keranjang";
 import Checkout from "./pages/Checkout";
 import Tracking from "./pages/Tracking";
-import Profile from "./pages/Profile"
+import Profile from "./pages/Profile";
 import Payment from "./pages/Payment";
 import AboutUs from "./pages/AboutUs";
+import NotFound from "./components/notFound";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/payment" element={<Payment />} />
         <Route exact path="/about" element={<AboutUs />} />
         <Route exact path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
