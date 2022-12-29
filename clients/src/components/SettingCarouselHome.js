@@ -54,9 +54,9 @@ const SettingsPromo = {
 };
 
 const SettingsSpSell = {
-    dots: false,
     speed: 500,
     infinite: false,
+    swipe: true,
     responsive: [
         {
             breakpoint: 3000,

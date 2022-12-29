@@ -9,23 +9,19 @@
   border-color: #a50e09;
 }
 
-.pembayaran {
-  border: 1px solid red;
-}
-
 .card-titles {
   width: 300px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
+
 .card-titles img {
   width: 1.8rem;
   margin-right: 0.7rem;
 }
 
 .cardCheckout {
-  border: 1px solid red;
   padding: 0px 10px 0px 10px;
 }
 
@@ -44,6 +40,7 @@
   border: none;
   background: #a50e09;
 }
+
 .btn-reds {
   color: #fff !important;
   background: #a50e09 !important;
@@ -52,17 +49,16 @@
 .item-pics {
   width: 120px;
   padding: 5px;
-  border: 1px solid red;
   display: block;
   margin: 0 auto;
 }
+
 Dropdown.Item {
   border: 1px solid red;
 }
 
 .item-pics img {
   width: 200px;
-  border: 1px solid red;
 }
 
 .cardCheckoutlg {
@@ -98,10 +94,11 @@ Dropdown.Item {
 }
 
 .hrCheckout {
+  width: 100%;
   color: red !important;
   border: 0 !important;
   border-top: 2px solid red !important;
-  margin: 10px 0px 10px 5px !important;
+  margin: 10px 0px 10px 0px !important;
 }
 
 label {
