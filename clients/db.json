@@ -87,6 +87,24 @@
       "email": "khali@gt",
       "password": "khalil",
       "id": 10
+    },
+    {
+      "firstName": "Alexander",
+      "lastName": "Haposan",
+      "address": "Nasi Goreng",
+      "mobilePhone": "1231231",
+      "email": "kha@a",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "firstName": "123",
+      "lastName": "123",
+      "address": "123",
+      "mobilePhone": "123",
+      "email": "kha@a",
+      "password": "123",
+      "id": 12
     }
   ],
   "products": [
@@ -970,6 +988,18 @@
       "sumAmount": 0,
       "sumPrice": 0,
       "id": 4
+    },
+    {
+      "userid": 11,
+      "sumAmount": 0,
+      "sumPrice": 0,
+      "id": 5
+    },
+    {
+      "userid": 12,
+      "sumAmount": 0,
+      "sumPrice": 0,
+      "id": 6
     }
   ],
   "transactions": [

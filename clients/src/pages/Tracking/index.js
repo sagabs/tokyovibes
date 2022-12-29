@@ -16,7 +16,7 @@ const Tracking = () => {
   const [userId, setuserId] = useState(parseInt(localStorage.getItem("userId")));
   const [DataTracking, setDataTracking] = useState([])
   const [ShowDetail, setShowDetail] = useState(false)
-  const [ModalData, setModalData] = useState()
+  const [ModalData, setModalData] = useState("")
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",

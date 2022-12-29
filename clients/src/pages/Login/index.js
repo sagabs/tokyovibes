@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -33,17 +34,17 @@ export const Login = () => {
       .get(API_URL + "users?email=" + userDetails.email)
       .then((res) => {
         if (res.data.length === 0) {
-          alert("Akun belum terdaftar");
+          swal("Gagal", "Akun belum terdaftar", "error");
         } else {
           if (res.data[0].password !== userDetails.password) {
-            alert("Email atau password salah");
+            swal("Gagal", "Email atau password salah", "error");
           } else {
             localStorage.removeItem("historyLink");
             localStorage.setItem("isLoggedin", true);
             localStorage.setItem("userId", res.data[0].id);
             localStorage.setItem("userName", res.data[0].firstName + " " + res.data[0].lastName);
             localStorage.setItem("alamat", res.data[0].address);
-            alert("Berhasil masuk");
+            swal("Sukses", "Berhasil masuk", "success");
             navigate(link);
           }
         }

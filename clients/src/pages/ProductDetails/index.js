@@ -6,6 +6,7 @@ import Productex from "../../assets/productex.png";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import swal from "sweetalert";
 import { DashCircle, Trash, PlusCircle } from "react-bootstrap-icons";
 
 import { API_URL } from "../../utils/constants";
@@ -60,7 +61,7 @@ const ProductDetails = () => {
             axios
               .post(API_URL + "carts", cart)
               .then((res) => {
-                alert("Sukses Masuk Keranjang " + product.name);
+                swal("Sukses", "Sukses Masuk Keranjang " + product.name, "success");
                 navigate("/carts");
               })
               .catch((error) => {
@@ -78,7 +79,7 @@ const ProductDetails = () => {
             axios
               .put(API_URL + "carts/" + res.data[0].id, cart)
               .then((res) => {
-                alert("Sukses Masuk Keranjang " + product.name);
+                swal("Sukses", "Sukses Masuk Keranjang " + product.name, "success");
                 navigate("/carts");
               })
               .catch((error) => {
@@ -91,7 +92,7 @@ const ProductDetails = () => {
         });
     } else {
       localStorage.setItem("historyLink", `/details/${product.id}`);
-      alert("Silahkan login terlebih dahulu untuk lanjut belanja");
+      swal("Gagal", "Silahkan login terlebih dahulu untuk lanjut belanja", "error");
       navigate("/login");
     }
   };
@@ -120,7 +121,7 @@ const ProductDetails = () => {
       navigate("/checkout", { state: { dataProps: data } });
     } else {
       localStorage.setItem("historyLink", `/details/${product.id}`);
-      alert("Silahkan login terlebih dahulu untuk lanjut belanja");
+      swal("Gagal", "Silahkan login terlebih dahulu untuk lanjut belanja", "error");
       navigate("/login");
     }
   };
