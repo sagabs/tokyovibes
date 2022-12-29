@@ -208,7 +208,7 @@ const Tracking = () => {
           onHide={() => setShowDetail(false)}
           data={ModalData}
         />
-          : <div>tes</div>
+          : <div>TIDAK ADA BORONG BOSH</div>
       }
     </>
   );
