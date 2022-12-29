@@ -329,7 +329,7 @@ const Keranjang = () => {
       asal: "carts"
     }
     axios
-      .get("http://localhost:3000/carts?checked=true")
+      .get(`http://localhost:3000/carts?checked=true&&userid=${userId}`)
       .then(result => {
         if (result.data.length === 0) {
           swal("Gagal!", "Anda belum memilih dari keranjang atau keranjang kosong!", "warning")

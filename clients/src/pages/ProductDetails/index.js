@@ -54,6 +54,7 @@ const ProductDetails = () => {
               amount: amount,
               totalPrice: product.price * (1 - (product.promo / 100)) * amount,
               product: product,
+              checked: false
             };
 
             axios
@@ -71,6 +72,7 @@ const ProductDetails = () => {
               amount: res.data[0].amount + amount,
               totalPrice: res.data[0].totalPrice + product.price,
               product: product,
+              checked: false
             };
 
             axios

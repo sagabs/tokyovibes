@@ -319,7 +319,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
-      "checked": true,
+      "checked": false,
       "id": 1
     },
     {
@@ -342,6 +342,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
+      "checked": true,
       "id": 2
     },
     {
@@ -387,7 +388,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "specialsell"
       },
-      "id": 4
+      "id": 4,
+      "checked": false
     }
   ],
   "CartSummary": [
@@ -405,8 +407,8 @@
     },
     {
       "userid": 9,
-      "sumAmount": 3,
-      "sumPrice": 240000,
+      "sumAmount": 1,
+      "sumPrice": 80000,
       "id": 3
     }
   ],
