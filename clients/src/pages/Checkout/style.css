@@ -13,9 +13,56 @@
   border: 1px solid red;
 }
 
+.card-titles {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.card-titles img {
+  width: 1.8rem;
+  margin-right: 0.7rem;
+}
+
 .cardCheckout {
   border: 1px solid red;
   padding: 0px 10px 0px 10px;
+}
+
+.element-pembayaran {
+  display: flex;
+}
+
+.dr-down-toggle {
+  border: none;
+  border-radius: 1em;
+  width: 190px;
+  background: #a50e09;
+}
+
+.dr-down-toggle:hover {
+  border: none;
+  background: #a50e09;
+}
+.btn-reds {
+  color: #fff !important;
+  background: #a50e09 !important;
+}
+
+.item-pics {
+  width: 120px;
+  padding: 5px;
+  border: 1px solid red;
+  display: block;
+  margin: 0 auto;
+}
+Dropdown.Item {
+  border: 1px solid red;
+}
+
+.item-pics img {
+  width: 200px;
+  border: 1px solid red;
 }
 
 .cardCheckoutlg {
