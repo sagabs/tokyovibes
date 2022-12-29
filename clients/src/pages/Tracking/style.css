@@ -1,113 +1,171 @@
+:root {
+  --red: #9b0e09;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
 .box2 {
-    box-sizing: border-box;
-    height: auto;
-    padding: 50px;
-    background: #FEFEFE;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 10px 10px rgba(97, 97, 97, 0.5);
-    border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 50px;
+  background: #fefefe;
+  border-radius: 1em;
+  border: none;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+}
+Link:hover {
+  text-decoration: none;
+}
+.contentLeft {
+  font-size: large;
+  font-weight: 600;
+  border: 0 none;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+  width: 300px;
+  padding: 25px;
+  display: grid;
+  justify-content: start;
 }
 
-.contentLeft {
-    padding: 50px;
-    font-size: large;
-    font-weight: 600;
+.profiles {
+  display: grid;
+  width: 250px;
+  border-radius: 1em;
+  border: none;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.profile-names {
+  margin-bottom: 1rem;
+  font-size: 1.315rem;
 }
 
 .btnFilter {
-    /* padding: 10px 30px 10px 30px; */
-    background-color: white;
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 15%;
-    font-weight: 630;
-    font-size: large;
-    box-shadow: 5px 5px 5px rgba(4, 4, 4, 0.5);
+  /* padding: 10px 30px 10px 30px; */
+  background-color: white;
+  color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 15%;
+  font-weight: 630;
+  font-size: large;
+  border-radius: 1em;
+  border: none;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
 }
 
 .btnFilter:hover {
-    background-color: #13A722;
-    color: white;
-    border-color: #13A722;
+  background-color: #13a722;
+  color: white;
+  border-color: #13a722;
 }
 
-
 .btnFilter:focus {
-    background-color: #13A722;
-    color: white;
+  background-color: #13a722;
+  color: white;
 }
 
 .btnFilter:active {
-    background-color: #13A722 !important;
-    color: white;
+  background-color: #13a722 !important;
+  color: white;
 }
 
 .active {
-    background-color: #13A722 !important;
-    border-color: #13A722 !important;
+  background-color: #13a722 !important;
+  border-color: #13a722 !important;
 }
 
 .contentButton {
-    padding-right: 0;
-    padding-left: 0;
-
+  border: none;
 }
 
 .contentTransaksi {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    width: 98.5%;
-    margin-left: 10px;
+  margin-bottom: 1rem;
+  width: 98.5%;
+  margin-left: 10px;
 }
 
 .imgColTransaksi {
-    padding: 25px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 180px;
 }
 
 .imgTransaksi {
-    margin-left: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--shadow);
+  border-radius: 1em;
+  width: 160px;
 }
 
 .spanFilter1 {
-
-    color: #feba00;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  padding: 2px;
+  border: 2px solid #feba00;
+  border-radius: 1rem;
+  color: #feba00;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .spanFilter2 {
-
-    color: #e90202;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  padding: 2px;
+  border-radius: 1rem;
+  border: 2px solid #3b3998;
+  color: #3b3998;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .spanFilter3 {
-
-    color: #13A722;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  padding: 2px;
+  border: 2px solid #13a722;
+  border-radius: 1rem;
+  color: #13a722;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .cardColTransaksi {
-    padding: 25px 45px 25px 25px;
+  padding: 25px 45px 25px 25px;
+}
+
+.id {
+  font-size: 1.215rem;
+}
+
+.product-name,
+.product-price {
+  font-size: 1.415rem;
+  font-weight: 500;
+}
+
+.product-price {
+  color: var(--red);
 }
 
 a {
-
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 hr {
-    margin-left: 30px;
-    width: 95%;
-    color: rgb(0, 0, 0);
-    border: 3px solid rgba(0, 0, 0, 0.2) !important;
+  margin-left: 30px;
+  width: 95%;
+  color: rgb(0, 0, 0);
+  border: 3px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-@media (max-width:1368px) {
-    .box2 {
-        width: 950px
-    }
+@media (max-width: 1368px) {
+  .box2 {
+    width: 950px;
+  }
 }

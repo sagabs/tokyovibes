@@ -7,16 +7,16 @@
 }
 
 .child1 {
-display: flex;
+  display: flex;
   width: 50%;
   text-align: right;
   align-items: center;
 }
 
-.gundambg{
-    max-width: 500px;
-    max-height: 500px;
-    position: sticky;
+.gundambg {
+  max-width: 500px;
+  max-height: 500px;
+  position: sticky;
 }
 
 .child2 {
@@ -40,7 +40,8 @@ display: flex;
 
 .inputform {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1.15rem;
+  font-weight: 500;
 }
 
 .daftar {
@@ -50,12 +51,32 @@ display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
+  border: none;
+  font-weight: 500;
+}
+
+.daftar:hover {
+  opacity: 0.88;
+  background-color: #9b0e09;
 }
 
 .logoanddaftar {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.masuk {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #9b0e09;
+  font-weight: 500;
+}
+
+Link:hover {
+  text-decoration: none;
 }
 
 @media (max-width: 1024px) {
@@ -70,9 +91,9 @@ display: flex;
 }
 
 @media (max-width: 768px) {
-    .main {
-        height: 100vh;
-      }
+  .main {
+    height: 100vh;
+  }
   .regis {
     padding: 20px;
   }

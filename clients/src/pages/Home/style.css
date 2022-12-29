@@ -1,73 +1,77 @@
 p:empty {
-    display: none;
+  display: none;
 }
 
 .containerPromo {
-    margin-left: 100px;
-    margin-right: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .linkCard:hover {
-    color: black;
+  color: black;
 }
 
 .imgHome {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 
 .viewProdukList {
-    height: 100%;
-    width: 100%;
-    object-fit: contain
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .cardItem2 {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    width: 85%;
-    min-height: auto;
-    max-height: auto;
-    border: none;
-    border-radius: 20;
-    background: #3E3E3E;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 85%;
+  min-height: auto;
+  max-height: auto;
+  border: none;
+  border-radius: 20;
+  background: #3e3e3e;
+}
+
+.items-name {
+  font-size: 1.415rem;
 }
 
 .item1 {
-    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
 }
 
 .imgCard {
-    height: 260px;
+  height: 260px;
 }
 
 .cardProductAll {
-    margin: 8px;
+  margin: 8px;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 body {
-    margin: 0;
-    z-index: 1;
-    width: 100%;
-    max-width: 100%;
-    background: white;
-    transform-origin: top;
+  margin: 0;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  transform-origin: top;
 }
 
 h2 {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
-@media (max-width:1368px) {
-    .cardItem2 {
-        width: 85%;
-    }
+@media (max-width: 1368px) {
+  .cardItem2 {
+    width: 85%;
+  }
 
-    .imgCard {
-        height: 200px;
-    }
+  .imgCard {
+    height: 200px;
+  }
 }
