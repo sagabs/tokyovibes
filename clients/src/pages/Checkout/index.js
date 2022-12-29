@@ -132,7 +132,7 @@ const Checkout = () => {
                   <Row>
                     <Col xs={4}>
                       <div className="text-center">
-                        {item.product.img ? <img className="imgCheckout" height={200} width={200} src={require(`../../assets/img/${item.product.img}`)} alt={"Image Checkout"} draggable="false"></img> : <span>Loading....</span>}
+                        {item.product.img ? <img className="imgCheckout" height={200} width={200} src={require(`../../assets/img/${item.product.img}`)} alt={"Icons Checkout"} draggable="false"></img> : <span>Loading....</span>}
                       </div>
                     </Col>
                     <Col className="align-self-center ps-0">
@@ -180,26 +180,27 @@ const Checkout = () => {
                   </div>
                 </Card.Body>
               </Card>
-            </div>
-            <Row className="mt-5 ">
-              <Col>
-                <Card className="cardCheckout">
-                  <Card.Body>
-                    <Card.Title>Metode Pembayaran</Card.Title>
-                    <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Sinarmas")} />
-                    <label>Bank Sinarmas</label>
-                    <br />
-                    <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Mandiri")} />
-                    <label>Mandiri</label>
-                    <br />
-                    <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("BCA")} />
-                    <label>BCA</label>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card className="cardCheckout">
-                  <Card.Body>
+              <Card>
+                <Card.Body>
+                  <div className="cardCheckout">
+                    <Row>
+                      <Col>
+                        <Card.Title>Metode Pembayaran</Card.Title>
+                      </Col>
+                      <Col className="pembayaran d-grid align justify-content-end">
+                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Sinarmas")} />
+                        <label>Bank Sinarmas</label>
+                        <br />
+                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Mandiri")} />
+                        <label>Mandiri</label>
+                        <br />
+                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("BCA")} />
+                        <label>BCA</label>
+                      </Col>
+                    </Row>
+                  </div>
+
+                  <div className="cardCheckout">
                     <Card.Title>Metode Pengiriman</Card.Title>
                     <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("Ninja", 15000)} />
                     <label>Ninja (5-6 Hari)</label>
@@ -209,9 +210,13 @@ const Checkout = () => {
                     <br />
                     <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("JNE", 25000)} />
                     <label>JNE (1-2 Hari)</label>
-                  </Card.Body>
-                </Card>
-              </Col>
+                  </div>
+                </Card.Body>
+              </Card>
+            </div>
+            <div></div>
+            <Row className="mt-5 ">
+              <Col xs={11}></Col>
             </Row>
           </Col>
           <Col>

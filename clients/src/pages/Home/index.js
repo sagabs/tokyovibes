@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import ReactLoading from "react-loading";
 import { SettingsPromo, SettingsSpSell } from "../../components/SettingCarouselHome";
+import { rupiahLocale } from "../../utils/localeString";
 
 const Home = () => {
     const [productpromo, setProductpromo] = useState([
@@ -137,10 +138,10 @@ const Home = () => {
                                                             </div>
                                                             <Card.Text className="textPromo" style={{ textAlign: "center" }}>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
                                                             <Card.Text style={{ textAlign: "center", textDecoration: "line-through", color: "red" }}>
-                                                                <b>Rp. {item.price.toLocaleString("id-ID")}</b>
+                                                                <b>Rp. {rupiahLocale(item.price)}</b>
                                                             </Card.Text>
                                                             <Card.Text style={{ textAlign: "center" }}>
-                                                                <b>Rp. {item.price * (1 - item.promo / 100)}</b>
+                                                                <b>Rp. {rupiahLocale(item.price * (1 - item.promo / 100))}</b>
                                                             </Card.Text>
                                                         </Card.Body>
                                                     </Col>
@@ -168,7 +169,7 @@ const Home = () => {
                                                             <div className="items-name text">{item.name}</div>
                                                             <div className="mt-1">Hololive</div>
                                                             <div className="mt-1" style={{ fontWeight: "700" }}>
-                                                                Rp{item.price.toLocaleString("id-ID")}
+                                                                Rp{rupiahLocale(item.price)}
                                                             </div>
                                                             <div className="mt-1 mb-1">Terjual 500++</div>
                                                         </div>
@@ -195,7 +196,7 @@ const Home = () => {
                                                     <div className="items-name text">{item.name}</div>
                                                     <div className="mt-1">Hololive</div>
                                                     <div className="mt-1" style={{ fontWeight: "700" }}>
-                                                        {item.price}
+                                                        {rupiahLocale(item.price)}
                                                     </div>
                                                     <div className="mt-1 mb-1">Terjual 500++</div>
                                                 </div>
