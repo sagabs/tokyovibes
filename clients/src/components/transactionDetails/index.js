@@ -4,25 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Styles from "./index.module.css";
 import Productex from "../../assets/productex.png";
 import Carousel from "react-multi-carousel";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Modal from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Row';
 
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 
-const TransactionDetails = () => {
-    const [transaction, setTransaction] = useState({
-        id: "",
-        carts: [],
-        total: 0
-    });
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios.get(API_URL + "transactions/1")
-            setTransaction(result.data);
-        };
-
-        fetchData();
-    }, []);
+const TransactionDetails = (props) => {
+    const [DataTrx, setDataTrx] =  useState(props.data);
 
     const responsive = {
         superLargeDesktop: {
@@ -46,11 +38,49 @@ const TransactionDetails = () => {
     };
 
     return (
-        <>
-            <Navbar />
-            <div className={Styles.main}>
-                <div className={Styles.body}>
-                    <div className={Styles.invoice}>No. Invoice : ADS4W35FD</div>
+    <>
+		<Modal {...props} aria-labelledby="contained-modal-title-vcenter">
+      <Modal.Body>
+        <Container className="100vw">
+					<Col>
+						<Container>
+							<Container>
+								<Row><span> Detail Produk</span></Row>
+								<Row>
+									<Carousel responsive={responsive} showDots={true} arrows={false}>
+									{DataTrx.carts.map((item, index)=>(
+										<Container>
+											<Col>	
+												<img src={require(`../../assets/img/${item.product.img}`)} alt="Pesanan Saya"/>
+											</Col>
+											<Col>
+												<Container>
+													<Row><span>{item.product.name}</span></Row>
+													<Row></Row>
+													<Row></Row>
+												</Container>
+											</Col>
+										</Container>
+									))}
+									</Carousel>
+								</Row>
+							</Container>
+						</Container>	
+					</Col>
+					<Col></Col>
+				</Container>	
+      </Modal.Body>
+    </Modal>
+        {/* <Modal {...props}>
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Using Grid in Modal
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className={Styles.main}>
+                    <div className={Styles.body}>
+                        <div className={Styles.invoice}>No. Invoice : ADS4W35FD</div>
                     <div className={Styles.details}>
                         <div className={Styles.productdelivery}>
                             <div className={Styles.product}>
@@ -102,6 +132,8 @@ const TransactionDetails = () => {
                     </div>
                 </div>
             </div>
+            </Modal.Body>
+        </Modal> */}
         </>
     )
 }

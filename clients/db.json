@@ -848,7 +848,7 @@
         "sumPromo": 200000,
         "asal": "now"
       },
-      "status": "Sudah Bayar",
+      "status": "Dikirim",
       "ongkir": 15000,
       "total": 216000,
       "metodeBayar": "Sinarmas",
@@ -891,7 +891,7 @@
         "sumPrice": 200000,
         "sumPromo": 800000
       },
-      "status": "Sudah Bayar",
+      "status": "Belum Bayar",
       "ongkir": 15000,
       "total": 816000,
       "metodeBayar": "Sinarmas",
