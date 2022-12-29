@@ -10,12 +10,23 @@ import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import { Whatsapp } from "react-bootstrap-icons";
-
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
 
 const TransactionDetails = (props) => {
     const [DataTrx, setDataTrx] =  useState(props.data);
+		const [Dots, setDots] =  useState(false)
+		const navigate = useNavigate();
+
+		useEffect(() => {
+			const fetchData = async () => {
+				if(DataTrx.carts.length >  1){
+					setDots(true)
+				}
+			};
+			fetchData();
+		}, []);
 
     const responsive = {
         superLargeDesktop: {
@@ -38,6 +49,10 @@ const TransactionDetails = (props) => {
         }
     };
 
+		const BayarSekarang = () =>{
+			navigate("/payment", { state: { dataProps: DataTrx, idTrx: DataTrx.id } });
+		}
+
     return (
     <>
 		<Modal {...props} aria-labelledby="contained-modal-title-vcenter" fullscreen="sm-down" size="xl">
@@ -53,7 +68,7 @@ const TransactionDetails = (props) => {
 								<Row className="mb-2"><h4> Detail Produk</h4></Row>
 								<hr style={{margin:"0", padding:"0", marginBottom:"10px"}}/>
 								<Row>
-									<Carousel responsive={responsive} showDots={true} arrows={false}> 
+									<Carousel responsive={responsive} showDots={Dots}  arrows={false}> 
 									{DataTrx.carts.map((item, index)=>(
 										<Row>
 											<Col xs={4}style={{paddingRight:"0"}}>	
@@ -130,8 +145,10 @@ const TransactionDetails = (props) => {
 								<Col xs={8}><p style={{marginBottom:5}}>Rp. {DataTrx.total}</p></Col>
 							</Row>
 						</Container>
-						<Container className="d-flex justify-content-center">
-							<Button className="mt-5" style={{width:"200px", backgroundColor:"#12C824", border:"none"}}><Whatsapp size={25} className="me-2"/>Chat Penjual</Button>
+						<Container className="d-flex flex-column align-items-center">
+							{DataTrx.status==="Belum Bayar" ? 
+							<Button style={{width:"200px"}} className="mt-3" variant="outline-success" onClick={BayarSekarang}>Cara Bayar</Button> : null} 
+							<Button href="https://wa.me/6288221500153" className="mt-3" style={{width:"200px", backgroundColor:"#12C824", border:"none"}}><Whatsapp size={25} className="me-2"/>Chat Penjual</Button>
 						</Container>
 					</Col>
 				</Row>	

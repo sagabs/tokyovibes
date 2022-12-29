@@ -24,6 +24,7 @@ const Tracking = () => {
     mobilePhone: "",
     email: "",
   });
+	const [nil, setnil] = useState(null)
 
 
   useEffect(() => {
@@ -75,6 +76,8 @@ const Tracking = () => {
       setgetStatus("&&status=Dikirim")
     } else if (word === "Diterima") {
       setgetStatus("&&status=Diterima")
+    } else if (word === "Belum Bayar") {
+      setgetStatus("&&status=Belum Bayar")
     } else {
       setgetStatus("")
     }
@@ -136,6 +139,9 @@ const Tracking = () => {
                 <Button className="btnFilter" onClick={handleBtns} value="all">
                   Semua
                 </Button>
+								<Button className="btnFilter" onClick={handleBtns} value="Belum Bayar">
+                  Belum
+                </Button>
                 <Button className="btnFilter" onClick={handleBtns} value="Sudah Bayar">
                   Dibayar
                 </Button>
@@ -145,9 +151,6 @@ const Tracking = () => {
                 <Button className="btnFilter" onClick={handleBtns} value="Diterima">
                   Diterima
                 </Button>
-                <Button className="btnFilter" onClick={handleBtns} value="dinilai">
-                  Dinilai
-                </Button>
               </div>
             </Row>
             <Row>
@@ -156,7 +159,7 @@ const Tracking = () => {
                   <Card key={index} style={{ marginBottom: "1rem", paddingTop: 0, margin: "0px 0px 16px 0px", minHeight: 0 }}>
                     <Row key={item.id}>
                       <Col className="imgColTransaksi" xs={2}>
-                        <img src={require("../../assets/img/gambar2.png")} className="imgTransaksi" draggable={false} width={160} height={160} alt="pictures" />
+                        <img src={item.carts[0].product.img? require(`../../assets/img/${item.carts[0].product.img}`) : require(`../../assets/img/produk2.jpg`)} className="imgTransaksi" draggable={false} width={160} height={160} alt="pictures" />
                       </Col>
                       <Col className="cardColTransaksi" style={{ paddingRight: 25, paddingLeft: 0 }}>
                         <Row>
@@ -196,7 +199,11 @@ const Tracking = () => {
                       </Col>
                     </Row>
                   </Card>
-                )) : <div>TIDAK ADA BORONG BOSH</div>}
+                )) : 
+								<div className="d-flex flex-column align-items-center">
+									<p style={{fontWeight:800, color:"red" }}>Tidak Ada Barang BOSH 🤢🤣😍</p>
+									<img src={require(`../../assets/img/trxkosong.png`)} draggable={false} width={400} height={400} alt="pictures" />
+								</div>}
               </Col>
             </Row>
           </Col>
@@ -208,7 +215,7 @@ const Tracking = () => {
           onHide={() => setShowDetail(false)}
           data={ModalData}
         />
-          : <div>TIDAK ADA BORONG BOSH</div>
+          : nil
       }
     </>
   );
