@@ -5,8 +5,7 @@ import { Cart3 } from "react-bootstrap-icons";
 import "./navbar.css";
 import "../styles/Modal.css";
 
-const Navbars = ({searchParams}) => {
-  //const Profile = "C Ronaldo";
+const Navbars = ({searchParams}) => { 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
