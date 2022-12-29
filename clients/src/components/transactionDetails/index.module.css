@@ -148,3 +148,7 @@
 .totalpayment {
     font-weight: bold;
 }
+
+.detailproduk{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
