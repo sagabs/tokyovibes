@@ -5,14 +5,18 @@ import Navbars from "../../components/navbar/navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../../utils/constants";
+import TrxDetails from "../../components/transactionDetails"
 
 const Tracking = () => {
-  const dataDummy = [
-    { id: 1, nama: "HololiveEN", status: "bayar", total: 5000000 },
-    { id: 2, nama: "HololiveID gawr", status: "dikirim", total: 2000000 },
-    { id: 3, nama: "HololiveEN Ollie", status: "diterima", total: 4100000 },
-  ];
-
+  const point = 321;
+  const nominal = 1392346;
+  const saldo = nominal.toLocaleString("id-ID");
+  const [currentCard, setCurrentCard] = useState("all");
+  const [getStatus, setgetStatus] = useState("")
+  const [userId, setuserId] = useState(parseInt(localStorage.getItem("userId")));
+  const [DataTracking, setDataTracking] = useState([])
+  const [ShowDetail, setShowDetail] = useState(false)
+  const [ModalData, setModalData] = useState()
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -20,55 +24,59 @@ const Tracking = () => {
     mobilePhone: "",
     email: "",
   });
-  const point = 321;
-  const nominal = 1392346;
-  const saldo = nominal.toLocaleString("id-ID");
 
-  const [cards, setCards] = useState(dataDummy);
-  const [currentCard, setCurrentCard] = useState("all");
-
-  const handleBtns = (e) => {
-    let word = e.target.value;
-    setCurrentCard(word);
-  };
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (currentCard === "all") {
-      setCards(dataDummy);
-    } else {
-      const filtered = dataDummy.filter((item) => {
-        return item.status === currentCard || item.status.includes(currentCard);
-      });
-      setCards(filtered);
-    }
+
     const fetchData = async () => {
+      const res = await axios.get(API_URL + `transactions?userid=${userId}${getStatus}`)
+      setDataTracking(res.data)
+
       const userDetails = await axios.get(API_URL + `users?id=${userId}`);
       setUserDetails(userDetails.data[0]);
-      console.log(userDetails);
     };
     fetchData();
-  }, [currentCard]);
+  }, [getStatus]);
 
   const checkStatus = (e) => {
-    if (e === "bayar") {
+    if (e === "Sudah Bayar") {
       return (
         <div>
           <span className="spanFilter1">Dibayar</span>
         </div>
       );
-    } else if (e === "dikirim") {
+    } else if (e === "Dikirim") {
       return (
         <div>
           <span className="spanFilter2">Dikirim</span>
         </div>
       );
-    } else if (e === "diterima") {
+    } else if (e === "Diterima") {
       return (
         <div>
           <span className="spanFilter3">Diterima</span>
         </div>
       );
+    } else if (e === "Belum Bayar") {
+      return (
+        <div>
+          <span className="spanFilter3">Belum Bayar</span>
+        </div>
+      );
+    }
+  };
+
+  const handleBtns = (e) => {
+    let word = e.target.value;
+    setCurrentCard(word);
+    if (word === "Sudah Bayar") {
+      setgetStatus("&&status=Sudah Bayar")
+    } else if (word === "Dikirim") {
+      setgetStatus("&&status=Dikirim")
+    } else if (word === "Diterima") {
+      setgetStatus("&&status=Diterima")
+    } else {
+      setgetStatus("")
     }
   };
 
@@ -128,13 +136,13 @@ const Tracking = () => {
                 <Button className="btnFilter" onClick={handleBtns} value="all">
                   Semua
                 </Button>
-                <Button className="btnFilter" onClick={handleBtns} value="bayar">
+                <Button className="btnFilter" onClick={handleBtns} value="Sudah Bayar">
                   Dibayar
                 </Button>
-                <Button className="btnFilter" onClick={handleBtns} value="dikirim">
+                <Button className="btnFilter" onClick={handleBtns} value="Dikirim">
                   Dikirim
                 </Button>
-                <Button className="btnFilter" onClick={handleBtns} value="diterima">
+                <Button className="btnFilter" onClick={handleBtns} value="Diterima">
                   Diterima
                 </Button>
                 <Button className="btnFilter" onClick={handleBtns} value="dinilai">
@@ -144,35 +152,64 @@ const Tracking = () => {
             </Row>
             <Row>
               <Col className="contentTransaksi my-4">
-                {cards.map((item, index) => (
+                {DataTracking[0] ? DataTracking.map((item, index) => (
                   <Card key={index} style={{ marginBottom: "1rem", paddingTop: 0, margin: "0px 0px 16px 0px", minHeight: 0 }}>
                     <Row key={item.id}>
                       <Col className="imgColTransaksi" xs={2}>
                         <img src={require("../../assets/img/gambar2.png")} className="imgTransaksi" draggable={false} width={160} height={160} alt="pictures" />
                       </Col>
-                      <Col className="cardColTransaksi" style={{ paddingRight: 25 }}>
+                      <Col className="cardColTransaksi" style={{ paddingRight: 25, paddingLeft: 0 }}>
                         <Row>
                           <Col>
-                            <div className="id mb-1">ID: 081254961298</div>
-                            <div className="product-name mb-1">{item.nama}</div>
-                            <div>{checkStatus(item.status)}</div>
-                            <Col style={{ textAlign: "end" }}></Col>
+                            <Row>
+                              <Col xs={3}>
+                                <span>{item?.date ? item?.date : <span>17 Agustus 1945</span>} </span>
+                              </Col>
+                              <Col>
+                                {checkStatus(item.status)}
+                              </Col>
+                              <Col className="text-end">
+                                <div className="mb-1">Invoice: {item?.noInv ? item.noInv : "123180142"}</div>
+                              </Col>
+                            </Row>
+                            <Col>
+                              <div className="mb-2" style={{ fontWeight: 600 }}>{item.carts[0].product.name}</div>
+                              <div className="mb-2">{item.carts[0].product.category}</div>
+                            </Col>
                           </Col>
                         </Row>
-                        <Row>
+                        <Row className="mb-2">
+                          <Col>
+                            <div>
+                              <span style={{ textDecoration: "line-through", color: "red" }}>Rp. {item.carts[0].product.price} </span>
+                              <span style={{ margin: "0px 10px" }} />
+                              <span>Rp. {item.carts[0].product.price * (1 - (item.carts[0].product.promo / 100))}</span>
+                            </div>
+                          </Col>
                           <Col style={{ textAlign: "end" }}>
-                            <div className="product-price">Rp {item.total.toLocaleString("id-ID")}</div>
+                            <a className="detailTransaksi" onClick={() => {
+                              setModalData(item);
+                              setShowDetail(true);
+                            }}>Lihat Detail Transaksi</a>
                           </Col>
                         </Row>
                       </Col>
                     </Row>
                   </Card>
-                ))}
+                )) : <div>TIDAK ADA BORONG BOSH</div>}
               </Col>
             </Row>
           </Col>
         </Row>
       </Container>
+      {
+        ModalData ? <TrxDetails
+          show={ShowDetail}
+          onHide={() => setShowDetail(false)}
+          data={ModalData}
+        />
+          : <div>tes</div>
+      }
     </>
   );
 };

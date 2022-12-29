@@ -172,7 +172,7 @@ const Checkout = () => {
                       <span>Alamat Penerima</span>
                     </div>
                   </Card.Title>
-                  <Card.Text>{DetailLainnya.alamat}</Card.Text>
+                  <Card.Text className="mt-3" style={{ paddingLeft: 40 }}>{DetailLainnya.alamat}</Card.Text>
                   <div className="text-start">
                     <Button
                       className="btn btn-danger btn-sm btnUbahAlamat"

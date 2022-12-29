@@ -23,7 +23,6 @@ const Profile = () => {
     const fetchData = async () => {
       const userDetails = await axios.get(API_URL + `users?id=${userId}`);
       setUserDetails(userDetails.data[0]);
-      console.log(userDetails);
     };
     fetchData();
   }, []);

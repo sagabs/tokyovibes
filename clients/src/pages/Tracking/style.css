@@ -103,39 +103,28 @@ Link:hover {
 }
 
 .spanFilter1 {
-  display: flex;
-  justify-content: center;
-  width: 90px;
-  padding: 2px;
-  border: 2px solid #feba00;
-  border-radius: 1rem;
   color: #feba00;
-  font-size: 1.125rem;
   font-weight: 500;
 }
 
 .spanFilter2 {
-  display: flex;
-  justify-content: center;
-  width: 90px;
-  padding: 2px;
-  border-radius: 1rem;
-  border: 2px solid #3b3998;
   color: #3b3998;
-  font-size: 1.125rem;
   font-weight: 500;
 }
 
 .spanFilter3 {
-  display: flex;
-  justify-content: center;
-  width: 90px;
-  padding: 2px;
-  border: 2px solid #13a722;
-  border-radius: 1rem;
-  color: #13a722;
-  font-size: 1.125rem;
+  color: #9b0e09;
   font-weight: 500;
+}
+
+.detailTransaksi {
+  color: #13a722;
+  cursor: pointer;
+}
+
+.detailTransaksi:hover {
+  color: #0f831b;
+  cursor: pointer;
 }
 
 .cardColTransaksi {
