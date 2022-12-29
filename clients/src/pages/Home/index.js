@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import ReactLoading from "react-loading";
 import { SettingsPromo, SettingsSpSell } from "../../components/SettingCarouselHome";
 import ReactPaginate from "react-paginate";
+import { rupiahLocale } from "../../utils/localeString";
 
 const Home = () => {
   const [productpromo, setProductpromo] = useState([
@@ -192,10 +193,10 @@ const Home = () => {
                               <Card.Title style={{ textAlign: "center" }}>{item.name}</Card.Title>
                               <Card.Text style={{ textAlign: "center" }}>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
                               <Card.Text style={{ textAlign: "center", textDecoration: "line-through", color: "red" }}>
-                                <b>Rp. {item.price.toLocaleString("id-ID")}</b>
+                                <b>Rp{rupiahLocale(item.price)}</b>
                               </Card.Text>
                               <Card.Text style={{ textAlign: "center" }}>
-                                <b>Rp. {item.price * (1 - item.promo / 100)}</b>
+                                <b>Rp{rupiahLocale(item.price * (1 - item.promo / 100))}</b>
                               </Card.Text>
                             </Card.Body>
                           </Col>
