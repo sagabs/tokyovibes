@@ -62,7 +62,7 @@ const Tracking = () => {
           </Col>
         </Row>
         <Row className="mt-3">
-          <Col xs={4} className="">
+          <Col xs={4}>
             <div className="contentLeft">
               <Link to="/profile">
                 <div>
@@ -86,7 +86,7 @@ const Tracking = () => {
               </div>
             </div>
           </Col>
-          <Col xs={8} className="box2">
+          <Col className="box2">
             <Row className="contentButton">
               <div className="justify-content-between d-flex">
                 <Button className="btnFilter" onClick={handleBtns} value="all">

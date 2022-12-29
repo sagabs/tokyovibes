@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Navbars from "../../components/navbar/navbar";
 import "./style.css";
 const Profile = () => {
@@ -61,10 +62,12 @@ const Profile = () => {
                   </div>
                 </Col>
               </Row> */}
-              <div className="menu-profile">
-                <img className="my-order" src={require("../../assets/img/box.png")} alt="Pesanan Saya"></img>
-                <span className="">Daftar Transaksi</span>
-              </div>
+              <Link to="tracks" >
+                <div className="menu-profile">
+                  <img className="my-order" src={require("../../assets/img/box.png")} alt="Pesanan Saya"></img>
+                  <span className="">Daftar Transaksi</span>
+                </div>
+              </Link>
               <div className="menu-profile">
                 <img className="setting" src={require("../../assets/img/pengaturan.png")} alt="Pengaturan"></img>
                 <span className="">Pengaturan</span>

@@ -274,7 +274,9 @@ const Keranjang = () => {
         axios
           .put(API_URL + "cartsummary/" + RangkumBelanja.id, data2)
           .then((response) => {
-            swal("Sukses", "Berhasil memilih semua di keranjang", "success");
+            swal("Sukses", "Berhasil memilih semua di keranjang", "success").then(() => {
+              window.location.reload();
+            })
           })
           .catch((error) => {
             console.log("Error yaa ", error);
@@ -335,12 +337,12 @@ const Keranjang = () => {
               <hr style={{ margin: "1rem 0", width: "100%" }} />
             </Container>
             {DataKeranjang[0] ? (
-              <Container className="mt-3">
+              <div className="mt-3">
                 {DataKeranjang.map((item, index) => (
-                  <Card key={index} className={Styles.card} style={{ marginBottom: "1rem" }}>
+                  <Card key={index} className={Styles.card} style={{ marginBottom: "1rem", marginLeft: 0 }}>
                     <Row>
                       <Col className="py-2 ps-4" xs={3}>
-                        <Card.Img style={{ height: "150px", width: "150px", maxWidth: "100%" }} src={Logo} />
+                        {item?.product?.img ? <Card.Img style={{ height: "150px", width: "150px", maxWidth: "100%" }} src={require(`../../assets/img/${item?.product?.img}`)} /> : <span>Loading Image...</span>}
                       </Col>
                       <Col>
                         <Card.Body>
@@ -348,7 +350,7 @@ const Keranjang = () => {
                             <Col xs={11}>
                               <Card.Title style={{ margin: "0" }}>{item.product.name}</Card.Title>
                             </Col>
-                            <Col style={{ cursor: "pointer" }}>
+                            <Col style={{ cursor: "pointer", textAlign: "end", paddingRight: 33 }}>
                               <Form.Check aria-label="option 1" id={index} name="barang" checked={item.checked ? item.checked : false} value={[item.id, item.amount, item.product.price]} onChange={handleChange} />
                             </Col>
                           </Row>
@@ -367,10 +369,10 @@ const Keranjang = () => {
                                 <span style={{ margin: "0" }}>Rp{item.product.price.toLocaleString("id-ID")}</span>
                               )}
                             </Col>
-                            <Col xs={4} className="d-flex justify-content-between">
+                            <Col xs={5} className="d-flex justify-content-between" style={{ padding: 0, paddingRight: 30, paddingLeft: -20 }}>
                               <Trash size={20} color={"red"} onClick={() => deleteCart(item.id, item.totalPrice, item.amount, item.checked)} style={{ cursor: "pointer" }} />
                               <DashCircle size={20} color={"red"} onClick={() => reduceAmount(item.id, item.product.price)} style={{ cursor: "pointer" }} />
-                              <span>{item.amount}</span>
+                              <span className={Styles.amountItem}>{item.amount}</span>
                               <PlusCircle size={20} color={"green"} onClick={() => addAmount(item.id, item.product.price)} style={{ cursor: "pointer" }} />
                             </Col>
                           </Row>
@@ -379,7 +381,7 @@ const Keranjang = () => {
                     </Row>
                   </Card>
                 ))}
-              </Container>
+              </div>
             ) : (
               <Container className="d-flex flex-column align-items-center justify-content-center" style={{ paddingTop: "40px" }}>
                 <span>Keranjang Masih Kosong !</span>
@@ -407,11 +409,11 @@ const Keranjang = () => {
                     <span className={Styles.font}>Total Harga</span>
                   </Col>
                   <Col>
-                    <span className={Styles.font}>Rp{RangkumBelanja.sumPrice.toLocaleString("id-ID")}</span>
+                    <span className={Styles.font}>Rp{RangkumBelanja.sumPrice}</span>
                   </Col>
                 </Row>
                 <Row>
-                  <Button variant="success" style={{ borderRadius: "1em", fontWeight: "500", marginTop: "1rem", height: "45px", fontSize: "1.225rem" }} onClick={bayar}>
+                  <Button variant="success mb-2" style={{ borderRadius: "1em", fontWeight: "500", marginTop: "1rem", height: "45px", fontSize: "1.225rem" }} onClick={bayar}>
                     Bayar
                   </Button>
                 </Row>
