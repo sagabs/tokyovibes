@@ -95,7 +95,10 @@ const Checkout = () => {
       const userId = parseInt(localStorage.getItem("userId"));
       const userName = parseInt(localStorage.getItem("userName"));
       const randNumber = Math.floor(Math.random() * 900000000) + 100000000
-      const today = date.getDate().toLocaleDateString();
+
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed).toLocaleDateString();
+
       const data = {
         noInv : randNumber,
         date : today, 
