@@ -319,7 +319,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
-      "checked": true,
+      "checked": false,
       "id": 1
     },
     {
@@ -342,6 +342,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
+      "checked": true,
       "id": 2
     },
     {
@@ -406,8 +407,8 @@
     },
     {
       "userid": 9,
-      "sumAmount": 3,
-      "sumPrice": 240000,
+      "sumAmount": 1,
+      "sumPrice": 80000,
       "id": 3
     }
   ],
@@ -847,7 +848,7 @@
         "sumPromo": 200000,
         "asal": "now"
       },
-      "status": "Sudah Bayar",
+      "status": "Dikirim",
       "ongkir": 15000,
       "total": 216000,
       "metodeBayar": "Sinarmas",
@@ -890,7 +891,7 @@
         "sumPrice": 200000,
         "sumPromo": 800000
       },
-      "status": "Sudah Bayar",
+      "status": "Belum Bayar",
       "ongkir": 15000,
       "total": 816000,
       "metodeBayar": "Sinarmas",

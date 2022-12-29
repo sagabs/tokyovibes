@@ -15,6 +15,7 @@ import { API_URL } from "../../utils/constants";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
+
 const Keranjang = () => {
   const [total, setTotal] = useState({});
   const [DataKeranjang, setDataKeranjang] = useState([]);
@@ -295,26 +296,30 @@ const Keranjang = () => {
         sumPromo: 0,
       },
       carts: [],
-      asal: "carts",
-    };
-    axios.get(`http://localhost:3000/carts?checked=true&&userid=${userId}`).then((result) => {
-      if (result.data.length === 0) {
-        swal("Gagal!", "Anda belum memilih dari keranjang atau keranjang kosong!", "warning");
-      } else {
-        const beforePromo = result.data.reduce((total_harga, data) => total_harga + data.amount * data.product.price, 0);
-        simpanPass.totalsummary = {
-          id: RangkumBelanja.id,
-          sumAmount: RangkumBelanja.sumAmount,
-          sumPrice: beforePromo,
-          sumPromo: RangkumBelanja.sumPrice,
-        };
-        result.data.forEach((temp) => {
-          simpanPass.carts.push(temp);
-        });
-        navigate("/checkout", { state: { dataProps: simpanPass } });
-      }
-    });
-  };
+      asal: "carts"
+    }
+    axios
+      .get(`http://localhost:3000/carts?checked=true&&userid=${userId}`)
+      .then(result => {
+        if (result.data.length === 0) {
+          swal("Gagal!", "Anda belum memilih dari keranjang atau keranjang kosong!", "warning")
+        } else {
+          const beforePromo = result.data.reduce(
+            (total_harga, data) => total_harga + (data.amount * data.product.price), 0
+          )
+          simpanPass.totalsummary = {
+            id: RangkumBelanja.id,
+            sumAmount: RangkumBelanja.sumAmount,
+            sumPrice: beforePromo,
+            sumPromo: RangkumBelanja.sumPrice
+          }
+          result.data.forEach(temp => {
+            simpanPass.carts.push(temp)
+          });
+          navigate("/checkout", { state: { dataProps: simpanPass } })
+        }
+      })
+  }
 
   return (
     <>
