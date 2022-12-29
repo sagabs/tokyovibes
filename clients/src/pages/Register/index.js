@@ -8,6 +8,7 @@ import Gundambg from "../../assets/gundambg.png";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
+import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -50,7 +51,7 @@ const Register = () => {
     };
 
     if (userDetails.password !== userDetails.c_password) {
-      alert("Konfirmasi password belum benar");
+      swal("Gagal", "Konfirmasi password belum benar", "error");
     } else {
       axios
         .post(API_URL + "users", data)
@@ -64,7 +65,7 @@ const Register = () => {
             console.log("Error gk bisa ", error);
           });
 
-          alert("Sukses Daftar Akun");
+          swal("Sukses", "Sukses Daftar Akun", "success");
           navigate("/login");
         })
         .catch((error) => {
