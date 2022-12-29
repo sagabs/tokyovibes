@@ -134,49 +134,66 @@ const Home = () => {
       {product[0]?.img ? (
         params.length > 1 ? (
           <div>
-            <div style={{ margin: 20, verticalAlign: "middle" }}>
-              <h2 className="mb-3 mt-2" style={{ marginLeft: 90 }}>
-                List Action Figure
-              </h2>
-              <div className="d-flex flex-wrap justify-content-center ">
-                {paginateAllProduct.map((item, index) => (
-                  <div className="mb-4 cardProductAll">
-                    <Link to={`/details/${item.id}`} className="linkCard" draggable={false}>
-                      <Card className="item1" style={{ width: "17rem", border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
-                        {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, padding: 0 }} /> : <span>Loading...</span>}{" "}
-                        <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
-                          <div>{item.name}</div>
-                          <div className="mt-1">Hololive</div>
-                          <div className="mt-1" style={{ fontWeight: "700" }}>
-                            {item.price}
-                          </div>
-                          <div className="mt-1 mb-1">Terjual 500++</div>
+            {
+              paginateAllProduct.length > 0 ? (
+                <>
+                  <div style={{ margin: 20, verticalAlign: "middle" }}>
+                    <h2 className="mb-3 mt-2" style={{ marginLeft: 90 }}>
+                      List Action Figure
+                    </h2>
+                    <div className="d-flex flex-wrap justify-content-center ">
+                      {paginateAllProduct.map((item, index) => (
+                        <div className="mb-4 cardProductAll">
+                          <Link to={`/details/${item.id}`} className="linkCard" draggable={false}>
+                            <Card className="item1" style={{ width: "17rem", border: "none", borderRadius: 20, background: "#3E3E3E", padding: 0 }}>
+                              {item?.img ? <Card.Img variant="top" height={"260"} src={require(`../../assets/img/${item?.img}`)} style={{ borderRadius: 15, padding: 0 }} /> : <span>Loading...</span>}{" "}
+                              <div style={{ margin: "10px 20px 10px 20px", color: "white" }}>
+                                <div>{item.name}</div>
+                                <div className="mt-1">Hololive</div>
+                                <div className="mt-1" style={{ fontWeight: "700" }}>
+                                  {item.price}
+                                </div>
+                                <div className="mt-1 mb-1">Terjual 500++</div>
+                              </div>
+                            </Card>
+                          </Link>
                         </div>
-                      </Card>
-                    </Link>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-            <ReactPaginate
-              previousLabel={"previous"}
-              nextLabel={"next"}
-              breakLabel={"..."}
-              pageCount={pageSearchCount}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={2}
-              onPageChange={handleClickSearchPaginate}
-              containerClassName={"pagination justify-content-center"}
-              pageClassName={"page-item"}
-              pageLinkClassName={"page-link"}
-              previousClassName={"page-item"}
-              previousLinkClassName={"page-link"}
-              nextClassName={"page-item"}
-              nextLinkClassName={"page-link"}
-              breakClassName={"page-item"}
-              breakLinkClassName={"page-link"}
-              activeClassName={"active"}
-            />
+                  <ReactPaginate
+                    previousLabel={"previous"}
+                    nextLabel={"next"}
+                    breakLabel={"..."}
+                    pageCount={pageSearchCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={2}
+                    onPageChange={handleClickSearchPaginate}
+                    containerClassName={"pagination justify-content-center"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link"}
+                    previousClassName={"page-item"}
+                    previousLinkClassName={"page-link"}
+                    nextClassName={"page-item"}
+                    nextLinkClassName={"page-link"}
+                    breakClassName={"page-item"}
+                    breakLinkClassName={"page-link"}
+                    activeClassName={"active"}
+                  />
+                </>
+              ) : (
+                <>
+                  <div style={{ margin: 20, verticalAlign: "middle" }}>
+                    <h2 className="mb-3 mt-2" style={{ marginLeft: 90 }}>
+                      List Action Figure
+                    </h2>
+                    <div className="d-flex flex-wrap justify-content-center ">
+                      Tidak dapat menemukan barang yang anda cari.
+                    </div>
+                  </div>
+                </>
+              )
+            }
           </div>
         ) : (
           <div>
