@@ -82,7 +82,7 @@ const Profile = () => {
                   </div>
                 </Col>
               </Row> */}
-              <Link to="tracks" >
+              <Link to="tracks" className="linkCard" >
                 <div className="menu-profile">
                   <img className="my-order" src={require("../../assets/img/box.png")} alt="Pesanan Saya"></img>
                   <span className="">Daftar Transaksi</span>

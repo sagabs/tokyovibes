@@ -109,12 +109,12 @@ const Tracking = () => {
             <Row>
               <Col className="contentTransaksi my-4">
                 {cards.map((item, index) => (
-                  <Card key={index} className="cards" style={{ marginBottom: "1rem" }}>
+                  <Card key={index} className="cards" style={{ marginBottom: "1rem", paddingTop: 0 }}>
                     <Row key={item.id}>
                       <Col className="imgColTransaksi" xs={2}>
                         <img src={require("../../assets/img/gambar2.png")} className="imgTransaksi" draggable={false} width={160} height={160} alt="pictures" />
                       </Col>
-                      <Col className="cardColTransaksi">
+                      <Col className="cardColTransaksi" style={{ paddingRight: 25 }}>
                         <Row>
                           <Col>
                             <div className="id mb-1">ID: 081254961298</div>
@@ -125,7 +125,7 @@ const Tracking = () => {
                         </Row>
                         <Row>
                           <Col style={{ textAlign: "end" }}>
-                            <div className="product-price">Rp{item.total.toLocaleString("id-ID")}</div>
+                            <div className="product-price">Rp {item.total.toLocaleString("id-ID")}</div>
                           </Col>
                         </Row>
                       </Col>
