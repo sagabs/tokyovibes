@@ -152,3 +152,15 @@
 .detailproduk{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.Pay {
+    border: 0px none;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+    background-color: #439a97;
+    border-radius: 5rem;
+    width: 40%;
+    color: #379237;
+    font-weight: 700;
+  }
