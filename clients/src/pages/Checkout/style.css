@@ -1,34 +1,41 @@
-.imgCheckout {
-    border-radius: 20px;
-    border: solid;
-    border-color: #A50E09;
+:root {
+  --red: #9b0e09;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
 
+.imgCheckout {
+  border-radius: 20px;
+  border: solid;
+  border-color: #a50e09;
+}
+
+.pembayaran {
+  border: 1px solid red;
 }
 
 .cardCheckout {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    width: 69%;
-    border-radius: 20px;
-    padding: 0px 10px 0px 10px;
+  border: 1px solid red;
+  padding: 0px 10px 0px 10px;
 }
 
 .cardCheckoutlg {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    width: 85%;
-    border-radius: 20px;
-    padding: 10px 10px 0px 10px;
+  box-shadow: 0px 0.7px 1.1px 1.1px rgba(0, 0, 0, 0.25);
+  width: 85%;
+  border-radius: 20px;
+  padding: 10px 10px 0px 10px;
 }
 
 .detailTransaksiText {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .btnUbahAlamat {
-    box-shadow: rgba(0, 0, 0, 0.19) 10px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    border: #A50E09;
-    border-radius: 10px;
-    background-color: #A50E09 !important;
-    font-weight: 600;
+  box-shadow: 0px 0.7px 1.1px 1.1px rgba(0, 0, 0, 0.25);
+  border: 0 none;
+  border-radius: 1em;
+  background-color: #a50e09 !important;
+  font-weight: 600;
+  width: 9rem;
 }
 
 .btnUbahAlamat:hover,
@@ -36,47 +43,47 @@
 .btnUbahAlamat:focus,
 .btnUbahAlamat:visited,
 .btnUbahAlamat:active:hover {
-    background-color: #ffffff !important;
-    border-color: #A50E09 !important;
-    color: #A50E09;
-    background-image: none !important;
-    font-weight: 600;
+  background-color: #ffffff !important;
+  border-color: #a50e09 !important;
+  color: #a50e09;
+  background-image: none !important;
+  font-weight: 600;
 }
 
 .hrCheckout {
-    color: red !important;
-    border: 0 !important;
-    border-top: 2px solid red !important;
-    margin: 10px 0px 10px 5px !important;
+  color: red !important;
+  border: 0 !important;
+  border-top: 2px solid red !important;
+  margin: 10px 0px 10px 5px !important;
 }
 
 label {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
-input[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -4px;
-    left: -1px;
-    position: relative;
-    background-color: white;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 1px solid black;
+input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  background-color: white;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid black;
 }
 
-input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -4px;
-    left: -1px;
-    position: relative;
-    background-color: #A50E09;
-    content: '';
-    display: inline-block;
-    visibility: visible;
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  background-color: #a50e09;
+  content: "";
+  display: inline-block;
+  visibility: visible;
 }
