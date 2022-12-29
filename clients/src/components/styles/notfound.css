@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@500&display=swap");
+
+.body404 {
+  background-image: url("../../assets/img/bg-notfound.jpeg");
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+}
+.not-found {
+  font-family: "Fira Sans", sans-serif;
+}
+.not-found span {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.clickhere {
+  color: #fff;
+  font-size: 2.296rem;
+}
