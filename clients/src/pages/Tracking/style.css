@@ -2,18 +2,21 @@
   --red: #9b0e09;
   --shadow: rgba(0, 0, 0, 0.25);
 }
+
 .box2 {
   box-sizing: border-box;
   height: auto;
-  padding: 50px;
+  padding: 30px 50px 50px 50px;
   background: #fefefe;
   border-radius: 1em;
   border: none;
   box-shadow: 0px 1px 3px 1px var(--shadow);
 }
+
 Link:hover {
   text-decoration: none;
 }
+
 .contentLeft {
   font-size: large;
   font-weight: 600;
@@ -83,6 +86,7 @@ Link:hover {
   margin-bottom: 1rem;
   width: 98.5%;
   margin-left: 10px;
+  padding: 0px;
 }
 
 .imgColTransaksi {
