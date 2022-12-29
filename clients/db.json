@@ -355,14 +355,14 @@
     {
       "userid": 8,
       "amount": 1,
-      "totalPrice": 24000,
+      "totalPrice": 80000,
       "product": {
-        "id": 1,
-        "name": "Broskuy",
-        "price": 30000,
+        "id": 5,
+        "name": "Mata Langit",
+        "price": 100000,
         "stock": 1234,
         "promo": 20,
-        "img": "produk1.jpg",
+        "img": "produk5.jpg",
         "category": "Hololive ID",
         "spesification": {
           "condition": "Baru",
@@ -372,8 +372,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
-      "checked": true,
-      "id": 8
+      "checked": false,
+      "id": 9
     }
   ],
   "CartSummary": [
@@ -964,6 +964,49 @@
       "namaTerima": null,
       "noResi": "",
       "id": 12
+    },
+    {
+      "userid": 8,
+      "carts": [
+        {
+          "userid": 8,
+          "amount": 1,
+          "totalPrice": 24000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 8
+        }
+      ],
+      "totalsummary": {
+        "id": 2,
+        "sumAmount": 1,
+        "sumPrice": 30000,
+        "sumPromo": 24000
+      },
+      "status": "belum bayar",
+      "ongkir": 25000,
+      "total": 50000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Jln percobaan",
+      "kurir": "JNE",
+      "namaTerima": null,
+      "noResi": "",
+      "id": 13
     }
   ]
 }

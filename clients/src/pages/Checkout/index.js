@@ -195,7 +195,7 @@ const Checkout = () => {
                     </Card.Title>
                     <Dropdown>
                       <Dropdown.Toggle className="dr-down-toggle" variant="reds" id="dropdown-basic">
-                        Pilih Pembayaran
+                        {DetailLainnya?.metodeBayar ? DetailLainnya.metodeBayar : <span>Pilih Pembayaran</span>}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => changePembayaran("Sinarmas")}>
@@ -228,7 +228,7 @@ const Checkout = () => {
                     </Card.Title>
                     <Dropdown>
                       <Dropdown.Toggle className="dr-down-toggle " variant="reds" id="dropdown-basic">
-                        Pilih Kurir
+                        {DetailLainnya?.kurir ? DetailLainnya.kurir : <span>Pilih Kurir</span>}
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
@@ -255,7 +255,7 @@ const Checkout = () => {
             </div>
           </Col>
           <Col>
-            <Card style={{ width: "20rem", borderColor: "red", borderRadius: 15 }}>
+            <Card style={{ width: "auto", borderColor: "red", borderRadius: 15, margin: 0 }}>
               <Card.Body>
                 <Card.Title className="mt-3 detailTransaksiText">Detail Transaksi</Card.Title>
                 <br />
@@ -283,12 +283,12 @@ const Checkout = () => {
                   </Col>
                   <Col style={{ textAlign: "end" }}>Rp. 600</Col>
                 </Row>
-                <hr className="hrCheckout" />
+                <div className="hrCheckout" />
                 <Row>
                   <Col>Promo</Col>
                   <Col style={{ textAlign: "end" }}>- Rp. {checkoutData.totalsummary.sumPrice - checkoutData.totalsummary.sumPromo}</Col>
                 </Row>
-                <hr className="hrCheckout" />
+                <div className="hrCheckout" />
                 <Row>
                   <Col style={{ fontWeight: "700" }}>Total</Col>
                   <Col style={{ textAlign: "end" }}>Rp. {DetailLainnya.total}</Col>
