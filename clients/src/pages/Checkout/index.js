@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Col, Container, Row, Card, Button, OverlayTrigger, Tooltip, Dropdown } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import "./style.css";
 import Header from "../../components/navbar/navbar";
@@ -164,11 +164,16 @@ const Checkout = () => {
               </Carousel>
             </div>
             <div>
-              <Card className="mt-5 cardCheckoutlg">
-                <Card.Body>
-                  <Card.Title>Alamat</Card.Title>
+              <Card className="my-5 cardCheckoutlg">
+                <Card.Body className="my-1">
+                  <Card.Title>
+                    <div className="card-titles">
+                      <img src={require("../../assets/img/alamat.png")} alt="alamat penerima"></img>
+                      <span>Alamat Penerima</span>
+                    </div>
+                  </Card.Title>
                   <Card.Text>{DetailLainnya.alamat}</Card.Text>
-                  <div className="text-end">
+                  <div className="text-start">
                     <Button
                       className="btn btn-danger btn-sm btnUbahAlamat"
                       onClick={() => {
@@ -179,45 +184,75 @@ const Checkout = () => {
                     </Button>
                   </div>
                 </Card.Body>
-              </Card>
-              <Card>
-                <Card.Body>
-                  <div className="cardCheckout">
-                    <Row>
-                      <Col>
-                        <Card.Title>Metode Pembayaran</Card.Title>
-                      </Col>
-                      <Col className="pembayaran d-grid align justify-content-end">
-                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Sinarmas")} />
-                        <label>Bank Sinarmas</label>
-                        <br />
-                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("Mandiri")} />
-                        <label>Mandiri</label>
-                        <br />
-                        <input type={"radio"} name="checkPembayaran" onClick={() => changePembayaran("BCA")} />
-                        <label>BCA</label>
-                      </Col>
-                    </Row>
+                <hr style={{ width: "100%" }} />
+                <Card.Body className="my-1 element-pembayaran">
+                  <div className="d-flex align-items-center text-end justify-content-between w-100">
+                    <Card.Title>
+                      <div className="card-titles">
+                        <img src={require("../../assets/img/pembayaran.png")} alt="alamat penerima"></img>
+                        <span>Metode Pembayaran</span>
+                      </div>
+                    </Card.Title>
+                    <Dropdown>
+                      <Dropdown.Toggle className="dr-down-toggle" variant="reds" id="dropdown-basic">
+                        Pilih Pembayaran
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item onClick={() => changePembayaran("Sinarmas")}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/logosimas.png")} alt="simas pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                        <Dropdown.Item onClick={() => changePembayaran("Mandiri")}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/logomandiri.png")} alt="mandiri pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                        <Dropdown.Item onClick={() => changePembayaran("BCA")}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/logobca.png")} alt="bca pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
+                </Card.Body>
+                <hr style={{ width: "100%" }} />
+                <Card.Body className="my-1">
+                  <div className="d-flex align-items-center text-end justify-content-between w-100">
+                    <Card.Title>
+                      <div className="card-titles">
+                        <img src={require("../../assets/img/delivery.png")} alt="alamat penerima"></img>
+                        <span>Metode Pengiriman</span>
+                      </div>
+                    </Card.Title>
+                    <Dropdown>
+                      <Dropdown.Toggle className="dr-down-toggle " variant="reds" id="dropdown-basic">
+                        Pilih Kurir
+                      </Dropdown.Toggle>
 
-                  <div className="cardCheckout">
-                    <Card.Title>Metode Pengiriman</Card.Title>
-                    <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("Ninja", 15000)} />
-                    <label>Ninja (5-6 Hari)</label>
-                    <br />
-                    <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("JNT", 20000)} />
-                    <label>JNT (3-4 Hari)</label>
-                    <br />
-                    <input type={"radio"} name="checkPengiriman" onClick={() => changePengiriman("JNE", 25000)} />
-                    <label>JNE (1-2 Hari)</label>
+                      <Dropdown.Menu>
+                        <Dropdown.Item onClick={() => changePengiriman("Ninja", 15000)}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/sicepat.png")} alt="bca pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                        <Dropdown.Item className="border" onClick={() => changePengiriman("JNT", 20000)}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/jnt.jpg")} alt="bca pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                        <Dropdown.Item onClick={() => changePengiriman("JNE", 25000)}>
+                          <div className="item-pics">
+                            <img src={require("../../assets/img/jne.png")} alt="bca pic"></img>
+                          </div>
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
                 </Card.Body>
               </Card>
             </div>
-            <div></div>
-            <Row className="mt-5 ">
-              <Col xs={11}></Col>
-            </Row>
           </Col>
           <Col>
             <Card style={{ width: "20rem", borderColor: "red", borderRadius: 15 }}>
