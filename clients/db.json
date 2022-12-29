@@ -1568,6 +1568,48 @@
       "namaTerima": null,
       "noResi": "",
       "id": 13
+    },
+    {
+      "noInv": 454180539,
+      "date": "12/29/2022",
+      "userid": 9,
+      "carts": [
+        {
+          "amount": 4,
+          "totalPrice": 1400000,
+          "product": {
+            "id": 4,
+            "name": "Naruto",
+            "price": 350000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk4.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 4,
+        "sumPrice": 1400000,
+        "sumPromo": 1120000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 1136000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Jln percobaan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP403190423",
+      "id": 14
     }
   ]
 }
