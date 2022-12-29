@@ -78,6 +78,15 @@
       "email": "khali@g",
       "password": "khalil",
       "id": 9
+    },
+    {
+      "firstName": "Alexander ",
+      "lastName": "Haposan",
+      "address": "Nasi Goreng",
+      "mobilePhone": "081250231213",
+      "email": "khali@gt",
+      "password": "khalil",
+      "id": 10
     }
   ],
   "products": [
@@ -955,6 +964,12 @@
       "sumAmount": 1,
       "sumPrice": 80000,
       "id": 3
+    },
+    {
+      "userid": 10,
+      "sumAmount": 0,
+      "sumPrice": 0,
+      "id": 4
     }
   ],
   "transactions": [
@@ -1610,6 +1625,161 @@
       "namaTerima": null,
       "noResi": "KGP403190423",
       "id": 14
+    },
+    {
+      "noInv": 137476149,
+      "date": "12/29/2022",
+      "userid": 10,
+      "carts": [
+        {
+          "amount": 5,
+          "totalPrice": 500000,
+          "product": {
+            "id": 23,
+            "name": "Action Figure Anime 20",
+            "price": 100000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk7.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 5,
+        "sumPrice": 500000,
+        "sumPromo": 400000,
+        "asal": "now"
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 15000,
+      "total": 416000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Ayam Goreng Kalasan",
+      "kurir": "Ninja",
+      "namaTerima": null,
+      "noResi": "KGP799531922",
+      "id": 15
+    },
+    {
+      "noInv": 163197225,
+      "date": "12/29/2022",
+      "userid": 10,
+      "carts": [
+        {
+          "userid": 10,
+          "amount": 8,
+          "totalPrice": 192000,
+          "product": {
+            "id": 1,
+            "name": "Broskuy",
+            "price": 30000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk1.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 11
+        },
+        {
+          "userid": 10,
+          "amount": 6,
+          "totalPrice": 480000,
+          "product": {
+            "id": 7,
+            "name": "Action Figure Anime 7",
+            "price": 100000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk7.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "specialsell"
+          },
+          "checked": true,
+          "id": 12
+        }
+      ],
+      "totalsummary": {
+        "id": 4,
+        "sumAmount": 14,
+        "sumPrice": 840000,
+        "sumPromo": 672000
+      },
+      "status": "Sudah Bayar",
+      "ongkir": 25000,
+      "total": 698000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Nasi Goreng",
+      "kurir": "JNE",
+      "namaTerima": "Alexander  Haposan",
+      "noResi": "KGP410937555",
+      "id": 16
+    },
+    {
+      "noInv": 890068363,
+      "date": "12/29/2022",
+      "userid": 10,
+      "carts": [
+        {
+          "userid": 10,
+          "amount": 7,
+          "totalPrice": 1960000,
+          "product": {
+            "id": 4,
+            "name": "Naruto",
+            "price": 350000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk4.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 10
+        }
+      ],
+      "totalsummary": {
+        "id": 4,
+        "sumAmount": 14,
+        "sumPrice": 2450000,
+        "sumPromo": 2128000
+      },
+      "status": "Belum Bayar",
+      "ongkir": 15000,
+      "total": 2144000,
+      "metodeBayar": "Mandiri",
+      "alamat": "Nasi Goreng",
+      "kurir": "Ninja",
+      "namaTerima": "Alexander  Haposan",
+      "noResi": "",
+      "id": 17
     }
   ]
 }

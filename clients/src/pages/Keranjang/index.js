@@ -414,7 +414,7 @@ const Keranjang = () => {
                     <span className={Styles.font}>Total Harga</span>
                   </Col>
                   <Col>
-                    <span className={Styles.font}>Rp{RangkumBelanja.sumPrice}</span>
+                    <span className={Styles.font}>Rp. {RangkumBelanja.sumPrice}</span>
                   </Col>
                 </Row>
                 <Row>
