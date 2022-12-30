@@ -80,6 +80,7 @@ const Profile = () => {
                   </div>
                 </Col>
               </Row> */}
+              <hr />
               <Link to="tracks" className="linkCard" >
                 <div className="menu-profile">
                   <img className="my-order" src={require("../../assets/img/box.png")} alt="Pesanan Saya"></img>

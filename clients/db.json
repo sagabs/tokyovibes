@@ -915,8 +915,8 @@
     },
     {
       "userid": 8,
-      "amount": 1,
-      "totalPrice": 80000,
+      "amount": 17,
+      "totalPrice": 1360000,
       "product": {
         "id": 5,
         "name": "Mata Langit",
@@ -933,7 +933,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
         "categorysell": "promo"
       },
-      "checked": false,
+      "checked": true,
       "id": 9
     }
   ],
@@ -946,8 +946,8 @@
     },
     {
       "userid": 8,
-      "sumAmount": 1,
-      "sumPrice": 24000,
+      "sumAmount": 17,
+      "sumPrice": 1360000,
       "id": 2
     },
     {
