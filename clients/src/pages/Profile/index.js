@@ -57,30 +57,7 @@ const Profile = () => {
                   </td>
                 </tr>
               </table>
-              {/* <Row>
-                <Col>
-                  <div>
-                    <img className="rupiah-icons" src={require("../../assets/img/rupiah.png")} alt="rupiah icons"></img>
-                  </div>
-
-                  <div>
-                    <img className="dana-icons" src={require("../../assets/img/dana.png")} alt="rupiah icons"></img>
-                  </div>
-                </Col>
-                <Col>
-                  <span className=" saldo-title">Saldo</span>
-                  <span className=" saldo-title">Dana</span>
-                </Col>
-                <Col>
-                  <div>
-                    <span className="text-right">Rp. {saldo}</span>
-                  </div>
-                  <div>
-                    <span className="text-right">Rp. {saldo}</span>
-                  </div>
-                </Col>
-              </Row> */}
-              <hr />
+              <div style={{ margin: 0, border: "1px solid gray" }} />
               <Link to="tracks" className="linkCard" >
                 <div className="menu-profile">
                   <img className="my-order" src={require("../../assets/img/box.png")} alt="Pesanan Saya"></img>

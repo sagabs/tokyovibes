@@ -20,13 +20,16 @@ const TransactionDetails = (props) => {
 		const navigate = useNavigate();
 
 		useEffect(() => {
+			setDataTrx(props.data)
 			const fetchData = async () => {
-				if(DataTrx.carts.length >  1){
+				if(props.data.carts.length >  1){
 					setDots(true)
+				}else{
+					setDots(false)
 				}
 			};
 			fetchData();
-		}, []);
+		}, [props.data, Dots]);
 
     const responsive = {
         superLargeDesktop: {

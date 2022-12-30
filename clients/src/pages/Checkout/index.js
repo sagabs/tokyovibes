@@ -10,6 +10,8 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+  const address = localStorage.getItem("alamat");
+  const userId = parseInt(localStorage.getItem("userId"));
   const location = useLocation();
   const { dataProps } = location.state;
   const [checkoutData, setCheckoutData] = useState(dataProps);
@@ -17,7 +19,7 @@ const Checkout = () => {
     ongkir: 0,
     total: 0,
     metodeBayar: "",
-    alamat: "Jln percobaan",
+    alamat: address,
     kurir: "",
     namaTerima: "",
     noResi: "",
@@ -25,10 +27,9 @@ const Checkout = () => {
   const date = new Date();
 
   const navigate = useNavigate();
-  //const [productdiskon, setproductdiskon] = useState()
+ 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
@@ -91,18 +92,35 @@ const Checkout = () => {
             console.log("error ya" + error);
           });
         });
+        axios
+          .get(API_URL + `cartsummary?userid=${userId}`)
+          .then(result =>{
+            const data = {
+              userid : userId,
+              sumAmount : 0,
+              sumPrice : 0
+            }
+            axios
+            .put(API_URL + `cartsummary/` + result.data[0].id, data)
+            .catch(error =>{
+              console.log("error ya" + error)
+            })
+          })
       }
-      const userId = parseInt(localStorage.getItem("userId"));
-      const userName = parseInt(localStorage.getItem("userName"));
+      
+      const userName = localStorage.getItem("userName");
       const randNumber = Math.floor(Math.random() * 900000000) + 100000000
-      const today = date.getDate().toLocaleDateString();
+
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed).toLocaleDateString();
+
       const data = {
         noInv : randNumber,
         date : today, 
         userid: userId,
         carts: checkoutData.carts,
         totalsummary: checkoutData.totalsummary,
-        status: "belum bayar",
+        status: "Belum Bayar",
         ongkir: DetailLainnya.ongkir,
         total: DetailLainnya.total,
         metodeBayar: DetailLainnya.metodeBayar,
