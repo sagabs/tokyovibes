@@ -105,6 +105,15 @@
       "email": "kha@a",
       "password": "123",
       "id": 12
+    },
+    {
+      "firstName": "alexander",
+      "lastName": "haposan",
+      "address": "nasi goreng",
+      "mobilePhone": "123123123",
+      "email": "123180119@student.upnyk.ac.id",
+      "password": "123",
+      "id": 13
     }
   ],
   "products": [
@@ -962,13 +971,82 @@
       },
       "checked": true,
       "id": 9
+    },
+    {
+      "userid": 13,
+      "amount": 11,
+      "totalPrice": 880000,
+      "product": {
+        "id": 8,
+        "name": "Action Figure Anime 8",
+        "price": 100000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk7.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
+      },
+      "checked": true,
+      "id": 11
+    },
+    {
+      "userid": 13,
+      "amount": 1,
+      "totalPrice": 80000,
+      "product": {
+        "id": 7,
+        "name": "Action Figure Anime 7",
+        "price": 100000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk7.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "specialsell"
+      },
+      "checked": false,
+      "id": 12
+    },
+    {
+      "userid": 13,
+      "amount": 1,
+      "totalPrice": 24000,
+      "product": {
+        "id": 1,
+        "name": "Broskuy",
+        "price": 30000,
+        "stock": 1234,
+        "promo": 20,
+        "img": "produk1.jpg",
+        "category": "Hololive ID",
+        "spesification": {
+          "condition": "Baru",
+          "color": "Biru",
+          "weight": 250
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+        "categorysell": "promo"
+      },
+      "checked": false,
+      "id": 13
     }
   ],
   "CartSummary": [
     {
       "userid": 1,
-      "sumAmount": 4,
-      "sumPrice": 4,
+      "sumAmount": 0,
+      "sumPrice": 0,
       "id": 1
     },
     {
@@ -1000,6 +1078,12 @@
       "sumAmount": 0,
       "sumPrice": 0,
       "id": 6
+    },
+    {
+      "userid": 13,
+      "sumAmount": 11,
+      "sumPrice": 880000,
+      "id": 7
     }
   ],
   "transactions": [
@@ -1810,6 +1894,158 @@
       "namaTerima": "Alexander  Haposan",
       "noResi": "",
       "id": 17
+    },
+    {
+      "noInv": 345978548,
+      "date": "12/30/2022",
+      "userid": 13,
+      "carts": [
+        {
+          "userid": 13,
+          "amount": 5,
+          "totalPrice": 1400000,
+          "product": {
+            "id": 4,
+            "name": "Naruto",
+            "price": 350000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk4.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          },
+          "checked": true,
+          "id": 10
+        },
+        {
+          "userid": 13,
+          "amount": 5,
+          "totalPrice": 1600000,
+          "product": {
+            "id": 3,
+            "name": "Sasukeh",
+            "price": 400000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk3.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "specialsell"
+          },
+          "checked": true,
+          "id": 11
+        }
+      ],
+      "totalsummary": {
+        "id": 7,
+        "sumAmount": 10,
+        "sumPrice": 3750000,
+        "sumPromo": 3000000
+      },
+      "status": "Diterima",
+      "ongkir": 25000,
+      "total": 3026000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "mixue",
+      "kurir": "JNE",
+      "namaTerima": "alexander haposan",
+      "noResi": "KGP916864285",
+      "id": 18
+    },
+    {
+      "noInv": 870331018,
+      "date": "12/30/2022",
+      "userid": 13,
+      "carts": [
+        {
+          "amount": 5,
+          "totalPrice": 500000,
+          "product": {
+            "id": 15,
+            "name": "Action Figure Anime 12",
+            "price": 100000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk7.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "promo"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 5,
+        "sumPrice": 500000,
+        "sumPromo": 400000,
+        "asal": "now"
+      },
+      "status": "Dikirim",
+      "ongkir": 25000,
+      "total": 426000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "Norma",
+      "kurir": "JNE",
+      "namaTerima": "alexander haposan",
+      "noResi": "KGP386400100",
+      "id": 19
+    },
+    {
+      "noInv": 867568319,
+      "date": "12/30/2022",
+      "userid": 13,
+      "carts": [
+        {
+          "amount": 1,
+          "totalPrice": 100000,
+          "product": {
+            "id": 7,
+            "name": "Action Figure Anime 7",
+            "price": 100000,
+            "stock": 1234,
+            "promo": 20,
+            "img": "produk7.jpg",
+            "category": "Hololive ID",
+            "spesification": {
+              "condition": "Baru",
+              "color": "Biru",
+              "weight": 250
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor nunc risus parturient ut diam maecenas urna, id scelerisque. Egestas feugiat integer condimentum volutpat odio ut egestas. Mi arcu sit duis vitae pretium aliquet. Ipsum commodo, amet nec eget diam donec.",
+            "categorysell": "specialsell"
+          }
+        }
+      ],
+      "totalsummary": {
+        "sumAmount": 1,
+        "sumPrice": 100000,
+        "sumPromo": 80000,
+        "asal": "now"
+      },
+      "status": "Belum Bayar",
+      "ongkir": 20000,
+      "total": 101000,
+      "metodeBayar": "Sinarmas",
+      "alamat": "nasi goreng",
+      "kurir": "JNT",
+      "namaTerima": "alexander haposan",
+      "noResi": "",
+      "id": 20
     }
   ]
 }

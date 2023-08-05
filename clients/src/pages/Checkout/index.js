@@ -27,7 +27,7 @@ const Checkout = () => {
   const date = new Date();
 
   const navigate = useNavigate();
- 
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -94,20 +94,20 @@ const Checkout = () => {
         });
         axios
           .get(API_URL + `cartsummary?userid=${userId}`)
-          .then(result =>{
+          .then(result => {
             const data = {
-              userid : userId,
-              sumAmount : 0,
-              sumPrice : 0
+              userid: userId,
+              sumAmount: 0,
+              sumPrice: 0
             }
             axios
-            .put(API_URL + `cartsummary/` + result.data[0].id, data)
-            .catch(error =>{
-              console.log("error ya" + error)
-            })
+              .put(API_URL + `cartsummary/` + result.data[0].id, data)
+              .catch(error => {
+                console.log("error ya" + error)
+              })
           })
       }
-      
+
       const userName = localStorage.getItem("userName");
       const randNumber = Math.floor(Math.random() * 900000000) + 100000000
 
@@ -115,8 +115,8 @@ const Checkout = () => {
       const today = new Date(timeElapsed).toLocaleDateString();
 
       const data = {
-        noInv : randNumber,
-        date : today, 
+        noInv: randNumber,
+        date: today,
         userid: userId,
         carts: checkoutData.carts,
         totalsummary: checkoutData.totalsummary,
